@@ -36,17 +36,16 @@ background-size: cover;
 
 .info-personal img{
     position: absolute;
-    top:10%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
     border-radius: 50%;
 }
 
 .info-personal p{
     position: absolute;
-    top:20%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    margin-top: 120px;
+   /* transform: translate(-50%,-50%);*/
     width: 100%;
     color: white;
     font-weight: bold;
@@ -72,4 +71,19 @@ background-size: cover;
     color: white;
     text-decoration: none;
     
+}
+
+.header-sm{
+    width: 100%;
+    display: inline-flex;
+}
+
+.header-sm #notification{
+float: right;
+width: 20%;
+}
+
+.header-sm #cargo{
+    float: right;
+    width: 50%;
 }
