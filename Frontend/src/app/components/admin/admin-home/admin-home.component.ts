@@ -14,6 +14,7 @@ export class AdminHomeComponent implements OnInit {
   ngOnInit() {
     $('#nav-principal').hide();
     $('#nav-admin').show();
+    $('.menu-admin').show();
   }
 
 }
