@@ -4,6 +4,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
+import { CompanyComponent } from './components/admin/company/company.component';
+import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
+import { AdminNotificationsComponent } from './components/admin/admin-notifications/admin-notifications.component';
 
 
 const routes: Routes = [
@@ -11,6 +14,9 @@ const routes: Routes = [
   {path:'home',component: HomeComponent},
   {path:'login',component: LoginComponent},
   {path:'admin/home',component: AdminHomeComponent},
+  {path:'admin/companys',component: CompanyComponent},
+  {path:'admin/notifications',component: AdminNotificationsComponent},
+  {path:'employee/home',component: EmployeeHomeComponent},
   {path:'**',component: NotfoundComponent},
 ];
 

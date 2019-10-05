@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
+import { CompanyComponent } from './components/admin/company/company.component';
+import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
+import { AdminNotificationsComponent } from './components/admin/admin-notifications/admin-notifications.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { AdminHomeComponent } from './components/admin/admin-home/admin-home.com
     HomeComponent,
     LoginComponent,
     NotfoundComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    CompanyComponent,
+    EmployeeHomeComponent,
+    AdminNotificationsComponent
   ],
   imports: [
     BrowserModule,

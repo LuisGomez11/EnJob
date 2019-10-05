@@ -3,6 +3,12 @@
     height: 100vh;
     background-color: #2C3447;
     color: white;
+    transition: transform 0.6s ease-in-out;
+    transform: translateX(-100%);
+}
+
+.menu-activado{
+    transform: translateX(0);
 }
 
 #icon-notification{
@@ -42,7 +48,7 @@ background-size: cover;
     border-radius: 50%;
 }
 
-.info-personal p{
+.info-personal .text-center{
     position: absolute;
     margin-top: 120px;
    /* transform: translate(-50%,-50%);*/
@@ -60,6 +66,11 @@ background-size: cover;
 
 .menu-items ul li{
     list-style: none;
+
+}
+
+.menu-items ul li a{
+
     padding: 15px;
 }
 
@@ -86,4 +97,22 @@ width: 20%;
 .header-sm #cargo{
     float: right;
     width: 50%;
+}
+
+.activado{
+    display: block;
+}
+.desactivado{
+    display: none;
+}
+
+.content-notifications{
+    width: 350px;
+    right: 0;
+    background-color: #fff;
+    display: none;
+}
+
+.notifi-active{
+    display: block;
 }
