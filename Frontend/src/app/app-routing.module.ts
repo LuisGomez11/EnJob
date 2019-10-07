@@ -7,6 +7,7 @@ import { AdminHomeComponent } from './components/admin/admin-home/admin-home.com
 import { CompanyComponent } from './components/admin/company/company.component';
 import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
 import { AdminNotificationsComponent } from './components/admin/admin-notifications/admin-notifications.component';
+import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'admin/companys',component: CompanyComponent},
   {path:'admin/notifications',component: AdminNotificationsComponent},
   {path:'employee/home',component: EmployeeHomeComponent},
+  {path:'employee/config',component: EmployeeConfigComponent},
   {path:'**',component: NotfoundComponent},
 ];
 

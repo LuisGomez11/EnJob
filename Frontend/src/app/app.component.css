@@ -11,7 +11,7 @@
     transform: translateX(0);
 }
 
-#icon-notification{
+i{
     font-size: 25px;
     color: rgb(90, 90, 90);
 }
@@ -113,6 +113,34 @@ width: 20%;
     display: none;
 }
 
+.content-configurations{
+    width: 270px;
+    right: 0;
+    background-color: #fff;
+    display: none;
+}
+
 .notifi-active{
     display: block;
+}
+
+.config-active{
+    display: block;
+}
+
+#options-user{
+    border-bottom: 0.5px solid rgba(200, 200, 200, .7);
+}
+
+#logout-user{
+    border-top: 0.5px solid rgba(100, 100, 100, .9);
+}
+
+#options-user:hover ,#logout-user:hover {
+    background-color: rgba(100, 100, 100, .1);
+    cursor: pointer;
+}
+
+.content-icons-block{
+    width: 100%;
 }

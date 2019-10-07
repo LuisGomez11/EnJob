@@ -55,6 +55,9 @@ export class AppComponent implements OnInit {
     $('#notification').click(function () {
       $('.content-notifications').toggleClass('notifi-active');
     });
+    $('#config-perfil').click(function () {
+      $('.content-configurations').toggleClass('config-active');
+    });
   }
   
 }

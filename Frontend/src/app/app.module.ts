@@ -10,6 +10,7 @@ import { AdminHomeComponent } from './components/admin/admin-home/admin-home.com
 import { CompanyComponent } from './components/admin/company/company.component';
 import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
 import { AdminNotificationsComponent } from './components/admin/admin-notifications/admin-notifications.component';
+import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminNotificationsComponent } from './components/admin/admin-notificati
     AdminHomeComponent,
     CompanyComponent,
     EmployeeHomeComponent,
-    AdminNotificationsComponent
+    AdminNotificationsComponent,
+    EmployeeConfigComponent
   ],
   imports: [
     BrowserModule,

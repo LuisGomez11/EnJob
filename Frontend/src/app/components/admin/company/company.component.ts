@@ -15,6 +15,7 @@ export class CompanyComponent implements OnInit {
     $('#nav-principal').hide();
     $('#nav-admin').show();
     $('.menu-admin').show();
+    $('#nav-empo').hide();
     if ($(window).width() <= 1106) {
       $('.list-companys').addClass("table-responsive");
     }else{
