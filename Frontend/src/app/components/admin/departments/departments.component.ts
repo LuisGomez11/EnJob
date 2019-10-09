@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var $: any;
+declare var $ : any;
 
 @Component({
-  selector: 'app-company',
-  templateUrl: './company.component.html',
-  styleUrls: ['./company.component.css']
+  selector: 'app-departments',
+  templateUrl: './departments.component.html',
+  styleUrls: ['./departments.component.css']
 })
-export class CompanyComponent implements OnInit {
+export class DepartmentsComponent implements OnInit {
 
   constructor() { }
 

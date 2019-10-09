@@ -1,0 +1,52 @@
+<div class="contenedor p-4">
+    <h3>Departamentos</h3>
+    <div class="row mt-3">
+        <div class="col-md-5 mb-2">
+            <div class="bg-white p-3 shadow">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa</label>
+                        <select id="company" class="form-control">
+                            <option value="Condor Labs">Condor Labs</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="ml-auto">
+                        <button type="reset" class="btn btn-danger mr-2">Cancelar</button>
+                        <button type="submit" class="btn btn-secondary">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="bg-white p-3 shadow">
+                <table class="table table-hover table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Empresa</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sector administrativo</td>
+                            <td>Condor Labs</td>
+                            <td class="text-center">
+                                <button class="mr-2" style="background: transparent; border: none"><img
+                                        src="../../../../assets/icon/edit.png" width="20" height="20" alt=""></button>
+                                <button style="background: transparent; border: none"><img
+                                        src="../../../../assets/icon/delete.png" width="20" height="20" alt=""></button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

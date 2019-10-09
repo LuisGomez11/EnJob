@@ -16,6 +16,7 @@ export class AdminHomeComponent implements OnInit {
     $('#nav-admin').show();
     $('.menu-admin').show();
     $('#nav-empo').hide();
+    $('#nav-sadmin').hide();
   }
 
 }

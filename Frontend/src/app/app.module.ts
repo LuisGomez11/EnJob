@@ -11,6 +11,9 @@ import { CompanyComponent } from './components/admin/company/company.component';
 import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
 import { AdminNotificationsComponent } from './components/admin/admin-notifications/admin-notifications.component';
 import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
+import { DepartmentsComponent } from './components/admin/departments/departments.component';
+import { SadminHomeComponent } from './components/sadmin/sadmin-home/sadmin-home.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { EmployeeConfigComponent } from './components/employee/employee-config/e
     CompanyComponent,
     EmployeeHomeComponent,
     AdminNotificationsComponent,
-    EmployeeConfigComponent
+    EmployeeConfigComponent,
+    DepartmentsComponent,
+    SadminHomeComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

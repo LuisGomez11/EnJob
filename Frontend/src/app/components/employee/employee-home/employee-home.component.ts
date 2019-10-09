@@ -16,6 +16,7 @@ export class EmployeeHomeComponent implements OnInit {
     $('#nav-admin').hide();
     $('.menu-admin').hide();
     $('#nav-empo').show();
+    $('#nav-sadmin').hide();
     if ($(window).width() <= 991) {
       $('#name-user').hide();
       $('.navbar-brand').hide();
