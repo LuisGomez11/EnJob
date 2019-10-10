@@ -144,3 +144,11 @@ width: 20%;
 .content-icons-block{
     width: 100%;
 }
+
+.content-notifications{
+    position: absolute; z-index: 20;
+}
+
+#menu-slide2{
+    cursor: pointer;font-size: 20px;position: absolute; right: 0;
+}

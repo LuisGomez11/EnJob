@@ -10,7 +10,9 @@ import { AdminNotificationsComponent } from './components/admin/admin-notificati
 import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
 import { DepartmentsComponent } from './components/admin/departments/departments.component';
 import { SadminHomeComponent } from './components/sadmin/sadmin-home/sadmin-home.component';
-import { ChatComponent } from './components/chat/chat.component';
+import { EmployeesComponent } from './components/admin/employees/employees.component';
+import { AdminChatComponent } from './components/admin/admin-chat/admin-chat.component';
+import { EmployeeChatComponent } from './components/employee/employee-chat/employee-chat.component';
 
 
 const routes: Routes = [
@@ -21,10 +23,12 @@ const routes: Routes = [
   {path:'admin/home',component: AdminHomeComponent},
   {path:'admin/companys',component: CompanyComponent},
   {path:'admin/departments',component: DepartmentsComponent},
+  {path:'admin/employees',component: EmployeesComponent},
+  {path:'admin/chat',component: AdminChatComponent},
   {path:'admin/notifications',component: AdminNotificationsComponent},
   {path:'employee/home',component: EmployeeHomeComponent},
+  {path:'employee/chat',component: EmployeeChatComponent},
   {path:'employee/config',component: EmployeeConfigComponent},
-  {path:'chat',component: ChatComponent},
   {path:'**',component: NotfoundComponent},
 ];
 

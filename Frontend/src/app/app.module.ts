@@ -13,7 +13,9 @@ import { AdminNotificationsComponent } from './components/admin/admin-notificati
 import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
 import { DepartmentsComponent } from './components/admin/departments/departments.component';
 import { SadminHomeComponent } from './components/sadmin/sadmin-home/sadmin-home.component';
-import { ChatComponent } from './components/chat/chat.component';
+import { EmployeesComponent } from './components/admin/employees/employees.component';
+import { AdminChatComponent } from './components/admin/admin-chat/admin-chat.component';
+import { EmployeeChatComponent } from './components/employee/employee-chat/employee-chat.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ChatComponent } from './components/chat/chat.component';
     EmployeeConfigComponent,
     DepartmentsComponent,
     SadminHomeComponent,
-    ChatComponent
+    EmployeesComponent,
+    AdminChatComponent,
+    EmployeeChatComponent,
   ],
   imports: [
     BrowserModule,
