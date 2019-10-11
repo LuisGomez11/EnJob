@@ -17,6 +17,7 @@ export class AdminChatComponent implements OnInit {
     $('.menu-admin').show();
     $('#nav-empo').hide();
     $('#nav-sadmin').hide();
+    $('#nav-supervisor').hide();
     $('.messages').animate({scrollTop: $(document).height()},"fast");
   }
 

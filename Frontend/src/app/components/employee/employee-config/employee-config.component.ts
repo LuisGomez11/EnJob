@@ -17,6 +17,7 @@ export class EmployeeConfigComponent implements OnInit {
     $('.menu-admin').hide();
     $('#nav-empo').show();
     $('#nav-sadmin').hide();
+    $('#nav-supervisor').hide();
   }
 
 }

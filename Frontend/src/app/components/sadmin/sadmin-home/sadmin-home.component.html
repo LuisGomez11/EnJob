@@ -1,3 +1,20 @@
 <div class="contenedor p-4">
-    <h3>Inicio</h3>
+    <h3>Solicitudes</h3>
+    <div class="cont-solicitudes mt-3">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let item of [1,1,1,1,1];let i=index">
+                <div class="card mb-3 shadow">
+                    <div class="card-header">
+                        Cualquier persona en el mundo
+                    </div>
+                    <div class="card-body">
+                        <strong>Empresa: </strong>Condor Labs
+                    </div>
+                    <div class="card-footer text-center">
+                        <button>Activar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

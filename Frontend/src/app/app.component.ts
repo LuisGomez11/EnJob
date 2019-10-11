@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     $('.links-admin').click(function () {
       $('.menu-admin').removeClass('menu-activado');
     });
-    $('#menu-slide').click(function () {
+    $('.menu-slide').click(function () {
       $('.menu-admin').addClass('menu-activado');
     });
     $('#menu-slide2').click(function () {
@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
     $('#notification').click(function () {
       $('.content-notifications').toggleClass('notifi-active');
     });
-    $('#config-perfil').click(function () {
+    $('.config-perfil').click(function () {
       $('.content-configurations').toggleClass('config-active');
     });
   }

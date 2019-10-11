@@ -17,6 +17,7 @@ export class DepartmentsComponent implements OnInit {
     $('.menu-admin').show();
     $('#nav-empo').hide();
     $('#nav-sadmin').hide();
+    $('#nav-supervisor').hide();
     if ($(window).width() <= 1106) {
       $('.list-companys').addClass("table-responsive");
     }else{

@@ -3,20 +3,20 @@ import { Component, OnInit } from '@angular/core';
 declare var $ : any;
 
 @Component({
-  selector: 'app-notfound',
-  templateUrl: './notfound.component.html',
-  styleUrls: ['./notfound.component.css']
+  selector: 'app-subscribed',
+  templateUrl: './subscribed.component.html',
+  styleUrls: ['./subscribed.component.css']
 })
-export class NotfoundComponent implements OnInit {
+export class SubscribedComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
-  	$('#nav-principal').hide();
+    $('#nav-principal').hide();
     $('#nav-admin').hide();
     $('.menu-admin').hide();
     $('#nav-empo').hide();
-    $('#nav-sadmin').hide(); 
+    $('#nav-sadmin').show();
     $('#nav-supervisor').hide();
   }
 

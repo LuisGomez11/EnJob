@@ -14,6 +14,7 @@ export class AdminNotificationsComponent implements OnInit {
   ngOnInit() {
     $('#nav-empo').hide();
     $('#nav-sadmin').hide();
+    $('#nav-supervisor').hide();
   }
 
 }

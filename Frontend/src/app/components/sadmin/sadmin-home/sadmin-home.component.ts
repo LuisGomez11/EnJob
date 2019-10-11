@@ -17,6 +17,7 @@ export class SadminHomeComponent implements OnInit {
     $('.menu-admin').hide();
     $('#nav-empo').hide();
     $('#nav-sadmin').show();
+    $('#nav-supervisor').hide();
   }
 
 }

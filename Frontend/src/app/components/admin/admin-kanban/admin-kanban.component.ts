@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var $: any;
+declare var $ : any;
 
 @Component({
-  selector: 'app-admin-home',
-  templateUrl: './admin-home.component.html',
-  styleUrls: ['./admin-home.component.css']
+  selector: 'app-admin-kanban',
+  templateUrl: './admin-kanban.component.html',
+  styleUrls: ['./admin-kanban.component.css']
 })
-export class AdminHomeComponent implements OnInit {
+export class AdminKanbanComponent implements OnInit {
 
   constructor() { }
 

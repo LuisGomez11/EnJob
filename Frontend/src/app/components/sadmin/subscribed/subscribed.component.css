@@ -4,7 +4,7 @@
 }
 
 button{
-    background: rgb(21, 172, 21);
+    background: rgb(155, 19, 19);
     border: none;
     color: #fff;
     padding: 5px 15px;
@@ -12,5 +12,5 @@ button{
 }
 
 button:hover{
-    background: rgb(25, 201, 25);
+    background: rgb(235, 33, 33);
 }
