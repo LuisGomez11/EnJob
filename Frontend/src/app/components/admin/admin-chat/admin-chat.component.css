@@ -13,9 +13,11 @@
     position: relative;
 }
 
-.side-panel .select-company{
-
+.side-panel .search-content .form-group input{
     background: #32465A;
+    border: none;
+    color: #fff;
+    box-shadow: none;
 }
 
 .side-panel .contacts{

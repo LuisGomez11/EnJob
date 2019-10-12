@@ -13,9 +13,11 @@
     position: relative;
 }
 
-.side-panel .select-company{
-
+.side-panel .search-content .form-group input{
     background: #32465A;
+    border: none;
+    color: #fff;
+    box-shadow: none;
 }
 
 .side-panel .contacts{
@@ -83,7 +85,7 @@
     width: 100%;
     height: 60px;
     line-height: 60px;
-    background: #FFF;
+    background: #fff;
 }
 
 .conversation .contact-profile img{

@@ -26,10 +26,14 @@ export class HomeComponent implements OnInit {
         $('#nav-principal').removeClass('bg-transparent');
         $('#nav-principal').addClass('bg-white');
         $('.logo-nav').show();
+        $('.name-product').css("color","rgb(12, 14, 173)");
+        $('.link-bg').css("color","rgb(12, 14, 173)");
       }else{
         $('#nav-principal').addClass('bg-transparent');
         $('#nav-principal').removeClass('bg-white');
         $('.logo-nav').hide();
+        $('.name-product').css("color","rgb(0, 0, 0)");
+        $('.link-bg').css("color","rgb(0, 0, 0)");
       }
     });
   }

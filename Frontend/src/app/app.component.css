@@ -146,9 +146,37 @@ width: 20%;
 }
 
 .content-notifications{
-    position: absolute; z-index: 20;
+    position: absolute;
+    z-index: 20;
 }
 
 #menu-slide2{
-    cursor: pointer;font-size: 20px;position: absolute; right: 0;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+}
+
+a.link-bg{
+    border: 2px solid;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+}
+
+a.link-bg:hover{
+    background: rgba(0, 0, 0, .1);
+}
+
+.name-product{
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.link-login{
+    color: rgb(0, 0, 0);
+}
+
+.link-login:hover{
+    color: rgb(12, 14, 173);
 }
