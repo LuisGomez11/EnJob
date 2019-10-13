@@ -7,14 +7,30 @@
     <span class="name-product">ENJOB</span>
   </a>
     <div class="navbar-nav ml-auto">
-      <li class="nav-item mr-2">
+      <i style="color: #000;" class="fas fa-bars menu-home"></i>
+      <li class="nav-item mr-2 home-link">
         <a class="p-2 text-decoration-none font-weight-bold link-login" routerLink="/login">Iniciar Sesión</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item home-link">
         <a class="p-2 px-4 text-decoration-none font-weight-bold link-bg" routerLink="/login">Registrarse</a>
       </li>
     </div>
 </nav>
+
+<!-- MENU HOME -->
+<div class="slide-home fixed-top">
+  <div class="slide-links">
+    <ul class="text-center">
+      <li class="my-2">
+          <a class="p-2 text-decoration-none font-weight-bold link-login" routerLink="/login">Iniciar Sesión</a>
+      </li>
+      <li class="my-2">
+          <a class="p-2 px-4 text-decoration-none font-weight-bold link-bg" routerLink="/login">Registrarse</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
 <!-- NAV SADMIN -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-sadmin">
