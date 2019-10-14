@@ -3,7 +3,7 @@
     height: 100vh;
     background-color: #2C3447;
     color: white;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.4s ease-in-out;
     transform: translateX(-100%);
 }
 
@@ -48,7 +48,7 @@ background-size: cover;
     border-radius: 50%;
 }
 
-.info-personal .text-center{
+.info-personal p.text-center{
     position: absolute;
     margin-top: 120px;
    /* transform: translate(-50%,-50%);*/
@@ -56,6 +56,15 @@ background-size: cover;
     color: white;
     font-weight: bold;
     font-size: 20px;
+}
+
+.info-personal span.text-center{
+    position: absolute;
+    margin-top: 147px;
+   /* transform: translate(-50%,-50%);*/
+    width: 100%;
+    color: white;
+    font-size: 17px;
 }
 
 .menu-items ul{
@@ -185,7 +194,7 @@ a.link-bg:hover{
     right: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgb(182, 222, 233);
+    background-color: rgb(193, 241, 255);
     z-index: 10;
     transition: transform 0.6s ease-in-out;
     transform: translateX(100%);

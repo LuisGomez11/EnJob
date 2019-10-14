@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     $('#nav-sadmin').hide();
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
+    
     $(window).scroll(function () {
       var scrollPos = $(window).scrollTop();
       if ($('.slide-home').hasClass('slide-active')) {

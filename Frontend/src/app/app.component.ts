@@ -8,7 +8,7 @@ declare var $ : any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Frontend';
+  title = 'ENJOB';
   constructor() { }
 
   ngOnInit() {
@@ -30,13 +30,17 @@ export class AppComponent implements OnInit {
     if ($(window).width() <= 991) {
       $('.menu-admin').css("width", "100%");
       $('#notification').hide();
+      $('#admin-messages').hide();
       $('#link-notification').show();
+      $('#link-messages-a').show();
       $('.home-link').hide();
       $('.menu-home').show();
     } else {
       $('.menu-admin').css("width", "280px");
       $('#notification').show();
+      $('#admin-messages').show();
       $('#link-notification').hide();
+      $('#link-messages-a').hide();
       $('.home-link').show();
       $('.menu-home').hide();
     }
@@ -49,13 +53,17 @@ export class AppComponent implements OnInit {
       if ($(window).width() <= 991) {
         $('.menu-admin').css("width", "100%");
         $('#notification').hide();
+        $('#admin-messages').hide();
         $('#link-notification').show();
+        $('#link-messages-a').show();
         $('.home-link').hide();
         $('.menu-home').show();
       } else {
         $('.menu-admin').css("width", "280px");
         $('#notification').show();
+        $('#admin-messages').show();
         $('#link-notification').hide();
+        $('#link-messages-a').hide();
         $('.home-link').show();
         $('.menu-home').hide();
       }
@@ -66,6 +74,22 @@ export class AppComponent implements OnInit {
     });
     $('.config-perfil').click(function () {
       $('.content-configurations').toggleClass('config-active');
+    });
+    $('.menu-home').click(function () {
+      if ($('.slide-home').hasClass('slide-active') && $(window).scrollTop() > 0) {
+        $('#nav-principal').removeClass('bg-transparent');
+        $('#nav-principal').addClass('bg-white');
+        $('.logo-nav').show();
+        $('.name-product').css("color", "rgb(12, 14, 173)");
+        $('.link-bg').css("color", "rgb(12, 14, 173)");
+      }
+      if($(window).scrollTop() > 0 && !($('.slide-home').hasClass('slide-active'))){
+        $('#nav-principal').addClass('bg-transparent');
+          $('#nav-principal').removeClass('bg-white');
+          $('.logo-nav').hide();
+          $('.name-product').css("color", "rgb(0, 0, 0)");
+          $('.link-bg').css("color", "rgb(0, 0, 0)");
+      }
     });
     $('.menu-home').click(function () {
       $('.slide-home').toggleClass('slide-active');

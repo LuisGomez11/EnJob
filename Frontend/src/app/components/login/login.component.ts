@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     $('.menu-admin').hide();
     $('#nav-sadmin').hide();
     $('#nav-supervisor').hide();
+    $('#nav-empo').hide();
   }
 
 }
