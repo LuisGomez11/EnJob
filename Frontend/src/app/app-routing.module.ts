@@ -15,7 +15,7 @@ import { EmployeeChatComponent } from './components/employee/employee-chat/emplo
 import { SupervisorHomeComponent } from './components/supervisor/supervisor-home/supervisor-home.component';
 import { SubscribedComponent } from './components/sadmin/subscribed/subscribed.component';
 import { AdminKanbanComponent } from './components/admin/admin-kanban/admin-kanban.component';
-
+import { AdminConfigComponent } from './components/admin/admin-config/admin-config.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -30,6 +30,7 @@ const routes: Routes = [
   {path:'admin/employees',component: EmployeesComponent},
   {path:'admin/chat',component: AdminChatComponent},
   {path:'admin/kanban',component: AdminKanbanComponent},
+  {path:'admin/config',component: AdminConfigComponent},
   {path:'admin/notifications',component: AdminNotificationsComponent},
   {path:'supervisor',component: SupervisorHomeComponent},
   {path:'supervisor/home',component: SupervisorHomeComponent},

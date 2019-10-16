@@ -18,6 +18,7 @@ import { EmployeeChatComponent } from './components/employee/employee-chat/emplo
 import { SupervisorHomeComponent } from './components/supervisor/supervisor-home/supervisor-home.component';
 import { SubscribedComponent } from './components/sadmin/subscribed/subscribed.component';
 import { AdminKanbanComponent } from './components/admin/admin-kanban/admin-kanban.component';
+import { AdminConfigComponent } from './components/admin/admin-config/admin-config.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AdminKanbanComponent } from './components/admin/admin-kanban/admin-kanb
     SupervisorHomeComponent,
     SubscribedComponent,
     AdminKanbanComponent,
+    AdminConfigComponent,
   ],
   imports: [
     BrowserModule,
