@@ -75,6 +75,9 @@ export class AppComponent implements OnInit {
     $('.config-perfil').click(function () {
       $('.content-configurations').toggleClass('config-active');
     });
+    $('.sconfig-perfil').click(function () {
+      $('.scontent-configurations').toggleClass('sconfig-active');
+    });
     $('.menu-home').click(function () {
       if ($('.slide-home').hasClass('slide-active') && $(window).scrollTop() > 0) {
         $('#nav-principal').removeClass('bg-transparent');

@@ -17,6 +17,9 @@ import { SubscribedComponent } from './components/sadmin/subscribed/subscribed.c
 import { AdminKanbanComponent } from './components/admin/admin-kanban/admin-kanban.component';
 import { AdminConfigComponent } from './components/admin/admin-config/admin-config.component';
 import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
+import { SupervisorChatComponent } from './components/supervisor/supervisor-chat/supervisor-chat.component';
+import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
+import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -35,6 +38,9 @@ const routes: Routes = [
   {path:'admin/notifications',component: AdminNotificationsComponent},
   {path:'supervisor',component: SupervisorHomeComponent},
   {path:'supervisor/home',component: SupervisorHomeComponent},
+  {path:'supervisor/chat',component: SupervisorChatComponent},
+  {path:'supervisor/kanban',component: SupervisorKanbanComponent},
+  {path:'supervisor/config',component: SupervisorConfigComponent},
   {path:'employee',component: EmployeeHomeComponent},
   {path:'employee/home',component: EmployeeHomeComponent},
   {path:'employee/chat',component: EmployeeChatComponent},
