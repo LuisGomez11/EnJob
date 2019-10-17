@@ -20,6 +20,7 @@ import { EmployeeKanbanComponent } from './components/employee/employee-kanban/e
 import { SupervisorChatComponent } from './components/supervisor/supervisor-chat/supervisor-chat.component';
 import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
+import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path:'supervisor/home',component: SupervisorHomeComponent},
   {path:'supervisor/chat',component: SupervisorChatComponent},
   {path:'supervisor/kanban',component: SupervisorKanbanComponent},
+  {path:'supervisor/tasks',component: SupervisorTasksComponent},
   {path:'supervisor/config',component: SupervisorConfigComponent},
   {path:'employee',component: EmployeeHomeComponent},
   {path:'employee/home',component: EmployeeHomeComponent},

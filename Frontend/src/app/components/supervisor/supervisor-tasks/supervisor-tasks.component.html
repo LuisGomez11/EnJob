@@ -1,0 +1,63 @@
+<div class="contenedor p-4">
+	<div class="container">
+		<h3 class="text-center">Registrar nueva tarea</h3>
+		<div class="card mt-2 shadow-sm">
+			<div class="card-body">
+				<form>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="task">Tarea:</label>
+								<input type="text" id="task" placeholder="Escriba una tarea..." class="form-control">
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="descri">Descripción:</label>
+								<textarea id="descri" placeholder="Escriba una descripción de la tarea..." class="form-control" rows="3"></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="department">Departamento:</label>
+								<select class="form-control" id="department">
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="task">Asignar a:</label>
+								<select class="form-control">
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="date">Fecha:</label>
+								<input type="text" id="date" value="17-10-2019" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="task">Plazo:</label>
+								<input type="date" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="state">Estado:</label>
+								<input type="text" id="state" value="Por hacer" class="form-control">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<button class="btn btn-secondary mr-2">Añadir</button>
+				<a routerLink="/supervisor/home" class="btn btn-danger text-white">Cancelar</a>
+			</div>
+		</div>
+	</div>
+</div>
