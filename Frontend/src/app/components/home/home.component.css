@@ -1,3 +1,35 @@
+.contenedor{
+    overflow-x: hidden;
+}
+.margin-not{
+    margin: 0;
+}
+
+.padding-not{
+    padding: 0;
+}
+
+.mp-not{
+    padding: 0;
+    margin: 0;
+}
+
+.style-not{
+    list-style: none;
+}
+
+.bg-black{
+    background-color: #000;
+}
+
+footer ul{
+    font-size: 18px;
+}
+
+footer i{
+    width: 30px;
+}
+
 a{
     text-decoration: none;
     color: #000;
@@ -14,6 +46,7 @@ a{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-image: url('../../../assets/img/bg-02.jpg');
 
     background-repeat: no-repeat;
     background-position: center;

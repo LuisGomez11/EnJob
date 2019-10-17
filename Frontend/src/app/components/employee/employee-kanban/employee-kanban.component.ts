@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 declare var $ : any;
 
 @Component({
-  selector: 'app-supervisor-home',
-  templateUrl: './supervisor-home.component.html',
-  styleUrls: ['./supervisor-home.component.css']
+  selector: 'app-employee-kanban',
+  templateUrl: './employee-kanban.component.html',
+  styleUrls: ['./employee-kanban.component.css']
 })
-export class SupervisorHomeComponent implements OnInit {
+export class EmployeeKanbanComponent implements OnInit {
 
   constructor() { }
 
@@ -15,9 +15,9 @@ export class SupervisorHomeComponent implements OnInit {
     $('#nav-principal').hide();
     $('#nav-admin').hide();
     $('.menu-admin').hide();
-    $('#nav-empo').hide();
-    $('#nav-sadmin').hide(); 
-    $('#nav-supervisor').show();
+    $('#nav-empo').show();
+    $('#nav-sadmin').hide();
+    $('#nav-supervisor').hide();
     if ($(window).width() <= 991) {
       $('#name-user').hide();
       $('.navbar-brand').hide();

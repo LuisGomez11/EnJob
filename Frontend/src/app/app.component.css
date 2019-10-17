@@ -1,3 +1,7 @@
+.style-none{
+    list-style: none;
+}
+
 .menu-admin{
     width: 280px;
     height: 100vh;

@@ -127,45 +127,55 @@
 
 <!-- NAV SUPERVISOR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-info" id="nav-supervisor">
-  <div class="w-100">
-    <div style="float: left;">
-      <a class="navbar-brand text-white">
-        <span id="text-home">Nombre de la empresa | departamento</span>
+  <div style="width: 100%;">
+    <div class="float-left">
+      <a routerLink="/supervisor/home" class="navbar-brand text-white">
+        <span id="text-home">ENJOB</span>
       </a>
     </div>
-    <div style="float: right;" class="d-flex navbar-nav">
-      <li class="nav-item mr-5" style="cursor: pointer" id="messages">
-        <a routerLink="/supervisor/chat"><i class="fas fa-comment-dots mt-2 text-white" id="icon-messages"></i></a>
+    <div id="content-icons" class="d-flex navbar-nav float-right style-none">
+      <li class="nav-item mr-5" style="cursor: pointer" id="homes">
+        <i class="fas fa-home mt-2 text-white" id="icon-home"></i>
       </li>
-      <li class="nav-item mr-5" style="cursor: pointer" id="notification">
+      <li class="nav-item mr-5" style="cursor: pointer" id="dashboards">
+        <a routerLink="/employee/kanban"><i class="fas fa-columns mt-2 text-white" id="icon-dashboard"></i></a>
+      </li>
+      <li class="nav-item mr-5" style="cursor: pointer" id="messagess">
+        <a routerLink="/employee/chat"><i class="fas fa-comment-dots mt-2 text-white" id="icon-messages"></i></a>
+      </li>
+      <li class="nav-item mr-5" style="cursor: pointer" id="notifications">
         <i class="fas fa-bell mt-2 text-white" id="icon-notification"></i>
         <span class="badge badge-dark" id="number-notification">4</span>
       </li>
-      <li class="nav-item d-flex" routerLinkActive="active" id="cargo">
-        <div class="d-flex config-perfil" style="cursor: pointer;">
-          <img class="mt-1" src="../assets/img/foto-default.png" width="34" height="34" style="border-radius: 50%" alt="">
-          <p style="margin:0" id="name-user" class="text-white ml-2 mt-2">LuisGomez11</p>
+      <li class="nav-item" routerLinkActive="active" id="perfils">
+        <div class="d-flex sconfig-perfil" style="cursor: pointer;">
+          <img class="mt-1 rounded-circle" src="../assets/img/test-photos/foto8.jpg" width="34" height="34" alt="">
+          <p style="margin:0" id="name-user" class="text-white ml-2 mt-2">ClaraLopez</p>
         </div>
       </li>
     </div>
-
   </div>
 </nav>
+
+<!-- SUPERVISOR CONFIGURATIONS -->
+<div class="scontent-configurations mr-3 p-2 shadow" style="position: absolute; z-index: 100;">
+  <app-supervisor-config></app-supervisor-config>
+</div>
 
 <!-- NAV EMPLOYEE -->
 <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="nav-empo">
   <div style="width: 100%;">
-    <div style="float: left;">
-      <a class="navbar-brand text-white">
-        <span id="text-home">Nombre de la empresa | departamento</span>
+    <div class="float-left">
+      <a routerLink="/employee/home" class="navbar-brand text-white">
+        <span id="text-home">ENJOB</span>
       </a>
     </div>
-    <div style="float: right; list-style: none;" id="content-icons" class="d-flex navbar-nav">
+    <div id="content-icons" class="d-flex navbar-nav float-right style-none">
       <li class="nav-item mr-5" style="cursor: pointer" id="home">
         <i class="fas fa-home mt-2 text-white" id="icon-home"></i>
       </li>
       <li class="nav-item mr-5" style="cursor: pointer" id="dashboard">
-        <i class="fas fa-columns mt-2 text-white" id="icon-dashboard"></i>
+        <a routerLink="/employee/kanban"><i class="fas fa-columns mt-2 text-white" id="icon-dashboard"></i></a>
       </li>
       <li class="nav-item mr-5" style="cursor: pointer" id="messages">
         <a routerLink="/employee/chat"><i class="fas fa-comment-dots mt-2 text-white" id="icon-messages"></i></a>
@@ -176,8 +186,8 @@
       </li>
       <li class="nav-item" routerLinkActive="active" id="perfil">
         <div class="d-flex config-perfil" style="cursor: pointer;">
-          <img class="mt-1" src="../assets/img/foto-default.png" width="34" height="34" style="border-radius: 50%" alt="">
-          <p style="margin:0" id="name-user" class="text-white ml-2 mt-2">LuisGomez11</p>
+          <img class="mt-1 rounded-circle" src="../assets/img/test-photos/foto2.jpg" width="34" height="34" alt="">
+          <p style="margin:0" id="name-user" class="text-white ml-2 mt-2">rodolfo19</p>
         </div>
       </li>
     </div>

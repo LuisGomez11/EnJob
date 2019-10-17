@@ -19,6 +19,8 @@ import { SupervisorHomeComponent } from './components/supervisor/supervisor-home
 import { SubscribedComponent } from './components/sadmin/subscribed/subscribed.component';
 import { AdminKanbanComponent } from './components/admin/admin-kanban/admin-kanban.component';
 import { AdminConfigComponent } from './components/admin/admin-config/admin-config.component';
+import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
+import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { AdminConfigComponent } from './components/admin/admin-config/admin-conf
     SubscribedComponent,
     AdminKanbanComponent,
     AdminConfigComponent,
+    EmployeeKanbanComponent,
+    SupervisorConfigComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,3 +10,7 @@
     background-color: rgba(100, 100, 100, .1);
     cursor: pointer;
 }
+
+.margin-not{
+    margin: 0;
+}
