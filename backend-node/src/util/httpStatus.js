@@ -1,10 +1,12 @@
 const HttpStatus = require('http-status-codes');
 
 module.exports = {
-    errors: HttpStatus.getStatusText(HttpStatus.BAD_REQUEST),
-    created: HttpStatus.getStatusText(HttpStatus.CREATED),
-    bad_request: HttpStatus.BAD_REQUEST,
-    plantedPassword: process.env.playntedPassword,
-    jwt_key: process.env.JWT_KEY,
-    mongo_uri: process.env.MONGO_URI
+    bad_requestSend: HttpStatus.getStatusText(HttpStatus.BAD_REQUEST),
+    createdSend: HttpStatus.getStatusText(HttpStatus.CREATED),
+    not_foundSend: HttpStatus.getStatusText(HttpStatus.NOT_FOUND),
+    non_authoritative_informationSend: HttpStatus.getStatusText(HttpStatus.NON_AUTHORITATIVE_INFORMATION),
+    bad_requestStatus: HttpStatus.BAD_REQUEST,
+    createdStatus: HttpStatus.CREATED,
+    not_foundStatus: HttpStatus.NOT_FOUND,
+    non_authoritative_informationStatus: HttpStatus.NON_AUTHORITATIVE_INFORMATION
 };
