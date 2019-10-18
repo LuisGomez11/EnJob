@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 
-const userCtrl = require('../controller/userController');
+const { CreateAdmine } = require('../controller/admineController');
 
-router.post('/v1/api/create', );
+router.post('/v1/api/create', CreateAdmine);
 
 
 

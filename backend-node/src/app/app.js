@@ -7,5 +7,6 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
+app.use(require('../routes/admineRoutes'));
 
 module.exports = app;

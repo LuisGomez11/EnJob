@@ -1,9 +1,9 @@
-
+const HttpStatus = require('http-status-codes');
 
 module.exports = {
-    error: HttpStatus.getStatusText(HttpStatus.BAD_REQUEST),
-    password: process.env.PASSWORD_MONGODB,
-    port2: process.env.PORT || process.env.PORT2,
+    errors: HttpStatus.getStatusText(HttpStatus.BAD_REQUEST),
+    created: HttpStatus.getStatusText(HttpStatus.CREATED),
+    bad_request: HttpStatus.BAD_REQUEST,
     plantedPassword: process.env.playntedPassword,
     jwt_key: process.env.JWT_KEY,
     mongo_uri: process.env.MONGO_URI
