@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 declare var $ : any;
 
@@ -9,16 +10,10 @@ declare var $ : any;
 })
 export class AdminChatComponent implements OnInit {
 
-  constructor() { }
+  constructor(public app : AppComponent) { }
 
   ngOnInit() {
-    $('#nav-principal').hide();
-    $('#nav-admin').show();
-    $('.menu-admin').show();
-    $('#nav-empo').hide();
-    $('#nav-sadmin').hide();
-    $('#nav-supervisor').hide();
-    $('.messages').animate({scrollTop: $(document).height()},"fast");
+    this.app.admin();
   }
 
 }

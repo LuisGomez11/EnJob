@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
+
+declare var $ : any;
 
 @Component({
   selector: 'app-supervisor-config',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupervisorConfigComponent implements OnInit {
 
-  constructor() { }
+  constructor(public app : AppComponent) { }
 
   ngOnInit() {
+    this.app.supervisor();
+    $('.sconfig-perfil').click(function () {
+      $('.scontent-configurations').toggleClass('sconfig-active');
+    });
   }
 
 }

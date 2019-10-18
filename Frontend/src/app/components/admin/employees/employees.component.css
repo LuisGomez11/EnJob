@@ -2,3 +2,21 @@
     background-color: #eee;
     height: calc(100vh - 56px);
 }
+
+.profile-emplo{
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+}
+
+.profile-emplo:hover{
+    color: rgb(11, 95, 221);
+}
+
+td{
+    line-height: 35px;
+}
+
+.fa-star{
+    color: rgb(201, 201, 15);
+}

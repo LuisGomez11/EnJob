@@ -4,11 +4,11 @@ import { AppComponent } from 'src/app/app.component';
 declare var $ : any;
 
 @Component({
-  selector: 'app-admin-kanban',
-  templateUrl: './admin-kanban.component.html',
-  styleUrls: ['./admin-kanban.component.css']
+  selector: 'app-employee-profile',
+  templateUrl: './employee-profile.component.html',
+  styleUrls: ['./employee-profile.component.css']
 })
-export class AdminKanbanComponent implements OnInit {
+export class EmployeeProfileComponent implements OnInit {
 
   constructor(public app : AppComponent) { }
 
