@@ -24,6 +24,8 @@ import { SupervisorConfigComponent } from './components/supervisor/supervisor-co
 import { SupervisorChatComponent } from './components/supervisor/supervisor-chat/supervisor-chat.component';
 import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
+import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { SupervisorTasksComponent } from './components/supervisor/supervisor-tas
     SupervisorChatComponent,
     SupervisorKanbanComponent,
     SupervisorTasksComponent,
+    EmployeeProfileComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

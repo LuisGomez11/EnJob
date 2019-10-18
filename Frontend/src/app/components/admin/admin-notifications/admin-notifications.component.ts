@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 declare var $ : any;
 
@@ -9,12 +10,10 @@ declare var $ : any;
 })
 export class AdminNotificationsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public app : AppComponent) { }
 
   ngOnInit() {
-    $('#nav-empo').hide();
-    $('#nav-sadmin').hide();
-    $('#nav-supervisor').hide();
+    this.app.admin();
   }
 
 }

@@ -1,0 +1,10 @@
+.contenedor{
+    background-color: #eee;
+    background-attachment: fixed;
+    height: auto;
+    min-height: calc(100vh - 56px);
+}
+
+.margin-not{
+    margin: 0;
+}

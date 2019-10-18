@@ -1,44 +1,133 @@
 <div class="contenedor p-4">
     <h3>Empleados</h3>
-    <div class="employees bg-white mt-3">
-        <table class="table table-hover table-bordered table-responsive-xl">
-            <thead class="thead-dark">
-                <tr>
-                    <th class="text-center">Foto</th>
-                    <th>Nombre</th>
-                    <th>Nro. Documento</th>
-                    <th>Correo</th>
-                    <th>Telefono</th>
-                    <th>Departamento</th>
-                    <th>Usuario</th>
-                    <th class="text-center">Puntos</th>
-                    <th class="text-center">Estado</th>
-                    <th class="text-center">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="text-center"><img src="../../../../assets/img/Diana.jpg" class="rounded-circle" width="35" height="35" alt="">
-                    </td>
-                    <td>Luis Alberto Gomez</td>
-                    <td>1002244432</td>
-                    <td>luisgomez24g@gmail.com</td>
-                    <td>3002149179</td>
-                    <td>Administrativo</td>
-                    <td>LuisGomez11</td>
-                    <td class="text-center"><span class="mr-2">0</span><i style="color: rgb(201, 201, 15)"
-                            class="fas fa-star"></i></td>
-                    <td class="text-center"><span
-                        class="badge badge-success">Disponible</span></td>
-                    <td class="text-center">
-                        <button class="mr-2" style="background: transparent; border: none"><img
-                                src="../../../../assets/icon/edit.png" width="20" height="20" alt=""></button>
-                        <button style="background: transparent; border: none"><img
-                                src="../../../../assets/icon/delete.png" width="20" height="20" alt=""></button>
-                    </td>
-                </tr>
+    <div class="row mt-3">
+        <div class="col-md-2 mb-3">
+            <button class="btn btn-success" data-toggle="modal" data-target="#modal">
+                <i class="fas fa-plus mr-2"></i><span>Añadir</span>
+            </button>
+        </div>
+        <div class="col-md-10">
+            <div class="card bg-white p-2">
+                <table class="table table-hover table-bordered table-responsive-sm" style="margin: 0">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="text-center">Foto</th>
+                            <th>Nombre</th>
+                            <th class="text-center">Puntos</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Editar</th>
+                            <th class="text-center">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <img src="../../../../assets/img/test-photos/foto2.jpg" class="rounded-circle" width="35" height="35" alt="">
+                            </td>
+                            <td><a routerLink="/admin/profile/employee" title="Ver perfil" class="profile-emplo">Luis Alberto Gomez</a></td>
+                            <td class="text-center"><span class="mr-2">2</span><i class="fas fa-star"></i></td>
+                            <td class="text-center"><span class="badge badge-success">Disponible</span></td>
+                            <td class="text-center">
+                                <button title="Editar empleado" class="bg-transparent border-0"><i
+                                        class="fas fa-edit text-primary h4"></i></button>
+                            </td>
+                            <td class="text-center">
+                                <button title="Eliminar empleado" class="bg-transparent border-0"><i
+                                        class="fas fa-times text-danger h4"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <img src="../../../../assets/img/test-photos/foto1.jpg" class="rounded-circle" width="35" height="35" alt="">
+                            </td>
+                            <td><a routerLink="/admin/profile/employee" title="Ver perfil" class="profile-emplo">Mariana Vasquez Diaz</a></td>
+                            <td class="text-center"><span class="mr-2">5</span><i class="fas fa-star"></i></td>
+                            <td class="text-center"><span class="badge badge-success">Disponible</span></td>
+                            <td class="text-center">
+                                <button title="Editar empleado" class="bg-transparent border-0"><i
+                                        class="fas fa-edit text-primary h4"></i></button>
+                            </td>
+                            <td class="text-center">
+                                <button title="Eliminar empleado" class="bg-transparent border-0"><i
+                                        class="fas fa-times text-danger h4"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
-            </tbody>
-        </table>
+<!-- MODAL -->
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Datos del empleado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="name">Nombre completo:</label>
+                                <input type="text" id="name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="number">Nro. Documento:</label>
+                                <input type="text" id="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="phone">Telefono:</label>
+                                <input type="text" id="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="mail">Correo electronico:</label>
+                                <input type="email" id="mail" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="department">Departamento:</label>
+                                <input type="text" id="company" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="user">Usuario:</label>
+                                <input type="text" id="user" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="pass">Contraseña:</label>
+                                <input type="password" id="pass" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="photo">Subir foto de perfil:</label>
+                                <input type="file" id="photo" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary">Registrar</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

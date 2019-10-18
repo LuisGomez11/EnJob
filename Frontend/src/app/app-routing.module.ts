@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
@@ -21,11 +22,13 @@ import { SupervisorChatComponent } from './components/supervisor/supervisor-chat
 import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
+import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
   {path:'home',component: HomeComponent},
   {path:'login',component: LoginComponent},
+  {path:'join',component: SignUpComponent},
   {path:'sadmin',component: SadminHomeComponent},
   {path:'sadmin/home',component: SadminHomeComponent},
   {path:'sadmin/subscribed',component: SubscribedComponent},
@@ -34,6 +37,7 @@ const routes: Routes = [
   {path:'admin/departments',component: DepartmentsComponent},
   {path:'admin/employees',component: EmployeesComponent},
   {path:'admin/chat',component: AdminChatComponent},
+  {path:'admin/profile/employee',component: EmployeeProfileComponent},
   {path:'admin/kanban',component: AdminKanbanComponent},
   {path:'admin/config',component: AdminConfigComponent},
   {path:'admin/notifications',component: AdminNotificationsComponent},
