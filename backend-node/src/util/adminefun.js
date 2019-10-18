@@ -7,19 +7,23 @@ let _id = uuidv1();
 let salt = bcrypt.genSaltSync(10);
 let hash = bcrypt.hashSync(plantedPassword, salt);
 
- function admine(req) {
+const adminefun = {};
+
+ adminefun.admine = (req) => {
     let {
         name,
         lastName,
         userName,
         password,
         numDocument,
+        nameCompany,
         email
     } = req.body
     return {
         name,
         lastName,
         numDocument,
+        nameCompany,
         idUser: _id,
         state:'inactive',
         userName,
@@ -29,4 +33,4 @@ let hash = bcrypt.hashSync(plantedPassword, salt);
     }
 }
 
-module.exports = admine;
+module.exports = adminefun;
