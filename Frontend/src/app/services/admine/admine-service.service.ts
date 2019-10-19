@@ -1,28 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders  } from '@angular/common/http'
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
-import { AdmineModel } from '../../models/admine/admine-model'
-import { data } from '../../configs/data.config'
+import { AdmineModel } from '../../models/admine/admine-model';
 
 @Injectable({
   providedIn: 'root',
-
 })
 export class AdmineServiceService {
   selectedAdmine: AdmineModel;
   AdmineModel: AdmineModel[];
-  public data: string;
 
   constructor(private http: HttpClient) {
     this.selectedAdmine = new AdmineModel();
   }
-  
+
   signup(admine: AdmineModel) {
 
-    const model = JSON.stringify(user);
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-
-    return this._http.post(`${this.url}/register`, model, { headers: headers })
+    return this.http.post(`http://localhost:3000/v1/api/admine/signup`, admine, { headers: headers })
   }
 }

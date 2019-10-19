@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdmineModel } from '../../models/admine/admine-model';
+import { AdmineServiceService } from '../../services/admine/admine-service.service';
 
 declare var $ : any;
 
@@ -9,7 +11,21 @@ declare var $ : any;
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  admine : AdmineModel = {
+    idAdmine: '',
+    name: '',
+    userName: '',
+    lastName: '',
+    password: '',
+    email: '',
+    phone: '',
+    role: 'Admin RRHH',
+    nameCompany: '',
+    state: 'Desactivado',
+    numDocument: ''
+  }
+  // private admineService : AdmineServiceService
+  constructor(private admineService: AdmineServiceService) { }
 
   ngOnInit() {
     $('#nav-principal').hide();
@@ -18,6 +34,16 @@ export class SignUpComponent implements OnInit {
     $('#nav-sadmin').hide();
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
+  }
+
+  signUp(){
+    this.admineService.signup(this.admine)
+      .suscribe(
+        res => {
+          console.log(res);
+        },
+        err => console.error(err)
+      )
   }
 
 }

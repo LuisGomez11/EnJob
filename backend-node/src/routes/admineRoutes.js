@@ -11,4 +11,4 @@ router.post('/v1/api/admine/signin', LoginAdmine);
 
 
 
-module.exports = router;  
+module.exports = router;

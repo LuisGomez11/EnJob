@@ -1,4 +1,4 @@
-  
+
 const { Schema, model } = require('mongoose');
 
 const admineSchema = new Schema({
@@ -10,6 +10,7 @@ const admineSchema = new Schema({
     numDocument: { type: String, required: true, unique: true },
     nameCompany: { type: String, required: true, unique: true },
     email: { type: String, required: true,unique: true },
+    phone: { type: String, required: true },
     role: { type: String, required: true },
     state:{ type: String, required: true },
     photo: { type: String },
