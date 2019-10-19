@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule}from '@angular/forms';
+
+//COMPONENTES
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -54,11 +58,13 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     SupervisorTasksComponent,
     EmployeeProfileComponent,
     SignUpComponent,
-    Admine.ModelComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders  } from '@angular/common/http'
 
 import { AdmineModel } from '../../models/admine/admine-model'
 import { data } from '../../configs/data.config'
@@ -16,6 +16,7 @@ export class AdmineServiceService {
   constructor(private http: HttpClient) {
     this.selectedAdmine = new AdmineModel();
   }
+  
   signup(admine: AdmineModel) {
 
     const model = JSON.stringify(user);
