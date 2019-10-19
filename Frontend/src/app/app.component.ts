@@ -163,6 +163,7 @@ export class AppComponent implements OnInit {
     $('#nav-sadmin').hide();
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
+  
 
     $(window).scroll(function () {
       var scrollPos = $(window).scrollTop();
