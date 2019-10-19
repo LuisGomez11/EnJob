@@ -38,7 +38,7 @@ export class SignUpComponent implements OnInit {
 
   signUp(){
     this.admineService.signup(this.admine)
-      .suscribe(
+      .subscribe(
         res => {
           console.log(res);
         },
