@@ -35,8 +35,9 @@ admineCtrl.CreateAdmine = async (req, res) => {
         await adminE.create(Admine, (err, data) => {
             //si ocurre algun error lo retornaremos
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
+            const token = createToken(data);
             //sino retornaremos un mensaje exitoso
-            return res.status(createdStatus).send({ created: createdSend });
+            return res.status(createdStatus).send({ created: createdSend, auth:true, token });
         });
     });
 };

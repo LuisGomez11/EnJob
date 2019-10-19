@@ -27,6 +27,7 @@ import { SupervisorTasksComponent } from './components/supervisor/supervisor-tas
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     SupervisorTasksComponent,
     EmployeeProfileComponent,
     SignUpComponent,
+    Admine.ModelComponent,
   ],
   imports: [
     BrowserModule,

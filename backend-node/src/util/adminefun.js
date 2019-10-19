@@ -24,7 +24,7 @@ const adminefun = {};
         lastName,
         numDocument,
         nameCompany,
-        idUser: _id,
+        idamine: _id,
         state:'inactive',
         userName,
         password: hash,

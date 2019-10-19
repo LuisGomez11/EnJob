@@ -2,7 +2,7 @@
 const { Schema, model } = require('mongoose');
 
 const admineSchema = new Schema({
-    idUser: { type: String, required: false, unique: true },
+    idadmine: { type: String, required: false, unique: true },
     name: {type: String, required: true},
     lastName: { type: String, required: true },
     userName: { type: String, required: true, unique: true },
