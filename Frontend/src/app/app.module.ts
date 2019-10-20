@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule}from '@angular/forms';
+
+//COMPONENTES
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,6 +25,12 @@ import { AdminKanbanComponent } from './components/admin/admin-kanban/admin-kanb
 import { AdminConfigComponent } from './components/admin/admin-config/admin-config.component';
 import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
+import { SupervisorChatComponent } from './components/supervisor/supervisor-chat/supervisor-chat.component';
+import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
+import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
+import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+
 
 @NgModule({
   declarations: [
@@ -43,10 +53,18 @@ import { SupervisorConfigComponent } from './components/supervisor/supervisor-co
     AdminConfigComponent,
     EmployeeKanbanComponent,
     SupervisorConfigComponent,
+    SupervisorChatComponent,
+    SupervisorKanbanComponent,
+    SupervisorTasksComponent,
+    EmployeeProfileComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

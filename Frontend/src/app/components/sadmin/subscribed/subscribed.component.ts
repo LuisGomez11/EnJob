@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 declare var $ : any;
 
@@ -9,15 +10,10 @@ declare var $ : any;
 })
 export class SubscribedComponent implements OnInit {
 
-  constructor() { }
+  constructor(public app : AppComponent) { }
 
   ngOnInit() {
-    $('#nav-principal').hide();
-    $('#nav-admin').hide();
-    $('.menu-admin').hide();
-    $('#nav-empo').hide();
-    $('#nav-sadmin').show();
-    $('#nav-supervisor').hide();
+    this.app.sadmin();
   }
 
 }

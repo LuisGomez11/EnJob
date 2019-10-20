@@ -2,3 +2,7 @@
     background-color: #eee;
     height: calc(100vh - 56px);
 }
+
+.menu-slides{
+    display: block;
+}

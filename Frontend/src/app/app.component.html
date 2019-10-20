@@ -12,7 +12,7 @@
         <a class="p-2 text-decoration-none font-weight-bold link-login" routerLink="/login">Iniciar Sesión</a>
       </li>
       <li class="nav-item home-link">
-        <a class="p-2 px-4 text-decoration-none font-weight-bold link-bg" routerLink="/login">Registrarse</a>
+        <a class="p-2 px-4 text-decoration-none font-weight-bold link-bg" routerLink="/join">Registrarse</a>
       </li>
     </div>
 </nav>
@@ -55,16 +55,16 @@
 <!-- NAV ADMIN -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-admin">
   <div class="w-100">
-    <div style="float: left;">
-      <a class="navbar-brand menu-slide" id="" style="cursor: pointer;">
+    <div class="float-left">
+      <a class="navbar-brand menu-slides" style="cursor: pointer;">
         <i class="fas fa-bars"></i>
       </a>
     </div>
-    <div style="float: right;" class="d-flex navbar-nav">
+    <div class="d-flex navbar-nav float-right">
       <li class="nav-item mr-5" style="cursor: pointer" id="admin-messages">
         <a routerLink="/admin/chat"><i class="fas fa-comment-dots mt-2" id="icon-messages"></i></a>
       </li>
-      <li class="nav-item mr-5" style="cursor: pointer" id="notification">
+      <li class="nav-item mr-5" style="cursor: pointer" id="notification-admin">
         <i class="fas fa-bell mt-2" id="icon-notification"></i>
         <span class="badge badge-primary" id="number-notification">4</span>
       </li>
@@ -89,11 +89,11 @@
   </div>
   <div class="menu-items">
     <ul>
-        <li id="link-messages-a">
-            <a class="links-admin" style="display: block" routerLink="/admin/chat">
-              <i class="fas fa-comment-dots mr-3 text-white"></i>Chats
-            </a>
-          </li>
+      <li id="link-messages-a">
+        <a class="links-admin" style="display: block" routerLink="/admin/chat">
+          <i class="fas fa-comment-dots mr-3 text-white"></i>Chats
+        </a>
+      </li>
       <li style="border-bottom: 1px solid white" id="link-notification">
         <a class="links-admin" style="display: block" routerLink="/admin/notifications">
           <i class="fas fa-bell mr-3 text-white"></i>Notificaciones<span
@@ -129,28 +129,28 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-info" id="nav-supervisor">
   <div style="width: 100%;">
     <div class="float-left">
-      <a routerLink="/supervisor/home" class="navbar-brand text-white">
+      <a routerLink="/supervisor/home" id="nav-supervisor-brand" class="navbar-brand text-white">
         <span id="text-home">ENJOB</span>
       </a>
     </div>
-    <div id="content-icons" class="d-flex navbar-nav float-right style-none">
+    <div id="content-iconss" class="d-flex navbar-nav float-right style-none">
       <li class="nav-item mr-5" style="cursor: pointer" id="homes">
-        <i class="fas fa-home mt-2 text-white" id="icon-home"></i>
+       <a routerLink="/supervisor/home"><i class="fas fa-home mt-2 text-white" id="icon-homes"></i></a>
       </li>
       <li class="nav-item mr-5" style="cursor: pointer" id="dashboards">
-        <a routerLink="/employee/kanban"><i class="fas fa-columns mt-2 text-white" id="icon-dashboard"></i></a>
+        <a routerLink="/supervisor/kanban"><i class="fas fa-columns mt-2 text-white" id="icon-dashboards"></i></a>
       </li>
       <li class="nav-item mr-5" style="cursor: pointer" id="messagess">
-        <a routerLink="/employee/chat"><i class="fas fa-comment-dots mt-2 text-white" id="icon-messages"></i></a>
+        <a routerLink="/supervisor/chat"><i class="fas fa-comment-dots mt-2 text-white" id="icon-messagess"></i></a>
       </li>
       <li class="nav-item mr-5" style="cursor: pointer" id="notifications">
-        <i class="fas fa-bell mt-2 text-white" id="icon-notification"></i>
+        <i class="fas fa-bell mt-2 text-white" id="icon-notifications"></i>
         <span class="badge badge-dark" id="number-notification">4</span>
       </li>
       <li class="nav-item" routerLinkActive="active" id="perfils">
         <div class="d-flex sconfig-perfil" style="cursor: pointer;">
           <img class="mt-1 rounded-circle" src="../assets/img/test-photos/foto8.jpg" width="34" height="34" alt="">
-          <p style="margin:0" id="name-user" class="text-white ml-2 mt-2">ClaraLopez</p>
+          <p style="margin:0" id="name-users" class="text-white ml-2 mt-2">ClaraLopez</p>
         </div>
       </li>
     </div>
@@ -166,7 +166,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="nav-empo">
   <div style="width: 100%;">
     <div class="float-left">
-      <a routerLink="/employee/home" class="navbar-brand text-white">
+      <a routerLink="/employee/home" id="nav-employe-brand" class="navbar-brand text-white">
         <span id="text-home">ENJOB</span>
       </a>
     </div>

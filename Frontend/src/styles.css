@@ -2,3 +2,15 @@
 *{
     font-family: 'Open Sans', sans-serif;
 }
+
+body::-webkit-scrollbar {
+    background-color: #eee;
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+
+}

@@ -133,11 +133,22 @@ width: 20%;
     display: none;
 }
 
+.scontent-configurations{
+    width: 270px;
+    right: 0;
+    background-color: #fff;
+    display: none;
+}
+
 .notifi-active{
     display: block;
 }
 
 .config-active{
+    display: block;
+}
+
+.sconfig-active{
     display: block;
 }
 

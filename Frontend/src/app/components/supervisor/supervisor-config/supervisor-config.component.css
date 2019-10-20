@@ -1,0 +1,16 @@
+#options-user{
+    border-bottom: 0.5px solid rgba(200, 200, 200, .7);
+}
+
+#logout-user{
+    border-top: 0.5px solid rgba(100, 100, 100, .9);
+}
+
+#options-user:hover ,#logout-user:hover {
+    background-color: rgba(100, 100, 100, .1);
+    cursor: pointer;
+}
+
+.margin-not{
+    margin: 0;
+}
