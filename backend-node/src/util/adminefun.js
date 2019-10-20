@@ -17,7 +17,8 @@ const adminefun = {};
         password,
         numDocument,
         nameCompany,
-        email
+        email,
+        phone
     } = req.body
     return {
         name,
@@ -29,7 +30,8 @@ const adminefun = {};
         userName,
         password: hash,
         email,
-        role: 'admine'
+        role: 'admine',
+        phone
     }
 }
 
