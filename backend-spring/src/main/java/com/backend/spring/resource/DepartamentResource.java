@@ -58,7 +58,7 @@ public class DepartamentResource {
 
 		DepartamentModel dptModel = this.dptService.getIdDpt(id);
 		if (dptModel == null) {
-			return new ResponseEntity<DepartamentModel>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} else {
 			dptModel.setNameDpt(dptVo.getNameDpt());
 			dptModel.setEnterpriseDpt(dptVo.getEnterpriseDpt());
