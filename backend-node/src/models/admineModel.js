@@ -2,7 +2,6 @@
 const { Schema, model } = require('mongoose');
 
 const admineSchema = new Schema({
-    idadmine: { type: String,  unique: true },
     name: {type: String, },
     lastName: { type: String,  },
     userName: { type: String,  unique: true },
@@ -17,4 +16,4 @@ const admineSchema = new Schema({
     lastLogin: { type: Date, default: Date.now}
 });
 
-module.exports = model('admine', admineSchema);
+module.exports = model('admines', admineSchema);

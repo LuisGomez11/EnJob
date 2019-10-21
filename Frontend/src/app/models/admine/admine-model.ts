@@ -1,7 +1,7 @@
 export class AdmineModel {
-        constructor(idadmine='', name='', userName= '', lastName='', password = '', email = '',
+        constructor(_id='', name='', userName= '', lastName='', password = '', email = '',
         phone = '', numDocument = '', role = '', state = '', nameCompany = ''){
-        this.idadmine=idadmine;
+        this._id=_id;
         this.name=name;
         this.userName=userName;
         this.lastName=lastName;
@@ -14,7 +14,7 @@ export class AdmineModel {
         this.state=state;
     }
 
-    idadmine: string;
+    _id: string;
     name: string;
     userName: string;
     lastName: string;

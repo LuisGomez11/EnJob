@@ -12,16 +12,16 @@ declare var $ : any;
 export class SignUpComponent implements OnInit {
 
   admine : AdmineModel = {
-    idAdmine: '',
+    _id: '',
     name: '',
     userName: '',
     lastName: '',
     password: '',
     email: '',
     phone: '',
-    role: 'Admin RRHH',
+    role: '',
     nameCompany: '',
-    state: 'Desactivado',
+    state: '',
     numDocument: ''
   }
   // private admineService : AdmineServiceService
