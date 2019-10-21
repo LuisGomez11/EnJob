@@ -11,7 +11,6 @@ import lombok.Data;
  */
 @Data
 public class DepartamentVo {	
-	private String idDpt;
 	private String nameDpt;
 	private String enterpriseDpt;
 	
