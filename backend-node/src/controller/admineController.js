@@ -27,19 +27,21 @@ admineCtrl.CreateAdmine = async (req, res) => {
             nameCompany: Admine.nameCompany
         }]
     }, async (err, data) => {
+        console.log(data)
         // aqui retoranremos errores
         if (err) res.status(bad_requestStatus).send({ error1: bad_requestSend });
         //en caso de encontrar alguno de los datos pues retornara un mensaje de existencia comprobada
         if (data != null) return res.status(bad_requestStatus).send({ error2: bad_requestSend });
         //de lo contrario, se tomaran los valores del usuario y se registraran en la DB
+        
         await adminE.create(Admine, (err, data) => {
             //si ocurre algun error lo retornaremos
             console.log(err)
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
             
-            const token = createToken(data);
+            // const token = createToken(data);
             //sino retornaremos un mensaje exitoso
-            return res.status(createdStatus).send({ created: createdSend, auth:true, token });
+            return res.status(createdStatus).send({ created: createdSend});
         });
     });
 };

@@ -11,21 +11,23 @@ declare var $ : any;
 })
 export class SignUpComponent implements OnInit {
 
-  admine : AdmineModel = {
-    _id: '',
-    name: '',
-    userName: '',
-    lastName: '',
-    password: '',
-    email: '',
-    phone: '',
-    role: '',
-    nameCompany: '',
-    state: '',
-    numDocument: ''
-  }
+  public admine: AdmineModel;
   // private admineService : AdmineServiceService
-  constructor(private admineService: AdmineServiceService) { }
+  constructor(private admineService: AdmineServiceService) {
+    this.admine = new AdmineModel (
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+  )
+   }
 
   ngOnInit() {
     $('#nav-principal').hide();
@@ -34,10 +36,11 @@ export class SignUpComponent implements OnInit {
     $('#nav-sadmin').hide();
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
+    
   }
 
   signUp(){
-    this.admineService.signup(this.admine)
+    this.admineService.signup(form)
       .subscribe(
         res => {
           console.log(res);

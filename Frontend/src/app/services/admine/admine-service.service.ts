@@ -19,8 +19,10 @@ export class AdmineServiceService {
   }
 
   signup(admine: AdmineModel): Observable<AdmineModel> {
+    const model = JSON.stringify(admine);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-    return this.http.post<AdmineModel>(`${this.url}/signup`, admine, { headers: this.httpHeaders });
+    return this.http.post<AdmineModel>(`${this.url}/signup`, model, { headers: headers });
 
   }
 }
