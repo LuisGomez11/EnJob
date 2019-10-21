@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 app.use(morgan('dev'));
-app.use(cors('http://localhost:4200'));
+app.use(cors({origin:'http://localhost:4200'}));
 app.use(express.json());
 
 app.use(require('../routes/admineRoutes'));
