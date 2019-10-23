@@ -3,10 +3,17 @@
     <div class="row mt-3">
         <div class="col-md-5 mb-2">
             <div class="bg-white p-3 shadow">
-                <form [formGroup]="form" (ngSubmit)="createDepartment()">
+                <form #form="ngForm" (ngSubmit)="createDepartment(form)">
+                  <input type="hidden" name="_id" #_id = "ngModel"[(ngModel)]="service.selectedDepartment.idDepartment">
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        <input type="text" id="name" formControlName="name" class="form-control">
+                        <input type="text" id="name" name="name" #name="ngModel"
+                            [(ngModel)]="service.selectedDepartment.name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company" name="company" #company="ngModel"
+                            [(ngModel)]="service.selectedDepartment.company" class="form-control">
                     </div>
                     <hr>
                     <div class="ml-auto">

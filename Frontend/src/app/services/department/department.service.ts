@@ -16,7 +16,7 @@ export class DepartmentService {
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor( private http: HttpClient ) {
-    console.log('Funcionando');  
+    this.selectedDepartment = new Department();
   }
 
   getDepartments(): Observable<Department[]>{

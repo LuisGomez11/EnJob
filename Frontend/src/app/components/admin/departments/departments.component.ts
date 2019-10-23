@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, NgForm  } from "@angular/forms";
 import { DepartmentService } from "../../../services/department/department.service";
 import { Department } from "../../../models/department/department";
 import  swal  from "sweetalert2";
@@ -25,36 +25,59 @@ export class DepartmentsComponent implements OnInit {
 
   ngOnInit() {
     this.app.admin();
-    this.form = this.formBuilder.group({
-      name: ['', Validators.required],
-      company: ['Condor Labs', Validators.required]
-    });
-    this.department = new Department();
+    // this.form = this.formBuilder.group({
+    //   name: ['', Validators.required],
+    //   company: ['Condor Labs', Validators.required]
+    // });
+    this.getDepartments();
+    // this.department = new Department();
   }
 
   getDepartments(){
     this.service.getDepartments()
-    .subscribe(data => 
+    .subscribe(data =>
       this.listDepartments = data);
   }
 
-  createDepartment(){
-    this.service.createDepartment(this.form.value).subscribe(data => {
-      swal.fire({
-        position: 'center',
-        type: 'success',
-        title: 'Correcto!',
-        text: 'Departamento registrado correctamente',
-        showConfirmButton: false,
-        timer: 1500
+  createDepartment(form: NgForm){
+    if(form.value.idDepartment){
+      this.service.updateDepartment(form.value).subscribe(data => {
+        swal.fire({
+          position: 'center',
+          type: 'success',
+          title: 'Correcto!',
+          text: 'Departamento modificado correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.getDepartments();
+        this.resetForm(form);
       });
-      this.getDepartments();
-      this.form.reset();
-    });
+    }else{
+      this.service.createDepartment(form.value).subscribe(data => {
+        swal.fire({
+          position: 'center',
+          type: 'success',
+          title: 'Correcto!',
+          text: 'Departamento registrado correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.getDepartments();
+        this.resetForm(form);
+      });
+    }
+  }
+
+  resetForm(form?: NgForm){
+     if(form){
+       form.reset();
+       this.service.selectedDepartment = new Department();
+     }
   }
 
   async deleteDepartment(department: Department){
-    
+
     let result = await swal.fire({
       title: 'Confirmacion',
       text: `¿Seguro que desea eliminar el departamento de: ${department.name}?`,
