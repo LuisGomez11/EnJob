@@ -1,8 +1,0 @@
-com\backend\spring\resource\vo\DepartamentVo.class
-com\backend\spring\BackendSpringApplication.class
-com\backend\spring\resource\DepartamentResource.class
-com\backend\spring\services\implement\DepartamentServiceIm.class
-com\backend\spring\models\DepartamentModel.class
-com\backend\spring\services\DepartamentService.class
-com\backend\spring\util\SwaggerConfiguration.class
-com\backend\spring\repositorys\DepartamentRepository.class
