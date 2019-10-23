@@ -3,7 +3,7 @@ import { AppComponent } from 'src/app/app.component';
 import { FormBuilder, FormGroup, Validators, NgForm  } from "@angular/forms";
 import { DepartmentService } from "../../../services/department/department.service";
 import { Department } from "../../../models/department/department";
-import  swal  from "sweetalert2";
+// import  swal  from "sweetalert2";
 import { data } from 'src/app/configs/data.config';
 
 declare var $ : any;
@@ -39,35 +39,35 @@ export class DepartmentsComponent implements OnInit {
       this.listDepartments = data);
   }
 
-  createDepartment(form: NgForm){
-    if(form.value.idDepartment){
-      this.service.updateDepartment(form.value).subscribe(data => {
-        swal.fire({
-          position: 'center',
-          type: 'success',
-          title: 'Correcto!',
-          text: 'Departamento modificado correctamente',
-          showConfirmButton: false,
-          timer: 1500
-        });
-        this.getDepartments();
-        this.resetForm(form);
-      });
-    }else{
-      this.service.createDepartment(form.value).subscribe(data => {
-        swal.fire({
-          position: 'center',
-          type: 'success',
-          title: 'Correcto!',
-          text: 'Departamento registrado correctamente',
-          showConfirmButton: false,
-          timer: 1500
-        });
-        this.getDepartments();
-        this.resetForm(form);
-      });
-    }
-  }
+  // createDepartment(form: NgForm){
+  //   if(form.value.idDepartment){
+  //     this.service.updateDepartment(form.value).subscribe(data => {
+  //       swal.fire({
+  //         position: 'center',
+  //         type: 'success',
+  //         title: 'Correcto!',
+  //         text: 'Departamento modificado correctamente',
+  //         showConfirmButton: false,
+  //         timer: 1500
+  //       });
+  //       this.getDepartments();
+  //       this.resetForm(form);
+  //     });
+  //   }else{
+  //     this.service.createDepartment(form.value).subscribe(data => {
+  //       swal.fire({
+  //         position: 'center',
+  //         type: 'success',
+  //         title: 'Correcto!',
+  //         text: 'Departamento registrado correctamente',
+  //         showConfirmButton: false,
+  //         timer: 1500
+  //       });
+  //       this.getDepartments();
+  //       this.resetForm(form);
+  //     });
+  //   }
+  // }
 
   resetForm(form?: NgForm){
      if(form){
@@ -76,26 +76,26 @@ export class DepartmentsComponent implements OnInit {
      }
   }
 
-  async deleteDepartment(department: Department){
+  // async deleteDepartment(department: Department){
 
-    let result = await swal.fire({
-      title: 'Confirmacion',
-      text: `¿Seguro que desea eliminar el departamento de: ${department.name}?`,
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085D6',
-      cancelButtonColor: 'd33',
-      confirmButtonText: 'Si, eliminar!',
-      cancelButtonText: 'Cancelar'
-    })
+  //   let result = await swal.fire({
+  //     title: 'Confirmacion',
+  //     text: `¿Seguro que desea eliminar el departamento de: ${department.name}?`,
+  //     type: 'warning',
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#3085D6',
+  //     cancelButtonColor: 'd33',
+  //     confirmButtonText: 'Si, eliminar!',
+  //     cancelButtonText: 'Cancelar'
+  //   })
 
-    if(result.value){
-      this.service.deleteDepartment(department.idDepartment).subscribe(data => {
-        this.listDepartments = this.listDepartments.filter(s => s !== department);
-      });
-      swal.fire('Eliminado!','Se ha eliminado el departamento.','success');
-    }
+  //   if(result.value){
+  //     this.service.deleteDepartment(department.idDepartment).subscribe(data => {
+  //       this.listDepartments = this.listDepartments.filter(s => s !== department);
+  //     });
+  //     swal.fire('Eliminado!','Se ha eliminado el departamento.','success');
+  //   }
 
-  }
+  // }
 
 }

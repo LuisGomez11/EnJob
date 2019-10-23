@@ -8,7 +8,7 @@ import { AdmineModel } from '../../models/admine/admine-model';
 })
 export class AdmineServiceService {
 
-  readonly url='http://localhost:3000/v1/api/admine/signup';
+  readonly url='http://localhost:3000/v1/api/create';
 
   selectedAdmine: AdmineModel;
   AdmineModel: AdmineModel[];
