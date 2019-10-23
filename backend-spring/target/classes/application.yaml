@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://enjob:cri123456789@ds235658.mlab.com:35658/enjob
