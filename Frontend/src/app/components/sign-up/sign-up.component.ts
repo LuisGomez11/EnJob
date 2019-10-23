@@ -1,24 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { AdmineModel } from '../../models/admine/admine-model';
 import { AdmineServiceService } from '../../services/admine/admine-service.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 
-declare var $ : any;
+declare var $: any;
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  styleUrls: ['./sign-up.component.css'],
+  providers:[AdmineServiceService]
 })
 export class SignUpComponent implements OnInit {
 
-  public form: FormGroup;
 
-  public admine: AdmineModel;
-  // private admineService : AdmineServiceService
-  constructor(private admineService: AdmineServiceService, private formBuilder: FormBuilder) {
+  constructor(private admineService: AdmineServiceService) {
 
-   }
+  }
 
   ngOnInit() {
     $('#nav-principal').hide();
@@ -27,28 +25,22 @@ export class SignUpComponent implements OnInit {
     $('#nav-sadmin').hide();
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
-
-    this.form = this.formBuilder.group({
-     name: ['', Validators.required],
-     lastName: ['', Validators.required],
-     numDocument: ['', Validators.required],
-     phone: ['', Validators.required],
-     email: ['', Validators.required],
-     nameCompany: ['', Validators.required],
-     userName: ['', Validators.required],
-     password: ['', Validators.required]
-    });
-
   }
 
-  signUp(){
-    this.admineService.signup(this.form.value)
-      .subscribe(
-        res => {
-          console.log(res);
-        },
-        err => console.error(err)
-      )
+  signUp(form: NgForm) {
+    //  if(form.value._id){
+    //   this.admineService.putEmpleado(form.value)
+    //   .subscribe(res =>{
+    //     this.restForm(form);
+    //     this.getEmpleado();
+    //     M.toast({html:'updated sucessfuly'})
+    //   })
+    // }  else
+    console.log('estoy')
+    this.admineService.signup(form.value)
+    
+      .subscribe(res => {
+        console.log(res)
+      });
   }
-
 }

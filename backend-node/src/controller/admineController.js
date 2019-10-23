@@ -21,10 +21,10 @@ admineCtrl.CreateAdmine = async (req, res) => {
     await adminE.findOne({
         //usamos la estructura del OR de mongoose
         $or: [{
-            email: Admine.email,
+            // email: Admine.email,
             userName: Admine.userName,
-            numDocument: Admine.numDocument,
-            nameCompany: Admine.nameCompany
+            // numDocument: Admine.numDocument,
+            // nameCompany: Admine.nameCompany
         }]
     }, async (err, data) => {
         console.log(data)

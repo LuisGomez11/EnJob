@@ -2,8 +2,7 @@
     <div class="container-login100" style="background-image: url('../assets/img/bg-01.jpg');">
         <div class="wrap-login100">
             <form class="login100-form validate-form"
-            [formGroup]="form" (ngSubmit)="signUp()"
-            autocomplete="off">
+            #admineForm="ngForm" (ngSubmit)="signUp(admineForm)">
                 <span class="login100-form-title mt-4 mb-5">
                     Crea tu cuenta
                 </span>
@@ -11,7 +10,9 @@
                   <div class="col-md-6">
                     <div class="align-input px-2">
                       <div class="wrap-input100 validate-input" data-validate = "Ingrese su nombre">
-                          <input class="input100" formControlName="name" type="text" name="name" placeholder="Nombre">
+                          <input class="input100" type="text" name="name" #name="ngModel" 
+                            [(ngModel)]="admineService.selectedAdmine.name"
+                             placeholder="nombre" required>
                           <span class="focus-input100"></span>
                       </div>
                     </div>
@@ -19,7 +20,9 @@
                   <div class="col-md-6">
                     <div class="align-input px-2">
                       <div class="wrap-input100 validate-input" data-validate="Ingrese sus apellidos">
-                          <input class="input100" type="text" formControlName="lastName" name="lastnames" placeholder="Apellidos">
+                          <input class="input100"  type="text" name="lastName" #lastName="ngModel" 
+                            [(ngModel)]="admineService.selectedAdmine.lastName"
+                             placeholder="apellido" required>
                           <span class="focus-input100"></span>
                       </div>
                     </div>
@@ -27,7 +30,9 @@
                   <div class="col-md-7">
                     <div class="align-input px-2">
                       <div class="wrap-input100 validate-input" data-validate="Ingrese su nro. de documento">
-                          <input class="input100" formControlName="numDocument" type="text" name="number" placeholder="Nro. de documento">
+                          <input class="input100" type="text" name="numDocument" #numDocument="ngModel" 
+                            [(ngModel)]="admineService.selectedAdmine.numDocument"
+                             placeholder="nro.de documento" required>
                           <span class="focus-input100"></span>
                       </div>
                     </div>
@@ -35,7 +40,9 @@
                   <div class="col-md-5">
                     <div class="align-input px-2">
                       <div class="wrap-input100 validate-input" data-validate = "Ingrese su numero telefonico">
-                          <input class="input100" formControlName="phone" type="text" name="phone" placeholder="Telefono">
+                          <input class="input100" type="text" name="phone" #phone="ngModel" 
+                            [(ngModel)]="admineService.selectedAdmine.phone"
+                             placeholder="telefono" required>
                           <span class="focus-input100"></span>
                       </div>
                     </div>
@@ -43,7 +50,9 @@
                   <div class="col-md-12">
                     <div class="align-input px-2">
                       <div class="wrap-input100 validate-input" data-validate="Ingrese su correo">
-                          <input class="input100" formControlName="email" type="email" name="mail" placeholder="Correo electronico">
+                          <input class="input100" type="email" name="email" #email="ngModel" 
+                            [(ngModel)]="admineService.selectedAdmine.email"
+                             placeholder="correo" required>
                           <span class="focus-input100"></span>
                       </div>
                     </div>
@@ -51,7 +60,9 @@
                   <div class="col-md-12">
                     <div class="align-input px-2">
                       <div class="wrap-input100 validate-input" data-validate="Ingrese su empresa">
-                          <input class="input100" formControlName="nameCompany" type="text" name="company" placeholder="Empresa">
+                          <input class="input100" type="text" name="nameCompany" #nameCompany="ngModel" 
+                            [(ngModel)]="admineService.selectedAdmine.nameCompany"
+                             placeholder="empresa" required>
                           <span class="focus-input100"></span>
                       </div>
                     </div>
@@ -59,7 +70,9 @@
                   <div class="col-md-6">
                     <div class="align-input px-2">
                       <div class="wrap-input100 validate-input" data-validate = "Ingrese su usuario">
-                          <input class="input100" formControlName="userName" type="text" name="user" placeholder="Usuario">
+                          <input class="input100" type="text" name="userName" #userName="ngModel" 
+                            [(ngModel)]="admineService.selectedAdmine.userName"
+                             placeholder="usuario" required>
                           <span class="focus-input100"></span>
                       </div>
                     </div>
@@ -67,7 +80,9 @@
                   <div class="col-md-6">
                     <div class="align-input px-2">
                       <div class="wrap-input100 validate-input" data-validate="Ingrese su contraseña">
-                          <input class="input100" formControlName="password" type="password" name="pass" placeholder="Contraseña">
+                          <input  class="input100" type="password" name="password" #password="ngModel" 
+                            [(ngModel)]="admineService.selectedAdmine.password"
+                             placeholder="contraseña" required>
                           <span class="focus-input100"></span>
                       </div>
                     </div>

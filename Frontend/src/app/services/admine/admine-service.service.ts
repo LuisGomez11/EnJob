@@ -8,21 +8,17 @@ import { AdmineModel } from '../../models/admine/admine-model';
 })
 export class AdmineServiceService {
 
-  readonly url='http://localhost:3000/v1/api/admine';
-  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+  readonly url='http://localhost:3000/v1/api/admine/signup';
 
   selectedAdmine: AdmineModel;
   AdmineModel: AdmineModel[];
 
   constructor(private http: HttpClient) {
     this.selectedAdmine = new AdmineModel();
-  }
+  } 
 
-  signup(admine: AdmineModel): Observable<AdmineModel> {
-    const model = JSON.stringify(admine);
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-    return this.http.post<AdmineModel>(`${this.url}/signup`, model, { headers: headers });
+  signup(admine: AdmineModel){
+    return this.http.post(this.url, admine);
 
   }
 }
