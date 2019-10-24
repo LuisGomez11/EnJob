@@ -3,9 +3,12 @@ import { AppComponent } from 'src/app/app.component';
 import { NgForm  } from "@angular/forms";
 import { TaskService } from "../../../services/task/task.service";
 import { Task } from "../../../models/task/task";
+import { Department } from "../../../models/department/department";
 import  swal  from "sweetalert2";
+import { DepartmentService } from 'src/app/services/department/department.service';
 
 declare var $ : any;
+var f = new Date();
 
 @Component({
   selector: 'app-supervisor-tasks',
@@ -16,14 +19,22 @@ export class SupervisorTasksComponent implements OnInit {
 
   task: Task = new Task();
 
+  departments: Department[];
 
-  constructor(public app : AppComponent, private service: TaskService) { }
+  constructor(public app : AppComponent, private service: TaskService,private serviceDep: DepartmentService) { }
 
   ngOnInit() {
     this.app.supervisor();
     $('.sconfig-perfil').click(function () {
       $('.scontent-configurations').toggleClass('sconfig-active');
     });
+    this.getDepartments();
+  }
+
+  getDepartments(){
+    this.serviceDep.getDepartments()
+    .subscribe(data =>
+      this.departments = data);
   }
 
   createTask(form: NgForm){

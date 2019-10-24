@@ -4,7 +4,7 @@
         <div class="col-md-5 mb-2">
             <div class="bg-white p-3 shadow">
                 <form #form="ngForm" (ngSubmit)="createDepartment(form)">
-                  <input type="hidden" name="_id" #_id = "ngModel"[(ngModel)]="service.selectedDepartment.idDepartment">
+                  <input type="hidden" name="idDepartment" #idDepartment="ngModel" [(ngModel)]="service.selectedDepartment.idDepartment">
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <input type="text" id="name" name="name" #name="ngModel"
@@ -39,7 +39,7 @@
                             <td>{{ d.name }}</td>
                             <td>{{ d.company }}</td>
                             <td class="text-center">
-                                <button title="Editar empleado" class="bg-transparent border-0"><i
+                                <button title="Editar empleado" (click)="editDepartment(d)" class="bg-transparent border-0"><i
                                         class="fas fa-edit text-primary h4"></i></button>
                             </td>
                             <td class="text-center">

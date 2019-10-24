@@ -63,6 +63,10 @@ export class DepartmentsComponent implements OnInit {
     }
   }
 
+  editDepartment(department: Department){
+    this.service.selectedDepartment = department;
+  }
+
   resetForm(form?: NgForm){
      if(form){
        form.reset();
