@@ -5,9 +5,9 @@ const router = Router();
 const { CreateAdmine,LoginAdmine } = require('../controller/AdmineController');
 
 
-router.post('/v1/api/login', LoginAdmine);
+router.post('/v1/api/admine/login', LoginAdmine);
 
-router.post('/v1/api/create', CreateAdmine);
+router.post('/v1/api/admine/create', CreateAdmine);
 
 
 
