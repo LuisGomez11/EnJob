@@ -28,7 +28,7 @@
 								<select class="form-control" id="department" name="department" #department="ngModel"
 									[(ngModel)]="service.selectedTask.department">
 									<option disabled selected>Selecciona un departamento</option>
-									<option *ngFor="let d of departments">{{ d.name }}</option>
+									<option *ngFor="let d of departments" value="{{ d.name }}">{{ d.name }}</option>
 								</select>
 							</div>
 						</div>

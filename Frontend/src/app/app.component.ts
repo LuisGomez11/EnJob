@@ -82,13 +82,13 @@ export class AppComponent implements OnInit {
     $('#nav-supervisor').hide();
     $('.messages1').animate({ scrollTop: $(document).height() }, "fast");
     if ($(window).width() <= 991) {
-      $('#name-user').hide();
+      $('#name-usere').hide();
       $('#nav-employe-brand').hide();
       $('#icon-home').show();
       $('#content-icons').addClass('content-icons-block');
       $('#content-icons').removeClass('navbar-nav');
     } else {
-      $('#name-user').show();
+      $('#name-usere').show();
       $('#nav-employe-brand').show();
       $('#icon-home').hide();
       $('#content-icons').removeClass('content-icons-block');
@@ -96,13 +96,13 @@ export class AppComponent implements OnInit {
     }
     $(window).resize(function () {
       if ($(window).width() <= 991) {
-        $('#name-user').hide();
+        $('#name-usere').hide();
         $('#nav-employe-brand').hide();
         $('#icon-home').show();
         $('#content-icons').addClass('content-icons-block');
         $('#content-icons').removeClass('navbar-nav');
       } else {
-        $('#name-user').show();
+        $('#name-usere').show();
         $('#nav-employe-brand').show();
         $('#icon-home').hide();
         $('#content-icons').removeClass('content-icons-block');
