@@ -121,7 +121,7 @@ export class AppComponent implements OnInit {
     $('#nav-supervisor').show();
     $('.messages1').animate({ scrollTop: $(document).height() }, "fast");
     if ($(window).width() <= 991) {
-      $('#name-usesr').hide();
+      $('#name-users').hide();
       $('#nav-supervisor-brand').hide();
       $('#icon-homes').show();
       $('#content-iconss').addClass('content-icons-block');
@@ -135,7 +135,7 @@ export class AppComponent implements OnInit {
     }
     $(window).resize(function () {
       if ($(window).width() <= 991) {
-        $('#name-uses').hide();
+        $('#name-users').hide();
         $('#nav-supervisor-brand').hide();
         $('#icon-homes').show();
         $('#content-iconss').addClass('content-icons-block');
@@ -163,7 +163,7 @@ export class AppComponent implements OnInit {
     $('#nav-sadmin').hide();
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
-  
+
 
     $(window).scroll(function () {
       var scrollPos = $(window).scrollTop();

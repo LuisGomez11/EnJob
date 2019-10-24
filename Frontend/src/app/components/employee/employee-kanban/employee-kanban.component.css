@@ -1,8 +1,60 @@
 .contenedor{
     background-image: url(../../../../assets/img/bg-kanban.png);
     background-attachment: fixed;
+    /* height: auto; */
+    /* min-height: calc(100vh - 56px); */
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: calc(100vh - 56px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.contenedor::-webkit-scrollbar{
+    width: 8px;
+    background: transparent;
+}
+
+.contenedor::-webkit-scrollbar-thumb{
+  background-color: #797979;
+}
+
+.bg-white-transparent{
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+}
+
+.tasks{
+  height: calc(100% - 56px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.tasks::-webkit-scrollbar{
+    width: 5px;
+    background: transparent;
+}
+
+.tasks::-webkit-scrollbar-thumb{
+  background-color: #797979;
+  border-radius: 20px;
+}
+
+.title-task{
+  width: 90%;
+  max-width: 90%;
+}
+
+.details-task{
+  width: 10%;
+  max-width: 10%;
+}
+
+i{
+  color: gray;
+}
+
+.delete-task:hover{
+  color:red;
 }

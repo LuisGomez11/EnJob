@@ -1,1 +1,83 @@
-<div class="contenedor"></div>
+<div class="contenedor p-4">
+    <div class="row h-100">
+        <div class="col-lg-4 p-1 h-100">
+            <div class="bg-white-transparent h-100 p-2">
+                <h3>Pendientes</h3>
+                <div class="tasks p-1">
+                    <div class="bg-white card mb-1" *ngFor="let item of [1,1,1,1];let i=index">
+                        <div class="card-body">
+                            <div class="float-left text-truncate title-task">
+                                Arreglar esta monda porque se va a dañar
+                            </div>
+                            <div class="float-right details-task">
+                                <button class="bg-transparent border-0 float-right" title="Ver detalles"><i
+                                        class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="float-left text-muted" title="Fecha limite">
+                                10/11/2019
+                            </div>
+                            <div class="float-right text-center">
+                                <button class="bg-transparent border-0" title="Editar estado"><i
+                                        class="fas fa-pencil-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 p-1 h-100">
+            <div class="bg-white-transparent h-100 p-2">
+                <h3>En proceso</h3>
+                <div class="tasks p-1">
+                    <div class="bg-white card mb-1" *ngFor="let item of [1,1];let i=index">
+                        <div class="card-body">
+                            <div class="float-left text-truncate title-task">
+                                Arreglar esta monda porque se va a dañar
+                            </div>
+                            <div class="float-right details-task">
+                                <i class="fas fa-eye float-right" title="Ver detalles"></i>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="float-left text-muted" title="Fecha limite">
+                                10/11/2019
+                            </div>
+                            <div class="float-right text-center">
+                                <button class="bg-transparent border-0" title="Editar estado"><i
+                                        class="fas fa-pencil-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-2 p-1 h-100">
+            <div class="bg-white-transparent h-100 p-2">
+                <h3>Finalizadas</h3>
+                <div class="tasks p-1">
+                    <div class="bg-white card mb-1" *ngFor="let item of [1];let i=index">
+                        <div class="card-body">
+                            <div class="float-left text-truncate title-task">
+                                Arreglar esta monda porque se va a dañar
+                            </div>
+                            <div class="float-right details-task">
+                                <i class="fas fa-eye float-right" title="Ver detalles"></i>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="float-left text-muted" title="Fecha limite">
+                                10/11/2019
+                            </div>
+                            <div class="float-right text-center">
+                                <button class="bg-transparent border-0" title="Editar estado"><i
+                                        class="fas fa-pencil-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
