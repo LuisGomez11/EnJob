@@ -15,7 +15,7 @@ declare var $ : any;
 export class SupervisorTasksComponent implements OnInit {
 
   task: Task = new Task();
-  
+
 
   constructor(public app : AppComponent, private service: TaskService) { }
 
@@ -37,6 +37,8 @@ export class SupervisorTasksComponent implements OnInit {
           timer: 1500
         });
         this.resetForm(form);
+      },error => {
+        console.log(error);
       });
   }
 

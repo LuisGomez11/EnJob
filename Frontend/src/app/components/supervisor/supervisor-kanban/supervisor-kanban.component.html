@@ -4,10 +4,10 @@
       <div class="bg-white-transparent h-100 p-2">
         <h3>Pendientes</h3>
         <div class="tasks p-1">
-          <div class="bg-white card mb-1" *ngFor="let item of [1,1,1,1];let i=index">
+          <div class="bg-white card mb-1" *ngFor="let t of listTasks">
             <div class="card-body">
               <div class="float-left text-truncate title-task">
-                Arreglar esto porque se va a dañar
+                {{ t.title }}
               </div>
               <div class="float-right details-task">
                 <button class="bg-transparent border-0 float-right" title="Ver detalles"><i
@@ -16,12 +16,12 @@
             </div>
             <div class="card-footer">
               <div class="float-left text-muted" title="Fecha limite">
-                10/11/2019
+                {{ t.term }}
               </div>
               <div class="float-right text-center">
                 <button class="mr-3 bg-transparent border-0" title="Editar tarea" data-toggle="modal" data-target="#modalEdit"><i
                     class="fas fa-pencil-alt"></i></button>
-                <button class="bg-transparent border-0" title="Eliminar tarea"><i class="fas fa-times"></i></button>
+                <button class="bg-transparent border-0" (click)="deleteTask(t)" title="Eliminar tarea"><i class="fas fa-times"></i></button>
               </div>
             </div>
           </div>
