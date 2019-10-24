@@ -2,8 +2,8 @@
 	<div class="container">
 		<h3 class="text-center">Registrar nueva tarea</h3>
 		<div class="card mt-2 shadow-sm">
+			<form #form="ngForm" (ngSubmit)="createTask(form)">
 			<div class="card-body">
-				<form #form="ngForm" (ngSubmit)="createTask(form)">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
@@ -24,7 +24,7 @@
 								<label for="department">Departamento:</label>
 								<select class="form-control" id="department" name="department" #department="ngModel"
 										[(ngModel)]="service.selectedTask.department">
-									<option></option>
+									<option>Administrativo</option>
 								</select>
 							</div>
 						</div>
@@ -33,14 +33,14 @@
 								<label for="task">Asignar a:</label>
 								<select class="form-control" name="assigned" #assigned="ngModel"
 										[(ngModel)]="service.selectedTask.assigned">
-									<option></option>
+									<option>Luis Alberto Gomez</option>
 								</select>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="date">Fecha:</label>
-								<input type="text" id="date" value="17-10-2019"  name="changeDate" #changeDate="ngModel"
+								<input type="text" id="date" value="23-10-2019"  name="changeDate" #changeDate="ngModel"
 										[(ngModel)]="service.selectedTask.changeDate" class="form-control">
 							</div>
 						</div>
@@ -54,17 +54,18 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="state">Estado:</label>
-								<input type="text" id="state" value="Por hacer" name="stateTask" #stateTask="ngModel"
+								<input type="text" id="state" value="Pendiente" name="stateTask" #stateTask="ngModel"
 										[(ngModel)]="service.selectedTask.stateTask" class="form-control">
 							</div>
 						</div>
 					</div>
-				</form>
+
 			</div>
 			<div class="card-footer">
-				<button class="btn btn-secondary mr-2">Añadir</button>
+				<button type="submit" class="btn btn-secondary mr-2">Añadir</button>
 				<a routerLink="/supervisor/home" class="btn btn-danger text-white">Cancelar</a>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>
