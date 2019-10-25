@@ -1,12 +1,13 @@
-const express = require('express');
-const app = express();
+const {json,urlencoded} = require('express');
+const app = require('express')();
 
 const morgan = require('morgan');
 const cors = require('cors');
 
 app.use(morgan('dev'));
 app.use(cors())
-app.use(express.json());
+app.use(json());
+app.use(urlencoded({extended:false}));
 
 app.use(require('../routes/AdmineRoute'));
 

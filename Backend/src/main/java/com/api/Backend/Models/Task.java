@@ -17,25 +17,18 @@ public class Task {
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     private String idTask;
-
     @Column(name = "title")
     private String title;
-
     @Column(name = "description")
     private String description;
-
     @Column(name = "department")
     private String department;
-
     @Column(name = "assigned")
     private String assigned;
-
     @Column(name = "stateTask")
     private String stateTask;
-
     @Column(name = "changeDate")
     private String changeDate;
-
     @Column(name = "term")
     private String term;
 
