@@ -11,8 +11,7 @@ declare var $ : any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  role1 = '';
-  role2 = '';
+
   constructor(private authService: AuthAdmineService, private router: Router) { }
 
   ngOnInit() {
@@ -24,11 +23,8 @@ export class LoginComponent implements OnInit {
     $('#nav-empo').hide();
   }
   onLogin(form): void {
-    this.role = 
-    if (condition) {
-      this.authService.login(form.value).subscribe(res => {
-        this.router.navigateByUrl('/admin');
-      });
-    }
+    this.authService.login(form.value).subscribe(res => {
+      this.router.navigateByUrl('/admin');
+    });
   }
 }

@@ -31,7 +31,7 @@ employeefun.employee = (req) => {
         userName,
         password: hash,
         email,
-        role: 'admine',
+        role: 'employee',
         phone,
         availability,
         position,
