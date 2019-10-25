@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthAdmineService } from '../../services/admine/auth-admine.service';
+import { NgForm } from "@angular/forms";
 
 declare var $ : any;
 
@@ -9,7 +12,7 @@ declare var $ : any;
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthAdmineService, private router: Router) { }
 
   ngOnInit() {
     $('#nav-principal').hide();
@@ -19,5 +22,9 @@ export class LoginComponent implements OnInit {
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
   }
-
+  onLogin(form): void {
+    this.authService.login(form.value).subscribe(res => {
+      this.router.navigateByUrl('/admin');
+    });
+  }
 }

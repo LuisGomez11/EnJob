@@ -16,7 +16,7 @@ const employeeSchema = new Schema({
     departament: { type: String },
     salary: { type: Number },
     points: { type: Number },
- // jobs: {type:[]},
+ // task: {type:[]},
   // photo: { type: String },
     lastLogin: { type: Date, default: Date.now }
 });

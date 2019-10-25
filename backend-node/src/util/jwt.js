@@ -5,7 +5,6 @@ exports.createToken = Admine => {
     const payload = {
         userName: Admine.userName,
         role: Admine.role,
-        lastLogin: Admine.lastLogin
     }
     return jwt.sign({
         payload,

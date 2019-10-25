@@ -21,25 +21,31 @@ admineCtrl.LoginAdmine = async (req, res) => {
         if (comp == false) return res.status(not_foundStatus).send({ error2: not_foundSend });
 
         const token = createToken(data);
+        const dataUser = {
+            userName: Admine.userName,
+            role: Admine.role,
+            accessToken: token
+          }
 
-        return res.status(200).send({ user: Admine, auth: true , token });
+        return res.status(200).send({ dataUser});
     });
 };
 
 admineCtrl.CreateAdmine = async (req, res) => {
     let Admine = admine(req);
-
+    console.log(Admine.name)
     AdmineModel.findOne({
         $or: [{ userName: Admine.userName, email: Admine.email, numDocument: Admine.numDocument }]
     }, async (err, data) => {
         if (err) res.status(bad_requestStatus).send({ error1: bad_requestSend  });
         if (data != null) return res.status(bad_requestStatus).send({ error2: bad_requestSend });
         await AdmineModel.create(Admine, (err, data) => {
+            console.log(err)
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
 
             //const token = createToken(data);
 
-            return res.status(createdStatus).send({ created: createdSend, auth: true, token });
+            return res.status(createdStatus).send({Admine ,created: createdSend});
         });
     });
 };
