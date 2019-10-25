@@ -35,7 +35,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let d of listDepartments">
+                        <!--<tr *ngFor="let d of listDepartments">
                             <td>{{ d.name }}</td>
                             <td>{{ d.company }}</td>
                             <td class="text-center">
@@ -46,8 +46,55 @@
                                 <button title="Eliminar empleado" (click)="deleteDepartment(d)" class="bg-transparent border-0"><i
                                         class="fas fa-times text-danger h4"></i></button>
                             </td>
+                        </tr>-->
+                        <tr>
+                            <td>Administrativo</td>
+                            <td>Condor Labs</td>
+                            <td class="text-center">
+                                <button title="Editar empleado" (click)="editDepartment(d)" class="bg-transparent border-0"><i
+                                        class="fas fa-edit text-primary h4"></i></button>
+                            </td>
+                            <td class="text-center">
+                                <button title="Eliminar empleado" (click)="deleteDepartment(d)" class="bg-transparent border-0"><i
+                                        class="fas fa-times text-danger h4"></i></button>
+                            </td>
                         </tr>
-
+                        <tr>
+                            <td>Mantenimiento</td>
+                            <td>Condor Labs</td>
+                            <td class="text-center">
+                                <button title="Editar empleado" (click)="editDepartment(d)" class="bg-transparent border-0"><i
+                                        class="fas fa-edit text-primary h4"></i></button>
+                            </td>
+                            <td class="text-center">
+                                <button title="Eliminar empleado" (click)="deleteDepartment(d)" class="bg-transparent border-0"><i
+                                        class="fas fa-times text-danger h4"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Informatico</td>
+                            <td>Condor Labs</td>
+                            <td class="text-center">
+                                <button title="Editar empleado" (click)="editDepartment(d)" class="bg-transparent border-0"><i
+                                        class="fas fa-edit text-primary h4"></i></button>
+                            </td>
+                            <td class="text-center">
+                                <button title="Eliminar empleado" (click)="deleteDepartment(d)" class="bg-transparent border-0"><i
+                                        class="fas fa-times text-danger h4"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Educativo</td>
+                            <td>Condor Labs</td>
+                            <td class="text-center">
+                                <button title="Editar empleado" (click)="editDepartment(d)" class="bg-transparent border-0"><i
+                                        class="fas fa-edit text-primary h4"></i></button>
+                            </td>
+                            <td class="text-center">
+                                <button title="Eliminar empleado" (click)="deleteDepartment(d)" class="bg-transparent border-0"><i
+                                        class="fas fa-times text-danger h4"></i></button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
