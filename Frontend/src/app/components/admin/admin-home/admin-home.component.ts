@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { AuthAdmineService } from 'src/app/services/admine/auth-admine.service';
 
 declare var $: any;
 
@@ -10,13 +11,17 @@ declare var $: any;
 })
 export class AdminHomeComponent implements OnInit {
 
-  constructor(public app : AppComponent) { }
+  constructor(public app : AppComponent, private auth: AuthAdmineService) { }
+
+  admineUser = '';
 
   ngOnInit() {
     this.app.admin();
     $('#notification-admin').click(function () {
       $('.content-notifications').toggleClass('notifi-active');
     });
+    this.admineUser = this.auth.AdmineUser;
+    console.log('Este es el usuario: '+this.admineUser);
   }
 
 }
