@@ -18,8 +18,13 @@ employeeCtrl.loginEmployee = async (req, res) =>{
         if (comp == false) return res.status(not_foundStatus).send({ error2: not_foundSend });
 
         const token = createToken(data);
+        const dataEmployee = {
+            userName: empl.userName,
+            role: empl.role,
+            accessToken: token
+          }
 
-        return res.status(200).send({ user: empl, auth: true , token });
+        return res.status(200).send({  auth: true , dataEmployee });
     });
 };
 
@@ -32,9 +37,9 @@ employeeCtrl.createEmployee = async (req, res) =>{
         }]
     }, async (err, data) =>{
         if (err) res.status(bad_requestStatus).send({ error1: bad_requestSend  });
-        if (data != null) return res.status(bad_ryequestStatus).send({ error2: bad_requestSend });
+        if (data != null) return res.status(bad_requestStatus).send({ error2: bad_requestSend });
 
-        emplModel.create(empl, (req, res) =>{
+        emplModel.create(empl, (err, data) =>{
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
 
             return res.status(createdStatus).send({ empl ,created: createdSend});

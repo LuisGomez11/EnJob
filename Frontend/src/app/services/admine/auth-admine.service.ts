@@ -12,11 +12,12 @@ import { AdmineModel } from '../../models/admine/admine-model';
 })
 export class AuthAdmineService {
 
-  readonly AUTH_SERVER = 'http://localhost:3000/v1/api';
+    readonly AUTH_SERVER = 'http://localhost:3000/v1/api';
     authSubject = new BehaviorSubject(false);
     private token: string;
 
     AdmineUser = '';
+    role = '';
 
     constructor(private httpClient: HttpClient) { }
 
@@ -28,6 +29,7 @@ export class AuthAdmineService {
                         // guardar token
                         this.saveToken(res.dataUser.accessToken);
                         this.AdmineUser =  res.dataUser.userName;
+                        this.role = res.dataUser.role;
                     }
                 })
             );

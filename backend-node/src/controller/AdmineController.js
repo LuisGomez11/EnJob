@@ -33,14 +33,12 @@ admineCtrl.LoginAdmine = async (req, res) => {
 
 admineCtrl.CreateAdmine = async (req, res) => {
     let Admine = admine(req);
-    console.log(Admine.name)
     AdmineModel.findOne({
         $or: [{ userName: Admine.userName, email: Admine.email, numDocument: Admine.numDocument }]
     }, async (err, data) => {
         if (err) res.status(bad_requestStatus).send({ error1: bad_requestSend  });
         if (data != null) return res.status(bad_requestStatus).send({ error2: bad_requestSend });
         await AdmineModel.create(Admine, (err, data) => {
-            console.log(err)
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
 
             //const token = createToken(data);
