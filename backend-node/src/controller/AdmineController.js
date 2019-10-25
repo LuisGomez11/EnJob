@@ -5,7 +5,7 @@ const AdmineModel = require('../models/AdmineModel');
 const { admine } = require('../util/adminefun');
 const { bad_requestSend, bad_requestStatus, createdSend, createdStatus, non_authoritative_informationSend, non_authoritative_informationStatus, not_foundSend, not_foundStatus } = require('../util/HttpStatus');
 
-const admineCtrl = {};
+const admineCtrl = { };
 
 admineCtrl.LoginAdmine = async (req, res) => {
     let Admine = admine(req);
