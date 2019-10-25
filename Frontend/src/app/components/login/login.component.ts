@@ -11,8 +11,9 @@ declare var $ : any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private authService: AuthAdmineService, private router: Router) { }
+  role = '';
+  
+  constructor(private auth: AuthAdmineService, private router: Router) { }
 
   ngOnInit() {
     $('#nav-principal').hide();
@@ -23,8 +24,16 @@ export class LoginComponent implements OnInit {
     $('#nav-empo').hide();
   }
   onLogin(form): void {
-    this.authService.login(form.value).subscribe(res => {
-      this.router.navigateByUrl('/admin');
-    });
+
+      this.auth.login(form.value).subscribe(res => {
+        this.role = this.auth.AdmineUser;
+        if(this.role === 'admine'){
+          this.router.navigateByUrl('/admin');
+        } else if(this.role === 'employee'){
+          this.router.navigateByUrl('/employee');
+        }
+        
+      });
+
   }
 }
