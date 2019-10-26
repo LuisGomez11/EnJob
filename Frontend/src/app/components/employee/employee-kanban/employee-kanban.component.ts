@@ -43,7 +43,7 @@ export class EmployeeKanbanComponent implements OnInit {
         this.getTasks();
       }, error => {
         console.log(error);
-      }).unsubscribe();
+      });
       this.currentState = undefined;
     }
   }
