@@ -23,6 +23,7 @@ import { SupervisorKanbanComponent } from './components/supervisor/supervisor-ka
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
+import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path:'admin/kanban',component: AdminKanbanComponent},
   {path:'admin/config',component: AdminConfigComponent},
   {path:'admin/notifications',component: AdminNotificationsComponent},
+  {path:'admin/bonus',component: AdminBonusComponent},
   {path:'supervisor',component: SupervisorHomeComponent},
   {path:'supervisor/home',component: SupervisorHomeComponent},
   {path:'supervisor/chat',component: SupervisorChatComponent},

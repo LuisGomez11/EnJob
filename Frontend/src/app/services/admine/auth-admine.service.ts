@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JwtResponseI } from '../../models/admine/jwt-response-i';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { tap } from 'rxjs/operators';
 
 import { AdmineModel } from '../../models/admine/admine-model';

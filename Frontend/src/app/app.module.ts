@@ -30,6 +30,7 @@ import { SupervisorKanbanComponent } from './components/supervisor/supervisor-ka
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     SupervisorTasksComponent,
     EmployeeProfileComponent,
     SignUpComponent,
+    AdminBonusComponent,
   ],
   imports: [
     BrowserModule,

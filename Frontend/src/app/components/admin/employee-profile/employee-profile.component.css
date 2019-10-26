@@ -1,9 +1,35 @@
 .contenedor{
     background-color: #eee;
     background-attachment: fixed;
-    height: auto;
-    min-height: calc(100vh - 56px);
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+.contenedor::-webkit-scrollbar{
+    width: 8px;
+    background: transparent;
+}
+
+.contenedor::-webkit-scrollbar-thumb{
+  background-color: #797979;
+}
+
+.list-employee-actions{
+    height: calc(100% - 56px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  .list-employee-actions::-webkit-scrollbar{
+      width: 5px;
+      background: transparent;
+  }
+  
+  .list-employee-actions::-webkit-scrollbar-thumb{
+    background-color: #797979;
+    border-radius: 20px;
+  }
 
 .margin-not{
     margin: 0;
