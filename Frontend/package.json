@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.2.8",
     "@angular/platform-browser-dynamic": "~8.2.8",
     "@angular/router": "~8.2.8",
+    "angular-draggable-droppable": "^4.3.8",
     "animate.css": "^3.7.2",
     "rkjs": "^1.0.13",
     "rxjs": "~6.4.0",

@@ -3,9 +3,10 @@ import { AppComponent } from 'src/app/app.component';
 import { TaskService } from 'src/app/services/task/task.service';
 import { Task } from 'src/app/models/task/task';
 import { NgForm } from '@angular/forms';
-import  swal  from "sweetalert2";
+import swal from "sweetalert2";
+import { Router } from '@angular/router';
 
-declare var $ : any;
+declare var $: any;
 
 @Component({
   selector: 'app-employee-kanban',
@@ -16,8 +17,9 @@ export class EmployeeKanbanComponent implements OnInit {
 
   task: Task = new Task();
   listTasks: Task[];
+  currentState: Task = undefined;
 
-  constructor(public app : AppComponent, private service: TaskService) { }
+  constructor(public app: AppComponent, private service: TaskService, private router: Router) { }
 
   ngOnInit() {
     this.app.employee();
@@ -27,64 +29,36 @@ export class EmployeeKanbanComponent implements OnInit {
     this.getTasks();
   }
 
-  getTasks(){
+  getTasks() {
     this.service.getTasks()
-    .subscribe(data =>
-      this.listTasks = data);
+      .subscribe(data =>
+        this.listTasks = data);
   }
 
-  changeProgress(task:Task){
-    task.stateTask = 'En proceso';
-    this.service.updateTask(task).subscribe(data => {
-      console.log(data);
-      this.getTasks();
-    },error => {
-      console.log(error);
-    });
-  }
-
-  changePending(task:Task){
-    task.stateTask = 'Pendiente';
-    this.service.updateTask(task).subscribe(data => {
-      console.log(data);
-      this.getTasks();
-    },error => {
-      console.log(error);
-    });
-  }
-
-  changeFinish(task:Task){
-    task.stateTask = 'Finalizada';
-    this.service.updateTask(task).subscribe(data => {
-      console.log(data);
-      this.getTasks();
-    },error => {
-      console.log(error);
-    });
-  }
-
-  change(form: NgForm){
-    if(form.value.idDepartment){
-      this.service.updateTask(form.value).subscribe(data => {
-        swal.fire({
-          position: 'center',
-          type: 'success',
-          title: 'Correcto!',
-          text: 'Departamento modificado correctamente',
-          showConfirmButton: false,
-          timer: 1500
-        });
+  changeDrag(id: String) {
+    if (this.currentState.stateTask !== id && this.currentState !== undefined) {
+      this.currentState.stateTask = id;
+      this.service.updateTask(this.currentState).subscribe(data => {
+        console.log(data);
         this.getTasks();
-        this.resetForm(form);
-      });
+      }, error => {
+        console.log(error);
+      }).unsubscribe();
+      this.currentState = undefined;
     }
   }
+  
+  viewDetails(task: Task) {
+    localStorage.removeItem('IdTask');
+    localStorage.setItem('idTask', task.idTask.toString());
+    this.router.navigate(['employee/task/details']);
+  }
 
-  resetForm(form?: NgForm){
-    if(form){
+  resetForm(form?: NgForm) {
+    if (form) {
       form.reset();
       this.service.selectedTask = new Task();
     }
- }
+  }
 
 }

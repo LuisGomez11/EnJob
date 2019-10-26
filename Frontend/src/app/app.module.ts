@@ -31,7 +31,8 @@ import { SupervisorTasksComponent } from './components/supervisor/supervisor-tas
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
-
+import { EDetailsTaskComponent } from './components/employee/employee-kanban/e-details-task/e-details-task.component';
+import { DragAndDropModule } from "angular-draggable-droppable";
 
 @NgModule({
   declarations: [
@@ -60,13 +61,15 @@ import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.
     EmployeeProfileComponent,
     SignUpComponent,
     AdminBonusComponent,
+    EDetailsTaskComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DragAndDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
