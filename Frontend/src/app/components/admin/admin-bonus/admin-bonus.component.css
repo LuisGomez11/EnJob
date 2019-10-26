@@ -4,3 +4,16 @@
     height: auto;
     min-height: calc(100vh - 56px);
 }
+
+.cont-image img{
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.cont-image{
+    margin-left: 50%;
+    margin-top: -60px;
+    transform: translateX(-50%);
+    border: 8px solid rgb(121, 5, 121);;
+}
