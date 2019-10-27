@@ -1,0 +1,63 @@
+<div class="contenedor p-4">
+    <div class="row h-100">
+        <div class="col-lg-5 mb-3 h-100">
+            <div class="bg-white p-3 h-100">
+                <div class="profile-header d-flex">
+                    <div class="photo mr-3">
+                        <img src="../../../../assets/img/test-photos/foto2.jpg" class="rounded-circle" width="90"
+                            height="90">
+                    </div>
+                    <div class="name-user pt-3">
+                        <h3 class="margin-not">Luis Alberto Gomez</h3>
+                        <p class="margin-not text-muted">LuisGomez11</p>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="profile-body">
+                    <h2 class="text-center">Información</h2>
+                    <div class="info-employee mt-4">
+                        <p><strong>Nombre completo: </strong>Luis Alberto Gómez Arteaga</p>
+                        <p><strong>Nro. de documento: </strong>1002244432</p>
+                        <p><strong>Telefono: </strong>3002149179</p>
+                        <p><strong>Correo electronico: </strong>luisgomez24g@gmail.com</p>
+                        <p><strong>Usuario: </strong>LuisGomez11</p>
+                        <p><strong>Empresa: </strong>Condor Labs</p>
+                        <p><strong>Departamento: </strong>Educador</p>
+                        <p><strong>Salario: </strong>$ 1.200.000</p>
+                        <p><strong>Posición: </strong>Gerente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 h-100 mb-3">
+            <div class="bg-white p-3 border-bottom h-50" id="tasks-employee">
+                <h3 class="text-primary">Tus tareas</h3>
+                <ul class="list-group list-group-flush list-employee-actions">
+                    <li class="list-group-item d-flex" *ngFor="let item of [1,1,1,1,1];let i=index">
+                        <div>
+                            <p class="text-muted margin-not" style="font-size: 13px">12/11/2019 12:12 p.m</p>
+                            <p class="margin-not"><strong>Pachera Meza</strong> ha solicitado un permiso el dia
+                                12/11/2019</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-white p-3 h-50">
+                <div class="d-flex justify-content-between">
+                    <h3 class="text-primary">Tus solicitudes</h3>
+                    <a routerLink="/employee/request" title="Enviar nueva solicitud" style="cursor: pointer"><i
+                            class="fas fa-plus text-muted h5"></i></a>
+                </div>
+                <ul class="list-group list-group-flush list-employee-actions">
+                    <li class="list-group-item d-flex" *ngFor="let item of [1,1,1,1,1];let i=index">
+                        <div>
+                            <p class="text-muted margin-not" style="font-size: 13px">12/11/2019 12:12 p.m</p>
+                            <p class="margin-not">Has solicitado un permiso el dia 12/11/2019</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="contenedor p-4">
+        <div class="container">
+            <h3 class="text-center">Enviar nueva solicitud</h3>
+            <div class="card mt-2 shadow-sm">
+                <form #form="ngForm" (ngSubmit)="createTask(form)">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="task">Tarea:</label>
+                                    <input type="text" id="task" name="title" #title="ngModel"
+                                        [(ngModel)]="service.selectedTask.title" placeholder="Escriba una tarea..."
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="descri">Descripción:</label>
+                                    <textarea id="descri" name="description" #description="ngModel"
+                                        [(ngModel)]="service.selectedTask.description"
+                                        placeholder="Escriba una descripción de la tarea..." class="form-control"
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="department">Departamento:</label>
+                                    <select class="form-control" id="department" name="department" #department="ngModel"
+                                        [(ngModel)]="service.selectedTask.department">
+                                        <option *ngFor="let d of departments" value="{{ d.name }}">{{ d.name }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="task">Asignar a:</label>
+                                    <select class="form-control" name="assigned" #assigned="ngModel"
+                                        [(ngModel)]="service.selectedTask.assigned">
+                                        <option>Luis Alberto Gomez</option>
+                                        <option>Daniel Morelos</option>
+                                        <option>Maria Soledad</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="task">Plazo:</label>
+                                    <input type="date" class="form-control" name="term" #term="ngModel"
+                                        [(ngModel)]="service.selectedTask.term">
+                                </div>
+                            </div>
+                            <input type="hidden" id="date" readonly name="changeDate" #changeDate="ngModel"
+                                [(ngModel)]="service.selectedTask.changeDate" class="form-control">
+    
+                            <input type="hidden" id="state" readonly name="stateTask" #stateTask="ngModel"
+                                [(ngModel)]="service.selectedTask.stateTask" class="form-control">
+    
+                        </div>
+    
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-secondary mr-2"><i class="fas fa-paper-plane mr-2"></i><span>Enviar</span></button>
+                        <button (click)="back()" class="btn btn-danger">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

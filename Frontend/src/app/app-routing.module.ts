@@ -25,6 +25,8 @@ import { SupervisorTasksComponent } from './components/supervisor/supervisor-tas
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
 import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
 import { EDetailsTaskComponent } from './components/employee/employee-kanban/e-details-task/e-details-task.component';
+import { EmployeePersonalProfileComponent } from './components/employee/employee-personal-profile/employee-personal-profile.component';
+import { EmployeeRequestComponent } from './components/employee/employee-request/employee-request.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -56,6 +58,8 @@ const routes: Routes = [
   {path:'employee/kanban',component: EmployeeKanbanComponent},
   {path:'employee/task/details',component: EDetailsTaskComponent},
   {path:'employee/config',component: EmployeeConfigComponent},
+  {path:'employee/profile',component: EmployeePersonalProfileComponent},
+  {path:'employee/request',component: EmployeeRequestComponent},
   {path:'**',component: NotfoundComponent},
 ];
 

@@ -33,6 +33,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
 import { EDetailsTaskComponent } from './components/employee/employee-kanban/e-details-task/e-details-task.component';
 import { DragAndDropModule } from "angular-draggable-droppable";
+import { EmployeePersonalProfileComponent } from './components/employee/employee-personal-profile/employee-personal-profile.component';
+import { EmployeeRequestComponent } from './components/employee/employee-request/employee-request.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { DragAndDropModule } from "angular-draggable-droppable";
     SignUpComponent,
     AdminBonusComponent,
     EDetailsTaskComponent,
+    EmployeePersonalProfileComponent,
+    EmployeeRequestComponent,
   ],
   imports: [
     BrowserModule,
