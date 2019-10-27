@@ -66,3 +66,50 @@ a{
     left: 0;
     background-color: rgba(255,255,255,0.45);
   }
+
+  .content-tools{
+      background: rgb(158, 158, 158);
+  }
+
+  .image-tools{
+      width: 400px;
+      height: 189.7px;
+  }
+
+  .image-one{
+      background-image: url(../../../assets/img/carousel/1.png);
+      background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .image-two{
+    background-image: url(../../../assets/img/carousel/2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image-three{
+    background-image: url(../../../assets/img/carousel/3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.info-tools{
+    width: 400px;
+      height: 189.7px;
+      background-color: rgba(31,31,31,0.9);
+      transition: opacity 0.2s;
+      opacity: 0;
+}
+
+div.image-one:hover div.info-one{
+    opacity: 1;
+}
+
+div.image-two:hover div.info-two{
+    opacity: 1;
+}
+
+div.image-three:hover div.info-three{
+    opacity: 1;
+}
