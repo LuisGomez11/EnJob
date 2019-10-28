@@ -26,12 +26,9 @@ export class LoginComponent implements OnInit {
   onLogin(form): void {
 
       this.auth.login(form.value).subscribe(res => {
-        this.role = this.auth.AdmineUser;
-        if(this.role === 'admine'){
+        
           this.router.navigateByUrl('/admin');
-        } else if(this.role === 'employee'){
-          this.router.navigateByUrl('/employee');
-        }
+        
         
       });
 
