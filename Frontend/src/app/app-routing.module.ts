@@ -23,6 +23,10 @@ import { SupervisorKanbanComponent } from './components/supervisor/supervisor-ka
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
+import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
+import { EDetailsTaskComponent } from './components/employee/employee-kanban/e-details-task/e-details-task.component';
+import { EmployeePersonalProfileComponent } from './components/employee/employee-personal-profile/employee-personal-profile.component';
+import { EmployeeRequestComponent } from './components/employee/employee-request/employee-request.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -41,6 +45,7 @@ const routes: Routes = [
   {path:'admin/kanban',component: AdminKanbanComponent},
   {path:'admin/config',component: AdminConfigComponent},
   {path:'admin/notifications',component: AdminNotificationsComponent},
+  {path:'admin/bonus',component: AdminBonusComponent},
   {path:'supervisor',component: SupervisorHomeComponent},
   {path:'supervisor/home',component: SupervisorHomeComponent},
   {path:'supervisor/chat',component: SupervisorChatComponent},
@@ -51,7 +56,10 @@ const routes: Routes = [
   {path:'employee/home',component: EmployeeHomeComponent},
   {path:'employee/chat',component: EmployeeChatComponent},
   {path:'employee/kanban',component: EmployeeKanbanComponent},
+  {path:'employee/task/details',component: EDetailsTaskComponent},
   {path:'employee/config',component: EmployeeConfigComponent},
+  {path:'employee/profile',component: EmployeePersonalProfileComponent},
+  {path:'employee/request',component: EmployeeRequestComponent},
   {path:'**',component: NotfoundComponent},
 ];
 

@@ -1,17 +1,17 @@
 <div class="contenedor p-4">
     <div class="row h-100">
-        <div class="col-lg-4 p-1 h-100">
-            <div class="bg-white-transparent h-100 p-2">
+        <div class="col-lg-4 p-1 h-100" mwlDroppable id="Pendiente" (drop)="changeDrag('Pendiente')">
+            <div class="bg-white-transparent h-100 p-2" >
                 <h3>Pendientes</h3>
                 <div class="tasks p-1">
                     <div *ngFor="let t of listTasks">
-                        <div class="bg-white card mb-1" *ngIf="t.stateTask==='Pendiente'">
+                        <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='Pendiente'" style="z-index: 100;">
                             <div class="card-body">
                                 <div class="float-left text-truncate title-task">
                                     {{ t.title }}
                                 </div>
                                 <div class="float-right details-task">
-                                    <button class="bg-transparent border-0 float-right" title="Ver detalles"><i
+                                    <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right" title="Ver detalles"><i
                                             class="fas fa-eye"></i></button>
                                 </div>
                             </div>
@@ -19,41 +19,30 @@
                                 <div class="float-left text-muted" title="Fecha limite">
                                     {{ t.term }}
                                 </div>
-                                <div class="float-right text-center">
-                                    <button class="bg-transparent border-0" title="Cambiar (En proceso)"
-                                        (click)="changeProgress(t)"><i class="fas fa-arrow-circle-right"></i></button>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 p-1 h-100">
-            <div class="bg-white-transparent h-100 p-2">
+        <div class="col-lg-4 p-1 h-100" mwlDroppable id="EnProceso" (drop)="changeDrag('EnProceso')">
+            <div class="bg-white-transparent h-100 p-2" >
                 <h3>En proceso</h3>
                 <div class="tasks p-1">
                     <div *ngFor="let t of listTasks">
-                        <div class="bg-white card mb-1" *ngIf="t.stateTask==='En proceso'">
+                        <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='EnProceso'" style="z-index: 100;">
                             <div class="card-body">
                                 <div class="float-left text-truncate title-task">
                                     {{ t.title }}
                                 </div>
                                 <div class="float-right details-task">
-                                    <button class="bg-transparent border-0 float-right" title="Ver detalles"><i
+                                    <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right" title="Ver detalles"><i
                                             class="fas fa-eye"></i></button>
                                 </div>
                             </div>
                             <div class="card-footer">
                                 <div class="float-left text-muted" title="Fecha limite">
                                     {{ t.term }}
-                                </div>
-                                <div class="float-right text-center">
-
-                                    <button class="bg-transparent border-0" title="Cambiar (Pendiente)"
-                                        (click)="changePending(t)"><i class="fas fa-arrow-circle-left"></i></button>
-                                        <button class="bg-transparent border-0" title="Cambiar (Finalizada)"
-                                        (click)="changeFinish(t)"><i class="fas fa-arrow-circle-right"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -61,28 +50,24 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 mb-2 p-1 h-100">
-            <div class="bg-white-transparent h-100 p-2">
+        <div class="col-lg-4 mb-2 p-1 h-100" mwlDroppable id="Finalizada" (drop)="changeDrag('Finalizada')">
+            <div class="bg-white-transparent h-100 p-2" >
                 <h3>Finalizadas</h3>
                 <div class="tasks p-1">
                     <div *ngFor="let t of listTasks">
-                        <div class="bg-white card mb-1" *ngIf="t.stateTask==='Finalizada'">
+                        <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='Finalizada'" style="z-index: 100;">
                             <div class="card-body">
                                 <div class="float-left text-truncate title-task">
                                     {{ t.title }}
                                 </div>
                                 <div class="float-right details-task">
-                                    <button class="bg-transparent border-0 float-right" title="Ver detalles"><i
+                                    <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right" title="Ver detalles"><i
                                             class="fas fa-eye"></i></button>
                                 </div>
                             </div>
                             <div class="card-footer">
                                 <div class="float-left text-muted" title="Fecha limite">
                                     {{ t.term }}
-                                </div>
-                                <div class="float-right text-center">
-                                        <button class="bg-transparent border-0" title="Cambiar (En proceso)"
-                                        (click)="changeProgress(t)"><i class="fas fa-arrow-circle-left"></i></button>
                                 </div>
                             </div>
                         </div>

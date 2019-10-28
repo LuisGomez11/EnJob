@@ -11,7 +11,7 @@ const admineSchema = new Schema({
   phone: { type: String, },
   role: { type: String, },
   state: { type: String, },
-  //  photo: { type: String },
+  // photo: { type: String, default: 'https://image.flaticon.com/icons/svg/149/149071.svg'},
   lastLogin: { type: Date, default: Date.now }
 });
 

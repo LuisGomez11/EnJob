@@ -14,9 +14,6 @@ export class EmployeeHomeComponent implements OnInit {
 
   ngOnInit() {
     this.app.employee();
-    $('.config-perfil').click(function () {
-      $('.content-configurations').toggleClass('config-active');
-    });
   }
 
 }

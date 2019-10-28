@@ -17,9 +17,6 @@ export class AdminHomeComponent implements OnInit {
 
   ngOnInit() {
     this.app.admin();
-    $('#notification-admin').click(function () {
-      $('.content-notifications').toggleClass('notifi-active');
-    });
     this.admineUser = this.auth.AdmineUser;
     console.log('Este es el usuario: '+this.admineUser);
   }

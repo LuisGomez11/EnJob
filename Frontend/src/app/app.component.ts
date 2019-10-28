@@ -109,6 +109,9 @@ export class AppComponent implements OnInit {
         $('#content-icons').addClass('navbar-nav');
       }
     });
+    $('.config-perfil').click(function () {
+      $('.content-configurations').toggleClass('config-active');
+    });
 
   }
 
@@ -177,12 +180,14 @@ export class AppComponent implements OnInit {
         if (scrollPos > 0) {
           $('#nav-principal').removeClass('bg-transparent');
           $('#nav-principal').addClass('bg-white');
+          $('#nav-principal').addClass('border-bottom');
           $('.logo-nav').show();
           $('.name-product').css("color", "rgb(12, 14, 173)");
           $('.link-bg').css("color", "rgb(12, 14, 173)");
         } else {
           $('#nav-principal').addClass('bg-transparent');
           $('#nav-principal').removeClass('bg-white');
+          $('#nav-principal').removeClass('border-bottom');
           $('.logo-nav').hide();
           $('.name-product').css("color", "rgb(0, 0, 0)");
           $('.link-bg').css("color", "rgb(0, 0, 0)");
@@ -212,6 +217,7 @@ export class AppComponent implements OnInit {
       if ($('.slide-home').hasClass('slide-active') && $(window).scrollTop() > 0) {
         $('#nav-principal').removeClass('bg-transparent');
         $('#nav-principal').addClass('bg-white');
+        $('#nav-principal').addClass('border-bottom');
         $('.logo-nav').show();
         $('.name-product').css("color", "rgb(12, 14, 173)");
         $('.link-bg').css("color", "rgb(12, 14, 173)");
@@ -219,6 +225,7 @@ export class AppComponent implements OnInit {
       if ($(window).scrollTop() > 0 && !($('.slide-home').hasClass('slide-active'))) {
         $('#nav-principal').addClass('bg-transparent');
         $('#nav-principal').removeClass('bg-white');
+        $('#nav-principal').removeClass('border-bottom');
         $('.logo-nav').hide();
         $('.name-product').css("color", "rgb(0, 0, 0)");
         $('.link-bg').css("color", "rgb(0, 0, 0)");
