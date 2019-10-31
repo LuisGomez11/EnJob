@@ -67,6 +67,10 @@ a{
     background-color: rgba(255,255,255,0.45);
   }
 
+  .img-presentation .content h2{
+      font-family: 'Lobster', cursive;
+  }
+
   .content-tools{
       background: rgb(202, 202, 202);
   }

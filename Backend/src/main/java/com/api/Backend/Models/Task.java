@@ -31,6 +31,8 @@ public class Task {
     private String changeDate;
     @Column(name = "term")
     private String term;
+    @Column(name = "value")
+    private String value;
 
     /**
      * @return the idTask
@@ -142,6 +144,20 @@ public class Task {
      */
     public void setTerm(String term) {
         this.term = term;
+    }
+
+    /**
+     * @return the value
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * @param value the value to set
+     */
+    public void setValue(String value) {
+        this.value = value;
     }
 
 

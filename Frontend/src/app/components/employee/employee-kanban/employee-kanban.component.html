@@ -1,7 +1,7 @@
 <div class="contenedor p-4">
     <div class="row h-100">
-        <div class="col-lg-4 p-1 h-100" mwlDroppable id="Pendiente" (drop)="changeDrag('Pendiente')">
-            <div class="bg-white-transparent h-100 p-2" >
+        <div class="col-lg-4 d-flex justify-content-center p-2 h-100" mwlDroppable id="Pendiente" (drop)="changeDrag('Pendiente')">
+            <div class="bg-white-transparent shadow h-100 p-2" >
                 <h3>Pendientes</h3>
                 <div class="tasks p-1">
                     <div *ngFor="let t of listTasks">
@@ -25,8 +25,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 p-1 h-100" mwlDroppable id="EnProceso" (drop)="changeDrag('EnProceso')">
-            <div class="bg-white-transparent h-100 p-2" >
+        <div class="col-lg-4 d-flex justify-content-center p-2 h-100" mwlDroppable id="EnProceso" (drop)="changeDrag('EnProceso')">
+            <div class="bg-white-transparent shadow h-100 p-2" >
                 <h3>En proceso</h3>
                 <div class="tasks p-1">
                     <div *ngFor="let t of listTasks">
@@ -50,8 +50,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 mb-2 p-1 h-100" mwlDroppable id="Finalizada" (drop)="changeDrag('Finalizada')">
-            <div class="bg-white-transparent h-100 p-2" >
+        <div class="col-lg-4 d-flex justify-content-center mb-2 p-2 h-100" mwlDroppable id="Finalizada" (drop)="changeDrag('Finalizada')">
+            <div class="bg-white-transparent shadow h-100 p-2" >
                 <h3>Finalizadas</h3>
                 <div class="tasks p-1">
                     <div *ngFor="let t of listTasks">

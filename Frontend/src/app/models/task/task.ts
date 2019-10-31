@@ -1,7 +1,7 @@
 export class Task {
 
   constructor(idTask = '', title = '', description = '',assigned = '',
-            stateTask = '', changeDate = '', term = '', department = '' ){
+            stateTask = '', changeDate = '', term = '', department = '', value = '' ){
       this.idTask = idTask;
       this.title = title;
       this.description = description;
@@ -10,6 +10,7 @@ export class Task {
       this.stateTask = stateTask;
       this.changeDate = changeDate;
       this.term = term;
+      this.value = value;
   }
 
       idTask:String;
@@ -20,5 +21,6 @@ export class Task {
       stateTask:String;
       changeDate:String;
       term:String;
+      value:String;
 
 }

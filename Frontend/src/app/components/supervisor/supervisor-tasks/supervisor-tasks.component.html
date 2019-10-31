@@ -22,7 +22,7 @@
 									rows="3"></textarea>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label for="department">Departamento:</label>
 								<select class="form-control" id="department" name="department" #department="ngModel"
@@ -31,7 +31,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label for="task">Asignar a:</label>
 								<select class="form-control" name="assigned" #assigned="ngModel"
@@ -42,11 +42,18 @@
 								</select>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-8">
 							<div class="form-group">
 								<label for="task">Plazo:</label>
 								<input type="date" class="form-control" name="term" #term="ngModel"
 									[(ngModel)]="service.selectedTask.term">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="value">Valor (puntos):</label>
+								<input type="number" class="form-control" name="value" #value="ngModel"
+									[(ngModel)]="service.selectedTask.value">
 							</div>
 						</div>
 						<input type="hidden" id="date" readonly name="changeDate" #changeDate="ngModel"

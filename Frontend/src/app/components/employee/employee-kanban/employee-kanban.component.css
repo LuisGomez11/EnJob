@@ -1,5 +1,5 @@
 .contenedor{
-    background-image: url(../../../../assets/img/bg-kanban.png);
+    background-image: url(../../../../assets/img/bg-02.jpg);
     background-attachment: fixed;
     /* height: auto; */
     /* min-height: calc(100vh - 56px); */
@@ -23,6 +23,7 @@
 .bg-white-transparent{
   background: rgba(255, 255, 255, 0.5);
   border-radius: 15px;
+  width: 80%;
 }
 
 .tasks{
