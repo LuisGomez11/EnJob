@@ -25,12 +25,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 d-flex justify-content-center p-2 h-100" mwlDroppable id="EnProceso" (drop)="changeDrag('EnProceso')">
+        <div class="col-lg-4 d-flex justify-content-center p-2 h-100" mwlDroppable id="En Proceso" (drop)="changeDrag('En Proceso')">
             <div class="bg-white-transparent shadow h-100 p-2" >
                 <h3>En proceso</h3>
                 <div class="tasks p-1">
                     <div *ngFor="let t of listTasks">
-                        <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='EnProceso'" style="z-index: 100;">
+                        <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='En Proceso'" style="z-index: 100;">
                             <div class="card-body">
                                 <div class="float-left text-truncate title-task">
                                     {{ t.title }}
