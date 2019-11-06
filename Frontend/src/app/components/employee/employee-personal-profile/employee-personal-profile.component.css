@@ -31,6 +31,22 @@
     border-radius: 20px;
   }
 
+ .profile-body{
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  .profile-body::-webkit-scrollbar{
+      width: 5px;
+      background: transparent;
+  }
+  
+  .profile-body::-webkit-scrollbar-thumb{
+    background-color: #797979;
+    border-radius: 20px;
+  }
+
 .margin-not{
     margin: 0;
 }
