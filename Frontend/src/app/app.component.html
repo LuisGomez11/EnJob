@@ -1,20 +1,21 @@
 <!-- NAV PRINCIPAL -->
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top p-4" id="nav-principal" style="transition: all .5s">
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top p-4" id="nav-principal"
+  style="transition: all .5s">
   <a class="navbar-brand" routerLink="/home">
     <div class="d-inline-block mr-3">
-    <img src="../assets/img/original.png" width="45" height="45" class="logo-nav">
+      <img src="../assets/img/original.png" width="45" height="45" class="logo-nav">
     </div>
     <span class="name-product">{{title}}</span>
   </a>
-    <div class="navbar-nav ml-auto">
-      <i style="color: #000; cursor: pointer;" class="fas fa-bars menu-home"></i>
-      <li class="nav-item mr-2 home-link">
-        <a class="p-2 text-decoration-none font-weight-bold link-login" routerLink="/login">Iniciar Sesión</a>
-      </li>
-      <li class="nav-item home-link">
-        <a class="p-2 px-4 text-decoration-none font-weight-bold link-bg" routerLink="/join">Registrarse</a>
-      </li>
-    </div>
+  <div class="navbar-nav ml-auto">
+    <i style="color: #000; cursor: pointer;" class="fas fa-bars menu-home"></i>
+    <li class="nav-item mr-2 home-link">
+      <a class="p-2 text-decoration-none font-weight-bold link-login" routerLink="/login">Iniciar Sesión</a>
+    </li>
+    <li class="nav-item home-link">
+      <a class="p-2 px-4 text-decoration-none font-weight-bold link-bg" routerLink="/join">Registrarse</a>
+    </li>
+  </div>
 </nav>
 
 <!-- MENU HOME -->
@@ -22,10 +23,10 @@
   <div class="slide-links">
     <ul class="text-center">
       <li class="my-2">
-          <a class="p-2 text-decoration-none font-weight-bold link-login" routerLink="/login">Iniciar Sesión</a>
+        <a class="p-2 text-decoration-none font-weight-bold link-login" routerLink="/login">Iniciar Sesión</a>
       </li>
       <li class="my-2">
-          <a class="p-2 px-4 text-decoration-none font-weight-bold link-bg" routerLink="/join">Registrarse</a>
+        <a class="p-2 px-4 text-decoration-none font-weight-bold link-bg" routerLink="/join">Registrarse</a>
       </li>
     </ul>
   </div>
@@ -34,22 +35,22 @@
 
 <!-- NAV SADMIN -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-sadmin">
-    <div class="w-100">
-      <div style="float: left;">
-        <a routerLink="/sadmin/home" class="navbar-brand">
-          EnJob´s
-        </a>
-      </div>
-      <div style="float: right;" class="d-flex navbar-nav">
-        <li class="nav-item mr-5" style="cursor: pointer" id="messages">
-          <a class="nav-link" routerLink="/sadmin/subscribed">Subscritos</a>
-        </li>
-        <li class="nav-item d-flex" routerLinkActive="active" id="cargo">
-          <img src="../assets/icon/man.png" width="30" height="30" alt="">
-          <p style="margin:0" id="name-user" class="text-dark ml-2 mt-2">Administrador</p>
-        </li>
-      </div>
+  <div class="w-100">
+    <div style="float: left;">
+      <a routerLink="/sadmin/home" class="navbar-brand">
+        EnJob´s
+      </a>
     </div>
+    <div style="float: right;" class="d-flex navbar-nav">
+      <li class="nav-item mr-5" style="cursor: pointer" id="messages">
+        <a class="nav-link" routerLink="/sadmin/subscribed">Subscritos</a>
+      </li>
+      <li class="nav-item d-flex" routerLinkActive="active" id="cargo">
+        <img src="../assets/icon/man.png" width="30" height="30" alt="">
+        <p style="margin:0" id="name-user" class="text-dark ml-2 mt-2">Administrador</p>
+      </li>
+    </div>
+  </div>
 </nav>
 
 <!-- NAV ADMIN -->
@@ -80,7 +81,8 @@
 <!-- MENU ADMIN -->
 <div class="menu-admin fixed-top">
   <div class="info-personal">
-      <a class="links-admin" routerLink="/admin/config"><img src="../assets/img/foto-default.png" width="100" height="100"></a>
+    <a class="links-admin" routerLink="/admin/config"><img src="../assets/img/foto-default.png" width="100"
+        height="100"></a>
     <p class="text-center">Luis Alberto Gómez</p>
     <span class="text-center">Condor Labs</span>
     <p id="menu-slide2" class="mr-2">
@@ -139,7 +141,7 @@
     </div>
     <div id="content-iconss" class="d-flex justify-content-between navbar-nav float-right style-none">
       <li class="nav-item mr-5" style="cursor: pointer" id="homes">
-       <a routerLink="/supervisor/home"><i class="fas fa-home mt-2 text-white" id="icon-homes"></i></a>
+        <a routerLink="/supervisor/home"><i class="fas fa-home mt-2 text-white" id="icon-homes"></i></a>
       </li>
       <li class="nav-item mr-5" style="cursor: pointer" id="dashboards">
         <a routerLink="/supervisor/kanban"><i class="fas fa-columns mt-2 text-white" id="icon-dashboards"></i></a>
@@ -151,20 +153,19 @@
         <i class="fas fa-bell mt-2 text-white" id="icon-notifications"></i>
         <span class="badge badge-dark" id="number-notification">4</span>
       </li>
-      <li class="nav-item" routerLinkActive="active" id="perfils">
-        <div class="d-flex sconfig-perfil" style="cursor: pointer;">
-          <img class="mt-1 rounded-circle" src="../assets/img/test-photos/foto8.jpg" width="34" height="34" alt="">
-          <p style="margin:0" id="name-users" class="text-white ml-2 mt-2">ClaraLopez</p>
-        </div>
-      </li>
+      <li class="nav-item" routerLinkActive="active" id="perfil">
+          <button type="button" class="btn dropdown-toggle d-flex" style="padding: 0;" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img class="mt-1 rounded-circle" src="../assets/img/test-photos/foto8.jpg" width="34" height="34" alt="">
+            <p style="margin:0" id="name-usere" class="text-white ml-2 mt-2">ClaraLopez</p>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right profile-config mr-3 p-2 shadow">
+              <app-supervisor-config></app-supervisor-config>
+          </div>
+        </li>
     </div>
   </div>
 </nav>
-
-<!-- SUPERVISOR CONFIGURATIONS -->
-<div class="scontent-configurations mr-3 p-2 shadow" style="position: absolute; z-index: 100;">
-  <app-supervisor-config></app-supervisor-config>
-</div>
 
 <!-- NAV EMPLOYEE -->
 <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="nav-empo">
@@ -189,18 +190,17 @@
         <span class="badge badge-dark" id="number-notification">4</span>
       </li>
       <li class="nav-item" routerLinkActive="active" id="perfil">
-        <a routerLink="/employee/profile" class="d-flex config-perfil" style="cursor: pointer;">
+        <button type="button" class="btn dropdown-toggle d-flex" style="padding: 0;" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
           <img class="mt-1 rounded-circle" src="../assets/img/test-photos/foto2.jpg" width="34" height="34" alt="">
           <p style="margin:0" id="name-usere" class="text-white ml-2 mt-2">rodolfo19</p>
-        </a>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right profile-config mr-3 p-2 shadow">
+          <app-employee-config></app-employee-config>
+        </div>
       </li>
     </div>
   </div>
 </nav>
-
-<!-- EMPLOYEE CONFIGURATIONS -->
-<div class="content-configurations mr-3 p-2 shadow" style="position: absolute; z-index: 100;">
-  <app-employee-config></app-employee-config>
-</div>
 
 <router-outlet></router-outlet>

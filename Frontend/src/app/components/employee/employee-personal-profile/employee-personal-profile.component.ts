@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 
+declare var $ : any;
+
 @Component({
   selector: 'app-employee-personal-profile',
   templateUrl: './employee-personal-profile.component.html',

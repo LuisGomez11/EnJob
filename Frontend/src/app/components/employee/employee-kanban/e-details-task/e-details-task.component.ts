@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { TaskService } from 'src/app/services/task/task.service';
 
+declare var $ : any;
+
 @Component({
   selector: 'app-e-details-task',
   templateUrl: './e-details-task.component.html',
@@ -14,6 +16,7 @@ export class EDetailsTaskComponent implements OnInit {
 
   ngOnInit() {
     this.app.employee();
+
     const idTask = localStorage.getItem('idTask');
 
     if ( !idTask ) {

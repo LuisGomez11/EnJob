@@ -8,9 +8,43 @@ body::-webkit-scrollbar {
     width: 10px;
 }
 
+a{
+    text-decoration: none;
+}
+
 body::-webkit-scrollbar-thumb {
     background-color: #797979;
     border-radius: 20px;
     border: 2px solid #f1f2f3;
 
+}
+
+.content-configurations{
+    width: 270px;
+    right: 0;
+    background-color: #fff;
+    display: none;
+}
+
+
+.config-active{
+    display: block;
+}
+
+.dropdown-toggle{
+    outline: none;
+    box-shadow: none;
+}
+
+.dropdown-toggle:focus, .dropdown-toggle:active:focus, .dropdown-toggle.active:focus{
+    outline:none;
+    box-shadow:none;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+.profile-config{
+    width: 300px;
 }
