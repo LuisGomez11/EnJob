@@ -18,7 +18,7 @@ export class EmployeeRequestComponent implements OnInit {
   }
 
   back(){
-    this.router.navigate(['employee/profile']);
+    this.router.navigate(['employee/home']);
   }
 
 }

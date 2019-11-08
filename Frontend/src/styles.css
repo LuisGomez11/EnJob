@@ -48,3 +48,12 @@ body::-webkit-scrollbar-thumb {
 .profile-config{
     width: 300px;
 }
+
+.content-notification{
+    width: 350px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus{
+    outline:none;
+    box-shadow:none;
+}

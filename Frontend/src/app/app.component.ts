@@ -67,9 +67,6 @@ export class AppComponent implements OnInit {
     $('#menu-slide2').click(function () {
       $('.menu-admin').removeClass('menu-activado');
     });
-    $('#notification-admin').click(function () {
-      $('.content-notifications').toggleClass('notifi-active');
-    });
 
   }
 

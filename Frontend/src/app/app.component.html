@@ -66,12 +66,21 @@
         <a routerLink="/admin/chat"><i class="fas fa-comment-dots mt-2" id="icon-messages"></i></a>
       </li>
       <li class="nav-item mr-5" style="cursor: pointer" id="notification-admin">
-        <i class="fas fa-bell mt-2" id="icon-notification"></i>
-        <span class="badge badge-primary" id="number-notification">4</span>
+
+        <button type="button" class="btn dropdown-toggle d-flex" style="padding: 0;" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bell mt-2" id="icon-notification"></i>
+          <span class="badge badge-primary" id="number-notification">4</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right content-notification mr-3 p-2 shadow">
+          <app-admin-notifications></app-admin-notifications>
+        </div>
       </li>
-      <li class="nav-item d-flex" routerLinkActive="active" id="cargo">
-        <img src="../assets/icon/user2.png" width="30" height="30" alt="">
-        <p style="margin:0" id="name-user" class="text-dark ml-2 mt-2">Usuario123</p>
+      <li class="nav-item" routerLinkActive="active" id="cargo">
+        <a routerLink="/admin/profile" class="text-decoration-none d-flex">
+          <img src="../assets/icon/user2.png" width="30" height="30" alt="">
+          <p style="margin:0" id="name-user" class="text-body ml-2 mt-2">Usuario123</p>
+        </a>
       </li>
     </div>
 
@@ -85,7 +94,7 @@
         height="100"></a>
     <p class="text-center">Luis Alberto Gómez</p>
     <span class="text-center">Condor Labs</span>
-    <p id="menu-slide2" class="mr-2">
+    <p id="menu-slide2" class="mr-3 mt-2">
       <i class="fas fa-times text-white"></i>
     </p>
   </div>
@@ -122,13 +131,12 @@
         <a class="links-admin" routerLink="/admin/bonus" style="display: block"><i
             class="fas fa-trophy mr-3 text-white"></i>Bonificaciones</a>
       </li>
+      <li>
+          <a class="links-admin border-top" style="display: block; cursor: pointer;">
+            <i class="fas fa-sign-out-alt mr-3 text-white"></i>Cerrar sesión</a>
+        </li>
     </ul>
   </div>
-</div>
-
-<!-- ADMIN NOTIFICATIONS -->
-<div class="content-notifications mr-3 shadow-sm">
-  <app-admin-notifications></app-admin-notifications>
 </div>
 
 <!-- NAV SUPERVISOR -->
@@ -154,15 +162,15 @@
         <span class="badge badge-dark" id="number-notification">4</span>
       </li>
       <li class="nav-item" routerLinkActive="active" id="perfil">
-          <button type="button" class="btn dropdown-toggle d-flex" style="padding: 0;" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <img class="mt-1 rounded-circle" src="../assets/img/test-photos/foto8.jpg" width="34" height="34" alt="">
-            <p style="margin:0" id="name-usere" class="text-white ml-2 mt-2">ClaraLopez</p>
-          </button>
-          <div class="dropdown-menu dropdown-menu-right profile-config mr-3 p-2 shadow">
-              <app-supervisor-config></app-supervisor-config>
-          </div>
-        </li>
+        <button type="button" class="btn dropdown-toggle d-flex" style="padding: 0;" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <img class="mt-1 rounded-circle" src="../assets/img/test-photos/foto8.jpg" width="34" height="34" alt="">
+          <p style="margin:0" id="name-users" class="text-white ml-2 mt-2">ClaraLopez</p>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right profile-config mr-3 p-2 shadow">
+          <app-supervisor-config></app-supervisor-config>
+        </div>
+      </li>
     </div>
   </div>
 </nav>
