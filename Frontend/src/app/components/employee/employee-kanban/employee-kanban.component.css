@@ -52,6 +52,16 @@
   max-width: 10%;
 }
 
+.card{
+	-webkit-box-shadow: 0px 2px 0px 0px rgba(64,64,64,0.82);
+	-moz-box-shadow: 0px 2px 0px 0px rgba(64,64,64,0.82);
+	box-shadow: 0px 2px 0px 0px rgba(64,64,64,0.82);
+}
+
+.card-body, .card-footer{
+	padding: 10px;
+}
+
 i{
   color: gray;
 }
