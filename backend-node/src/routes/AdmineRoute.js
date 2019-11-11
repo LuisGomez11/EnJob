@@ -11,9 +11,7 @@ router.post('/v1/api/admine/login', LoginAdmine);
 
 router.post('/v1/api/admine/create', CreateAdmine);
 
-router.post('/v1/api/employee/create', createEmployee);
-
-router.post('/v1/api/employee/create');
+router.post('/v1/api/admine/employee/create', createEmployee);
 
 router.get('/v1/api/admin/companys', company)
 
