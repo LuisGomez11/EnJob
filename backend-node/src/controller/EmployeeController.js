@@ -29,6 +29,7 @@ employeeCtrl.loginEmployee = async (req, res) =>{
 };
 
 employeeCtrl.createEmployee = async (req, res) =>{
+    console.log('entre')
     let empl = employee(req);
     await emplModel.findOne({
         $or:[{userName: empl.userName, 
@@ -38,6 +39,7 @@ employeeCtrl.createEmployee = async (req, res) =>{
     }, async (err, data) =>{
         if (err) res.status(bad_requestStatus).send({ error1: bad_requestSend  });
         if (data != null) return res.status(bad_requestStatus).send({ error2: bad_requestSend });
+    console.log(data.name)
 
         emplModel.create(empl, (err, data) =>{
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
