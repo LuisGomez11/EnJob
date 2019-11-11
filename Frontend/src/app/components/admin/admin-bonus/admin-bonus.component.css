@@ -17,3 +17,10 @@
     transform: translateX(-50%);
     border: 8px solid rgb(121, 5, 121);;
 }
+
+#btn-delete{
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+}

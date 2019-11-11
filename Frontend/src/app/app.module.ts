@@ -35,6 +35,8 @@ import { EDetailsTaskComponent } from './components/employee/employee-kanban/e-d
 import { DragAndDropModule } from "angular-draggable-droppable";
 import { EmployeePersonalProfileComponent } from './components/employee/employee-personal-profile/employee-personal-profile.component';
 import { EmployeeRequestComponent } from './components/employee/employee-request/employee-request.component';
+import { EmployeeEditProfileComponent } from './components/employee/employee-edit-profile/employee-edit-profile.component';
+import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { EmployeeRequestComponent } from './components/employee/employee-request
     EDetailsTaskComponent,
     EmployeePersonalProfileComponent,
     EmployeeRequestComponent,
+    EmployeeEditProfileComponent,
+    AdminProfileComponent,
   ],
   imports: [
     BrowserModule,

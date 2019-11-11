@@ -67,9 +67,6 @@ export class AppComponent implements OnInit {
     $('#menu-slide2').click(function () {
       $('.menu-admin').removeClass('menu-activado');
     });
-    $('#notification-admin').click(function () {
-      $('.content-notifications').toggleClass('notifi-active');
-    });
 
   }
 
@@ -109,9 +106,6 @@ export class AppComponent implements OnInit {
         $('#content-icons').addClass('navbar-nav');
       }
     });
-    $('.config-perfil').click(function () {
-      $('.content-configurations').toggleClass('config-active');
-    });
 
   }
 
@@ -150,9 +144,6 @@ export class AppComponent implements OnInit {
         $('#content-iconss').removeClass('content-icons-block');
         $('#content-iconss').addClass('navbar-nav');
       }
-    });
-    $('.sconfig-perfil').click(function () {
-      $('.scontent-configurations').toggleClass('sconfig-active');
     });
   }
 

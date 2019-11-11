@@ -20,11 +20,6 @@ i{
     color: rgb(90, 90, 90);
 }
 
-#number-notification{
-   position: absolute;
-   transform: translateX(-50%);
-}
-
 .info-personal{
     width: 100%; height: 190px;
 background-image: url('../assets/img/bg-side1.jpg');
@@ -117,39 +112,6 @@ width: 20%;
 }
 .desactivado{
     display: none;
-}
-
-.content-notifications{
-    width: 350px;
-    right: 0;
-    background-color: #fff;
-    display: none;
-}
-
-.content-configurations{
-    width: 270px;
-    right: 0;
-    background-color: #fff;
-    display: none;
-}
-
-.scontent-configurations{
-    width: 270px;
-    right: 0;
-    background-color: #fff;
-    display: none;
-}
-
-.notifi-active{
-    display: block;
-}
-
-.config-active{
-    display: block;
-}
-
-.sconfig-active{
-    display: block;
 }
 
 #options-user{

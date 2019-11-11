@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { FormBuilder, FormGroup, Validators, NgForm } from "@angular/forms";
+import { BonificationService } from "../../../services/bonification/bonification.service";
+import { Bonification } from "../../../models/bonification/bonification";
+import swal from "sweetalert2";
 
 @Component({
   selector: 'app-admin-bonus',
@@ -8,10 +12,82 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class AdminBonusComponent implements OnInit {
 
-  constructor(public app : AppComponent) { }
+  bonification: Bonification = new Bonification();
+  listBonifications: Bonification[];
+  public form: FormGroup;
+
+  constructor(public app: AppComponent,
+    private service: BonificationService,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.app.admin();
+    this.getBonifications();
+  }
+
+  getBonifications() {
+    this.service.getBonifications()
+      .subscribe(data =>
+        this.listBonifications = data);
+  }
+
+  createBonification(form: NgForm) {
+    if (form.value.idBonification) {
+      this.service.updateBonification(form.value).subscribe(data => {
+        swal.fire({
+          position: 'center',
+          type: 'success',
+          title: 'Correcto!',
+          text: 'Bonificación modificada correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.getBonifications();
+        this.resetForm(form);
+      });
+    } else {
+      this.service.createBonification(form.value).subscribe(data => {
+        swal.fire({
+          position: 'center',
+          type: 'success',
+          title: 'Correcto!',
+          text: 'Bonificación creada correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.getBonifications();
+        this.resetForm(form);
+      });
+    }
+  }
+
+  async deleteBonification(bonification: Bonification) {
+
+    let result = await swal.fire({
+      title: 'Confirmacion',
+      text: `¿Seguro que desea eliminar la bonificación de: ${bonification.incentive}?`,
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085D6',
+      cancelButtonColor: 'd33',
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'Cancelar'
+    })
+
+    if (result.value) {
+      this.service.deleteBonification(bonification.idBonification).subscribe(data => {
+        this.listBonifications = this.listBonifications.filter(s => s !== bonification);
+      });
+      swal.fire('Eliminado!', 'Se ha eliminado la bonificación.', 'success');
+    }
+
+  }
+
+  resetForm(form?: NgForm) {
+    if (form) {
+      form.reset();
+      this.service.selectedBonification = new Bonification();
+    }
   }
 
 }

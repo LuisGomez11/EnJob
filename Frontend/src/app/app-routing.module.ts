@@ -27,6 +27,8 @@ import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.
 import { EDetailsTaskComponent } from './components/employee/employee-kanban/e-details-task/e-details-task.component';
 import { EmployeePersonalProfileComponent } from './components/employee/employee-personal-profile/employee-personal-profile.component';
 import { EmployeeRequestComponent } from './components/employee/employee-request/employee-request.component';
+import { EmployeeEditProfileComponent } from './components/employee/employee-edit-profile/employee-edit-profile.component';
+import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -46,6 +48,7 @@ const routes: Routes = [
   {path:'admin/config',component: AdminConfigComponent},
   {path:'admin/notifications',component: AdminNotificationsComponent},
   {path:'admin/bonus',component: AdminBonusComponent},
+  {path:'admin/profile',component: AdminProfileComponent},
   {path:'supervisor',component: SupervisorHomeComponent},
   {path:'supervisor/home',component: SupervisorHomeComponent},
   {path:'supervisor/chat',component: SupervisorChatComponent},
@@ -59,6 +62,7 @@ const routes: Routes = [
   {path:'employee/task/details',component: EDetailsTaskComponent},
   {path:'employee/config',component: EmployeeConfigComponent},
   {path:'employee/profile',component: EmployeePersonalProfileComponent},
+  {path:'employee/profile/edit',component: EmployeeEditProfileComponent},
   {path:'employee/request',component: EmployeeRequestComponent},
   {path:'**',component: NotfoundComponent},
 ];

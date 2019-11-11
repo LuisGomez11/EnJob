@@ -5,10 +5,10 @@
                 <h3>Pendientes</h3>
                 <div class="tasks p-1">
                     <div *ngFor="let t of listTasks">
-                        <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='Pendiente'" style="z-index: 100;">
+                        <div class="bg-white card mb-3" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='Pendiente'" style="z-index: 100;">
                             <div class="card-body">
-                                <div class="float-left text-truncate title-task">
-                                    {{ t.title }}
+                                <div class="float-left title-task">
+                                    Organizar los datos en la hoja de excel
                                 </div>
                                 <div class="float-right details-task">
                                     <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right" title="Ver detalles"><i
@@ -17,7 +17,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="float-left text-muted" title="Fecha limite">
-                                    {{ t.term }}
+                                    12/12/2019
                                 </div>
                             </div>
                         </div>
