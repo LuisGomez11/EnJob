@@ -9,3 +9,7 @@
 .margin-not{
     margin: 0;
 }
+
+.list-notifications .notification:last-child{
+    border: none;
+}

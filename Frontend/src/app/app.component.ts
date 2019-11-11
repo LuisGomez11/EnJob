@@ -67,7 +67,12 @@ export class AppComponent implements OnInit {
     $('#menu-slide2').click(function () {
       $('.menu-admin').removeClass('menu-activado');
     });
-
+    $("#myInput").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
   }
 
   employee = function () {
