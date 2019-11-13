@@ -2,16 +2,16 @@
 const { Schema, model } = require('mongoose');
 
 const admineSchema = new Schema({
-  name: { type: String, },
-  lastName: { type: String, },
-  userName: { type: String, unique: true },
-  password: { type: String, },
-  numDocument: { type: String, unique: true },
-  nameCompany: { type: String, },
+  name: { type: String, required: true },
+  lastName: { type: String, required: true },
+  userName: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  numDocument: { type: String, required: true, unique: true },
+  nameCompany: { type: String, required: true },
   email: { type: String, unique: true },
-  phone: { type: String, },
-  role: { type: String, },
-  state: { type: String, },
+  phone: { type: String, required: true },
+  role: { type: String, required: true },
+  state: { type: String, required: true },
   //  photo: { type: String },
   lastLogin: { type: Date, default: Date.now }
 });
