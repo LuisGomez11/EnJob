@@ -62,6 +62,10 @@ admineCtrl.LoginAdmine = async (req, res) => {
 admineCtrl.CreateAdmine = async (req, res) => {
     let Admine = admine(req);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 3715302... login
 =======
 
 >>>>>>> parent of 3715302... login

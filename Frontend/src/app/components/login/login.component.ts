@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
 =======
 
   constructor() { }
+<<<<<<< HEAD
+>>>>>>> parent of 3715302... login
+=======
 >>>>>>> parent of 3715302... login
 
   ngOnInit() {
@@ -26,6 +29,7 @@ export class LoginComponent implements OnInit {
     $('#nav-empo').hide();
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   onLogin(form): void {
 
       this.auth.login(form.value).subscribe(res => {
@@ -36,6 +40,9 @@ export class LoginComponent implements OnInit {
       });
 
   }
+=======
+
+>>>>>>> parent of 3715302... login
 =======
 
 >>>>>>> parent of 3715302... login

@@ -17,6 +17,10 @@ const employeeSchema = new Schema({
     salary: { type: Number },
     points: { type: Number },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ // jobs: {type:[]},
+>>>>>>> parent of 3715302... login
 =======
  // jobs: {type:[]},
 >>>>>>> parent of 3715302... login
