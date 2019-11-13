@@ -21,8 +21,13 @@ admineCtrl.LoginAdmine = async (req, res) => {
         if (comp == false) return res.status(not_foundStatus).send({ error2: not_foundSend });
 
         const token = createToken(data);
+        const dataUser = {
+            userName: Admine.userName,
+            role: Admine.role,
+            accessToken: token
+          }
 
-        return res.status(200).send({ user: Admine, auth: true , token });
+        return res.status(200).send({ dataUser});
     });
 };
 
