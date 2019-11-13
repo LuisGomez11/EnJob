@@ -37,6 +37,7 @@ import { EmployeePersonalProfileComponent } from './components/employee/employee
 import { EmployeeRequestComponent } from './components/employee/employee-request/employee-request.component';
 import { EmployeeEditProfileComponent } from './components/employee/employee-edit-profile/employee-edit-profile.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
+import { EmployeeChangepassComponent } from './components/employee/employee-changepass/employee-changepass.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { AdminProfileComponent } from './components/admin/admin-profile/admin-pr
     EmployeeRequestComponent,
     EmployeeEditProfileComponent,
     AdminProfileComponent,
+    EmployeeChangepassComponent,
   ],
   imports: [
     BrowserModule,
