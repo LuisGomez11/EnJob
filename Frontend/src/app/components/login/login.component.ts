@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthAdmineService } from '../../services/admine/auth-admine.service';
-import { NgForm } from "@angular/forms";
 
 declare var $ : any;
 
@@ -11,9 +8,14 @@ declare var $ : any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+<<<<<<< HEAD
   role = '';
   
   constructor(private auth: AuthAdmineService, private router: Router) { }
+=======
+
+  constructor() { }
+>>>>>>> parent of 3715302... login
 
   ngOnInit() {
     $('#nav-principal').hide();
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit {
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
   }
+<<<<<<< HEAD
   onLogin(form): void {
 
       this.auth.login(form.value).subscribe(res => {
@@ -33,4 +36,7 @@ export class LoginComponent implements OnInit {
       });
 
   }
+=======
+
+>>>>>>> parent of 3715302... login
 }

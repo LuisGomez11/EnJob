@@ -54,18 +54,17 @@ admineCtrl.LoginAdmine = async (req, res) => {
         if (comp == false) return res.status(not_foundStatus).send({ error2: not_foundSend });
 
         const token = createToken(data);
-        const dataUser = {
-            userName: Admine.userName,
-            role: Admine.role,
-            accessToken: token
-          }
 
-        return res.status(200).send({ dataUser});
+        return res.status(200).send({ user: Admine, auth: true , token });
     });
 };
 
 admineCtrl.CreateAdmine = async (req, res) => {
     let Admine = admine(req);
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 3715302... login
     AdmineModel.findOne({
         $or: [{ userName: Admine.userName, email: Admine.email, numDocument: Admine.numDocument }]
     }, async (err, data) => {
@@ -76,7 +75,7 @@ admineCtrl.CreateAdmine = async (req, res) => {
 
             //const token = createToken(data);
 
-            return res.status(createdStatus).send({Admine ,created: createdSend});
+            return res.status(createdStatus).send({ created: createdSend, auth: true, token });
         });
     });
 };
