@@ -20,11 +20,28 @@
     box-shadow: none;
 }
 
+@media screen and (max-width: 735px) {
+    .side-panel .search-content .form-group input{
+      display: none;
+    }
+  }
+
 .side-panel .contacts{
     height: calc(100% - 128px);
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
+@media screen and (max-width: 735px) {
+    .side-panel .contacts {
+      height: calc(100% - 149px);
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+    .side-panel .contacts::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
 .side-panel .contacts::-webkit-scrollbar{
     width: 8px;
@@ -47,6 +64,12 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 735px) {
+    .side-panel .contacts ul li.contact {
+      padding: 10px 0 46px 8px;
+    }
+  }
+
 .side-panel .contacts ul li.contact:hover{
     background: #32465A;
 }
@@ -57,15 +80,33 @@
     margin: 0 auto;
 }
 
+@media screen and (max-width: 735px) {
+    .side-panel .contacts ul li.contact .wrap {
+      width: 100%;
+    }
+  }
+
 .side-panel .contacts ul li.contact .wrap img{
     border-radius: 50%;
     float: left;
     margin-right: 15px;
 }
 
+@media screen and (max-width: 735px) {
+    .side-panel .contacts ul li.contact .wrap img {
+      margin-right: 0px;
+    }
+  }
+
 .side-panel .contacts ul li.contact .wrap .meta{
     padding: 5px 0 0 0;
 }
+
+@media screen and (max-width: 735px) {
+    .side-panel .contacts ul li.contact .wrap .meta {
+      display: none;
+    }
+  }
 
 .side-panel .contacts ul li.contact .wrap .meta .name{
     font-weight: 500;
@@ -214,3 +255,9 @@
 .conversation .message-input .wrap button:focus{
     outline: none;
 }
+
+@media (max-width: 600px) {
+    .meta {
+      display: none;
+    }
+  }
