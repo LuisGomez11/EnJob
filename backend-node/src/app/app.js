@@ -4,17 +4,11 @@ const app = require('express')();
 const morgan = require('morgan');
 const cors = require('cors');
 
-const routes = {
-    admine: app.use(require('../routes/AdmineRoute')),
-    admin: app.use(require('../routes/AdminRoute'))
-}
-
 app.use(morgan('dev'));
-app.use(cors({origin:'http://localhost:4200'}));
+app.use(cors())
 app.use(json());
 app.use(urlencoded({extended:false}));
 
+app.use(require('../routes/AdmineRoute'));
 
-routes
- 
 module.exports = app;

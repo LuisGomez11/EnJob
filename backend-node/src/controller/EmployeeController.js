@@ -4,8 +4,6 @@ const { bad_requestSend, bad_requestStatus, createdSend, createdStatus, non_auth
 
 const employeeCtrl = {};
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 employeeCtrl.loginEmployee = async (req, res) =>{
     let empl = employee(req);
     await emplModel.findOne({
@@ -50,11 +48,6 @@ employeeCtrl.createEmployee = async (req, res) =>{
         });
     });
 }
-=======
-employeeCtrl.createEmployee(req, res)
->>>>>>> parent of 3715302... login
-=======
-employeeCtrl.createEmployee(req, res)
->>>>>>> parent of 3715302... login
+
 
 module.exports = employeeCtrl;
