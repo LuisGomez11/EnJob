@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthAdmineService } from 'src/app/services/admine/auth-admine.service';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-declare var $ : any;
+declare var $: any;
 
 @Component({
   selector: 'app-login',
@@ -10,14 +13,16 @@ declare var $ : any;
 export class LoginComponent implements OnInit {
 
   role = '';
-  
-  constructor(private auth: AuthAdmineService, private router: Router) { }
+  FormLogin: FormGroup = new FormGroup({
+    userName: new FormControl('', {
+      validators: Validators.required
+    }),
+    password: new FormControl('', {
+      validators: Validators.required
+    })
+  });
 
-
-  constructor() { }
-
-
-
+  constructor(private auth: AuthAdmineService, private router: Router) { } y
 
 
   ngOnInit() {
@@ -30,14 +35,23 @@ export class LoginComponent implements OnInit {
   }
 
 
-  onLogin(form): void {
+  async onLogin() {
 
-      this.auth.login(form.value).subscribe(res => {
-        
-          this.router.navigateByUrl('/admin');
-        
-        
-      });
+    this.auth.login(this.FormLogin.value).toPromise().then(res => {
+      console.log(res)
+      this.router.navigateByUrl('/admin');  
+
+            if (res) {
+                // guardar token
+                console.log(res)
+                // this.saveToken(res.dataUser.accessToken);
+                // this.AdmineUser =  res.dataUser.userName;
+                // this.role = res.dataUser.role;
+            }     
+
+    }).catch( (err)=>{
+
+    }) ;
 
   }
 

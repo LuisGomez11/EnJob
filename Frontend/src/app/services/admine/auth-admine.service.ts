@@ -20,18 +20,9 @@ export class AuthAdmineService {
 
     constructor(private httpClient: HttpClient) { }
 
-    login(user: AdmineModel): Observable<JwtResponseI> {
-        return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/admine/login`,
-            user).pipe(tap(
-                (res: JwtResponseI) => {
-                    if (res) {
-                        // guardar token
-                        this.saveToken(res.dataUser.accessToken);
-                        this.AdmineUser =  res.dataUser.userName;
-                        this.role = res.dataUser.role;
-                    }
-                })
-            );
+    login(user: AdmineModel): Observable<any> {
+        return this.httpClient.post(`${this.AUTH_SERVER}/admine/login`,
+            user);
             
     }
     private saveToken(accessToken: string): void {

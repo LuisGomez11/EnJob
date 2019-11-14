@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
       }
 
     });
-    $('.links-admin').click(function () {
+    $('.links-admin').click( () => {
       $('.menu-admin').removeClass('menu-activado');
     });
     $('.menu-slides').click(function () {

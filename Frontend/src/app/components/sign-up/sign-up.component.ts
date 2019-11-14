@@ -37,9 +37,8 @@ export class SignUpComponent implements OnInit {
     //   })
     // }  else
     console.log('estoy')
-    this.admineService.signup(form.value)
-    
-      .subscribe(res => {
+     this.admineService.signup(form.value)
+    .subscribe(res => {
         console.log(res)
       });
   }
