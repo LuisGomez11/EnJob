@@ -1,6 +1,7 @@
 const emplModel = require('../models/EmployeeModel');
 const { employee } = require('../util/funs/emplfun');
 const { bad_requestSend, bad_requestStatus, createdSend, createdStatus, non_authoritative_informationSend, non_authoritative_informationStatus, not_foundSend, not_foundStatus } = require('../util/HttpStatus');
+const { compare } = require('../util/password')
 
 const employeeCtrl = {};
 
@@ -14,7 +15,7 @@ employeeCtrl.loginEmployee = async (req, res) => {
         if (!data) return res.status(not_foundStatus).send({ error1: not_foundSend });
 
         let comp = compare(data.password);
-
+        
         if (comp == false) return res.status(not_foundStatus).send({ error2: not_foundSend });
 
         const token = createToken(data);
@@ -30,7 +31,6 @@ employeeCtrl.loginEmployee = async (req, res) => {
 
 employeeCtrl.createEmployee = async (req, res) => {
     let empl = employee(req);
-    console.log(empl.name)
     await emplModel.findOne({
         $or: [{
             userName: empl.userName,
@@ -51,7 +51,7 @@ employeeCtrl.createEmployee = async (req, res) => {
 employeeCtrl.findEmployees = async (req, res) => {
     const employees = await emplModel.find();
 
-    return res.status(200).send({ users: employees});
+    return res.status(200).send({ users: employees });
 }
 
 

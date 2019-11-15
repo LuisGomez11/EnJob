@@ -17,7 +17,7 @@ admineCtrl.LoginAdmine = async (req, res) => {
         if (err) return res.status(bad_requestStatus).send({ error1: bad_requestSend });
         if (!data) return res.status(not_foundStatus).send({ auth });
 
-        let comp = compare(data.password);
+        let comp = compare(req.body.password, data.password);
         
         if (comp == false) return res.status(not_foundStatus).send({ auth });
 

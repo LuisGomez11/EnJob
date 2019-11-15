@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "celebrate": "^10.1.0",
     "cors": "^2.8.5",

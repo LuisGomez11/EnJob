@@ -2,12 +2,18 @@ const bcrypt = require('bcryptjs');
 
 const { plantedPassword } = require('../../config/data');
 
-let salt = bcrypt.genSaltSync(10);
-let hash = bcrypt.hashSync(plantedPassword, salt);
+
+Passcrypt = (password) => {
+    if (password) {
+        return bcrypt.hashSync(password);
+    } else {
+        return null;
+    }
+}
 
 const adminefun = {};
 
- adminefun.admine = (req) => {
+adminefun.admine = (req) => {
     let {
         name,
         lastName,
@@ -23,9 +29,9 @@ const adminefun = {};
         lastName,
         numDocument,
         nameCompany,
-        state:'Inactivo',
+        state: 'Inactivo',
         userName,
-        password: hash,
+        password: Passcrypt(password),
         email,
         role: 'Admin RH',
         phone
