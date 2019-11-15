@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AdmineModel } from '../../models/admine/admine-model';
+import { AdmineModel } from '../models/admine-model';
 
 @Injectable({
   providedIn: 'root',

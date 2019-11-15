@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
-import { TaskService } from 'src/app/services/task/task.service';
+import { TaskService } from 'src/app/services/task.service';
 
 declare var $ : any;
 

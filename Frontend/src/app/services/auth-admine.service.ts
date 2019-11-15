@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { AdmineModel } from '../../models/admine/admine-model';
+import { AdmineModel } from '../models/admine-model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,11 +30,23 @@ export class AuthAdmineService {
     this.user = admin;
   }
 
+  public logOut(){
+    localStorage.clear();
+  }
+
   public getUser(): any {
     if (!this.user) {
       this.user = JSON.parse(localStorage.getItem("USER"));
       this.user =  this.user.userName;
     }
     return this.user;
+  }
+
+  isAuthenticated(): boolean {
+    const authToken = localStorage.getItem('ACCESS_TOKEN');
+    if (authToken != null){
+      return true;
+    }
+    return false;
   }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthAdmineService } from 'src/app/services/admine/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth-admine.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import  swal  from "sweetalert2";
+import swal from "sweetalert2";
 
 declare var $: any;
 
@@ -39,29 +39,27 @@ export class LoginComponent implements OnInit {
   async onLogin() {
 
     this.auth.login(this.FormLogin.value).toPromise().then(res => {
-      this.router.navigateByUrl('/admin');  
+      if (res) {
+        console.log(res);
+        this.router.navigateByUrl('/admin');
+        swal.fire({
+          position: 'center',
+          type: 'success',
+          title: 'Bienvenido!',
+          text: `${res.dataUser.userName}`,
+          showConfirmButton: false,
+          timer: 3000
+        });
 
-            if (res) {
-                console.log(res);
+        // Guardar token
+        this.auth.saveToken(res.dataUser.accessToken);
+        // Guardar Admin
+        this.auth.saveAdmin(res.dataUser);
+      }
 
-                swal.fire({
-                  position: 'center',
-                  type: 'success',
-                  title: 'Bienvenido!',
-                  text: `${res.dataUser.userName}`,
-                  showConfirmButton: false,
-                  timer: 3000
-                });
+    }).catch((err) => {
 
-                // Guardar token
-                this.auth.saveToken(res.dataUser.accessToken);
-                // Guardar Admin
-                this.auth.saveAdmin(res.dataUser);
-            }     
-
-    }).catch( (err)=>{
-
-    }) ;
+    });
 
   }
 

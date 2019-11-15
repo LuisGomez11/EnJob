@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { FormBuilder, FormGroup, Validators, NgForm } from "@angular/forms";
-import { BonificationService } from "../../../services/bonification/bonification.service";
-import { Bonification } from "../../../models/bonification/bonification";
+import { BonificationService } from "../../../services/bonification.service";
+import { Bonification } from "../../../models/bonification";
 import swal from "sweetalert2";
 
 @Component({

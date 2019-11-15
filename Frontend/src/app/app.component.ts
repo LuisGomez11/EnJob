@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthAdmineService } from './services/admine/auth-admine.service';
+import { AuthAdmineService } from './services/auth-admine.service';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -13,7 +14,12 @@ export class AppComponent implements OnInit {
 
   user = '';
 
-  constructor(private auth: AuthAdmineService) { }
+  constructor(private auth: AuthAdmineService, private router: Router) { }
+
+  logOut() {
+    this.auth.logOut();
+    this.router.navigateByUrl('/login');
+  }
 
   sadmin = function () {
     document.getElementById('nav-principal').style.display = 'none';
@@ -21,7 +27,6 @@ export class AppComponent implements OnInit {
     document.getElementById('menu-admin').style.display = 'none';
     document.getElementById('nav-empo').style.display = 'none';
     document.getElementById('nav-supervisor').style.display = 'none';
-    document.getElementById('nav-empo').style.display = 'none';
     document.getElementById('nav-sadmin').style.display = 'block';
   }
 
@@ -31,7 +36,6 @@ export class AppComponent implements OnInit {
     document.getElementById('menu-admin').style.display = 'block';
     document.getElementById('nav-empo').style.display = 'none';
     document.getElementById('nav-supervisor').style.display = 'none';
-    document.getElementById('nav-empo').style.display = 'none';
     document.getElementById('nav-sadmin').style.display = 'none';
     $('.messages').animate({ scrollTop: $(document).height() }, "fast");
     $('.links-admin').click(() => {
@@ -52,80 +56,23 @@ export class AppComponent implements OnInit {
   }
 
   employee = function () {
-    $('#nav-principal').hide();
-    $('#nav-admin').hide();
-    $('.menu-admin').hide();
-    $('#nav-empo').show();
-    $('#nav-sadmin').hide();
-    $('#nav-supervisor').hide();
+    document.getElementById('nav-principal').style.display = 'none';
+    document.getElementById('nav-admin').style.display = 'none';
+    document.getElementById('menu-admin').style.display = 'none';
+    document.getElementById('nav-empo').style.display = 'block';
+    document.getElementById('nav-supervisor').style.display = 'none';
+    document.getElementById('nav-sadmin').style.display = 'none';
     $('.messages1').animate({ scrollTop: $(document).height() }, "fast");
-    if ($(window).width() <= 991) {
-      $('#name-usere').hide();
-      $('#nav-employe-brand').hide();
-      $('#icon-home').show();
-      $('#content-icons').addClass('content-icons-block');
-      $('#content-icons').removeClass('navbar-nav');
-    } else {
-      $('#name-usere').show();
-      $('#nav-employe-brand').show();
-      $('#icon-home').hide();
-      $('#content-icons').removeClass('content-icons-block');
-      $('#content-icons').addClass('navbar-nav');
-    }
-    $(window).resize(function () {
-      if ($(window).width() <= 991) {
-        $('#name-usere').hide();
-        $('#nav-employe-brand').hide();
-        $('#icon-home').show();
-        $('#content-icons').addClass('content-icons-block');
-        $('#content-icons').removeClass('navbar-nav');
-      } else {
-        $('#name-usere').show();
-        $('#nav-employe-brand').show();
-        $('#icon-home').hide();
-        $('#content-icons').removeClass('content-icons-block');
-        $('#content-icons').addClass('navbar-nav');
-      }
-    });
-
   }
 
   supervisor = function () {
-    $('#nav-principal').hide();
-    $('#nav-admin').hide();
-    $('.menu-admin').hide();
-    $('#nav-empo').hide();
-    $('#nav-sadmin').hide();
-    $('#nav-supervisor').show();
+    document.getElementById('nav-principal').style.display = 'none';
+    document.getElementById('nav-admin').style.display = 'none';
+    document.getElementById('menu-admin').style.display = 'none';
+    document.getElementById('nav-empo').style.display = 'none';
+    document.getElementById('nav-supervisor').style.display = 'block';
+    document.getElementById('nav-sadmin').style.display = 'none';
     $('.messages1').animate({ scrollTop: $(document).height() }, "fast");
-    if ($(window).width() <= 991) {
-      $('#name-users').hide();
-      $('#nav-supervisor-brand').hide();
-      $('#icon-homes').show();
-      $('#content-iconss').addClass('content-icons-block');
-      $('#content-iconss').removeClass('navbar-nav');
-    } else {
-      $('#name-users').show();
-      $('#nav-supervisor-brand').show();
-      $('#icon-homes').hide();
-      $('#content-iconss').removeClass('content-icons-block');
-      $('#content-iconss').addClass('navbar-nav');
-    }
-    $(window).resize(function () {
-      if ($(window).width() <= 991) {
-        $('#name-users').hide();
-        $('#nav-supervisor-brand').hide();
-        $('#icon-homes').show();
-        $('#content-iconss').addClass('content-icons-block');
-        $('#content-iconss').removeClass('navbar-nav');
-      } else {
-        $('#name-users').show();
-        $('#nav-supervisor-brand').show();
-        $('#icon-homes').hide();
-        $('#content-iconss').removeClass('content-icons-block');
-        $('#content-iconss').addClass('navbar-nav');
-      }
-    });
   }
 
   home = function () {
@@ -211,13 +158,10 @@ export class AppComponent implements OnInit {
     });
 
   }
-  
 
-  
+
+
   ngOnInit() {
-
-    
-
     this.user = this.auth.getUser();
   }
 

@@ -4,40 +4,53 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule}from '@angular/forms';
 
-//COMPONENTES
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+//COMPONENTS
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
-import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
-import { AdminNotificationsComponent } from './components/admin/admin-notifications/admin-notifications.component';
-import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
-import { DepartmentsComponent } from './components/admin/departments/departments.component';
+import { LoginComponent } from './components/login/login.component';
+
+//SADMIN-COMPONENTS
 import { SadminHomeComponent } from './components/sadmin/sadmin-home/sadmin-home.component';
+import { SubscribedComponent } from './components/sadmin/subscribed/subscribed.component';
+
+//ADMIN-COMPONENTS
+import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
+import { AdminNotificationsComponent } from './components/admin/admin-notifications/admin-notifications.component';
+import { DepartmentsComponent } from './components/admin/departments/departments.component';
 import { EmployeesComponent } from './components/admin/employees/employees.component';
 import { AdminChatComponent } from './components/admin/admin-chat/admin-chat.component';
-import { EmployeeChatComponent } from './components/employee/employee-chat/employee-chat.component';
-import { SupervisorHomeComponent } from './components/supervisor/supervisor-home/supervisor-home.component';
-import { SubscribedComponent } from './components/sadmin/subscribed/subscribed.component';
 import { AdminKanbanComponent } from './components/admin/admin-kanban/admin-kanban.component';
 import { AdminConfigComponent } from './components/admin/admin-config/admin-config.component';
-import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
-import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
-import { SupervisorChatComponent } from './components/supervisor/supervisor-chat/supervisor-chat.component';
-import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
-import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
+import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
+
+//EMPLOYEE-COMPONENTS
+import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
 import { EDetailsTaskComponent } from './components/employee/employee-kanban/e-details-task/e-details-task.component';
-import { DragAndDropModule } from "angular-draggable-droppable";
 import { EmployeePersonalProfileComponent } from './components/employee/employee-personal-profile/employee-personal-profile.component';
 import { EmployeeRequestComponent } from './components/employee/employee-request/employee-request.component';
 import { EmployeeEditProfileComponent } from './components/employee/employee-edit-profile/employee-edit-profile.component';
-import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
+import { EmployeeChatComponent } from './components/employee/employee-chat/employee-chat.component';
+import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
+import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
 import { EmployeeChangepassComponent } from './components/employee/employee-changepass/employee-changepass.component';
+
+//SUPERVISOR-COMPONENTS
+import { SupervisorHomeComponent } from './components/supervisor/supervisor-home/supervisor-home.component';
+import { SupervisorChatComponent } from './components/supervisor/supervisor-chat/supervisor-chat.component';
+import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
+import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
+import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
+
+//EXTERNAL
+import { DragAndDropModule } from "angular-draggable-droppable";
+import { AuthAdmineService } from './services/auth-admine.service';
+import { AuthGuard } from './guards/authguard.service';
 
 @NgModule({
   declarations: [
@@ -79,9 +92,9 @@ import { EmployeeChangepassComponent } from './components/employee/employee-chan
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    DragAndDropModule
+    DragAndDropModule,
   ],
-  providers: [],
+  providers: [AuthAdmineService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

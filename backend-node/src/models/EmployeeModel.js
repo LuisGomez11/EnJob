@@ -14,8 +14,8 @@ const employeeSchema = new Schema({
     availability: { type: String },
     position: { type: String },
     departament: { type: String },
-    salary: { type: Number },
-    points: { type: Number },
+    salary: { type: String },
+    points: { type: String },
 
     lastLogin: { type: Date, default: Date.now }
 });
