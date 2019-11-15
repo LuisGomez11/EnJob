@@ -11,7 +11,7 @@ declare var $: any;
 export class AppComponent implements OnInit {
   title = 'ENJOB';
 
-  user = 'LuisGomez11';
+  user = '';
 
 
   constructor(private auth: AuthAdmineService) { }
@@ -244,7 +244,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.user = this.auth.getUser();
+    this.user = this.auth.getUser();
   }
 
 }

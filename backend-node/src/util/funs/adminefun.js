@@ -23,11 +23,11 @@ const adminefun = {};
         lastName,
         numDocument,
         nameCompany,
-        state:'inactive',
+        state:'Inactivo',
         userName,
         password: hash,
         email,
-        role: 'admine',
+        role: 'Admin RH',
         phone
     }
 }

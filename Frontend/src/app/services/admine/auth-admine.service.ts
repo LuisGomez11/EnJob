@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 import { AdmineModel } from '../../models/admine/admine-model';
 
@@ -13,7 +12,7 @@ export class AuthAdmineService {
   readonly AUTH_SERVER = 'http://localhost:3000/v1/api';
   authSubject = new BehaviorSubject(false);
   private token: string;
-  private user: AdmineModel;
+  private user: any;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -31,10 +30,11 @@ export class AuthAdmineService {
     this.user = admin;
   }
 
-  // public getUser(): string {
-  //   if (!this.user) {
-  //     this.user = localStorage.getItem("USER");
-  //   }
-  //   return this.user;
-  // }
+  public getUser(): any {
+    if (!this.user) {
+      this.user = JSON.parse(localStorage.getItem("USER"));
+      this.user =  this.user.userName;
+    }
+    return this.user;
+  }
 }

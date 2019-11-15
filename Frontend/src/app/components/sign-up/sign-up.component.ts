@@ -28,14 +28,6 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp(form: NgForm) {
-    //  if(form.value._id){
-    //   this.admineService.putEmpleado(form.value)
-    //   .subscribe(res =>{
-    //     this.restForm(form);
-    //     this.getEmpleado();
-    //     M.toast({html:'updated sucessfuly'})
-    //   })
-    // }  else
     console.log('estoy')
      this.admineService.signup(form.value)
     .subscribe(res => {
