@@ -5,7 +5,7 @@ module.exports = celebrate({
     name: Joi.string().required(),
     lastName: Joi.string().required(),
     userName:Joi.string().required(),
-    password: Joi.string().required(),
+    password: Joi.string(),
     numDocument: Joi.string().required(),
     nameCompany: Joi.string().required(),
     email: Joi.string().required(),

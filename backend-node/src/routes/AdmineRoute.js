@@ -12,9 +12,9 @@ module.exports = (app) =>{
 
   app.post('/v1/api/admine/create',admineVo, CreateAdmine);
   
-  app.post('/v1/api/admine/employee/create', emplVo, createEmployee);
+  app.post('/v1/api/admine/employee/create', createEmployee);
   
-  app.get('/v1/api/admine/Employees', findEmployees);
+  app.get('/v1/api/admine/employees', findEmployees);
   
   app.get('*', (req, res) => {
       res.status(500).send({ err: 'servido no encontrado' });
