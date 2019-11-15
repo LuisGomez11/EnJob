@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthAdmineService } from './services/admine/auth-admine.service';
+import { AuthAdmineService } from './services/auth-admine.service';
 import { Router } from '@angular/router';
 
 declare var $: any;

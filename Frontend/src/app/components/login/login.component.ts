@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthAdmineService } from 'src/app/services/admine/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth-admine.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import swal from "sweetalert2";

@@ -49,7 +49,7 @@ import { SupervisorTasksComponent } from './components/supervisor/supervisor-tas
 
 //EXTERNAL
 import { DragAndDropModule } from "angular-draggable-droppable";
-import { AuthAdmineService } from './services/admine/auth-admine.service';
+import { AuthAdmineService } from './services/auth-admine.service';
 import { AuthGuard } from './guards/authguard.service';
 
 @NgModule({

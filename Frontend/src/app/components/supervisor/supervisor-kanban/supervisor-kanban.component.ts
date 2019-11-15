@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { NgForm  } from "@angular/forms";
-import { TaskService } from "../../../services/task/task.service";
-import { Task } from "../../../models/task/task";
+import { TaskService } from "../../../services/task.service";
+import { Task } from "../../../models/task";
 import  swal  from "sweetalert2";
 
 declare var $ : any;

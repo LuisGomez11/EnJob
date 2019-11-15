@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { FormBuilder, FormGroup, Validators, NgForm  } from "@angular/forms";
-import { DepartmentService } from "../../../services/department/department.service";
-import { Department } from "../../../models/department/department";
+import { DepartmentService } from "../../../services/department.service";
+import { Department } from "../../../models/department";
 import  swal  from "sweetalert2";
 
 declare var $ : any;

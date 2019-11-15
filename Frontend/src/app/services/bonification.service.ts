@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Bonification } from 'src/app/models/bonification/bonification';
+import { Bonification } from 'src/app/models/bonification';
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 

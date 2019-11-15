@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { TaskService } from 'src/app/services/task/task.service';
-import { Task } from 'src/app/models/task/task';
+import { TaskService } from 'src/app/services/task.service';
+import { Task } from 'src/app/models/task';
 import { NgForm } from '@angular/forms';
 import swal from "sweetalert2";
 import { Router } from '@angular/router';

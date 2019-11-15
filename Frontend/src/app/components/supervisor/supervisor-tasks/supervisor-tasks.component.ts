@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { NgForm  } from "@angular/forms";
-import { TaskService } from "../../../services/task/task.service";
-import { Task } from "../../../models/task/task";
-import { Department } from "../../../models/department/department";
+import { TaskService } from "../../../services/task.service";
+import { Task } from "../../../models/task";
+import { Department } from "../../../models/department";
 import  swal  from "sweetalert2";
-import { DepartmentService } from 'src/app/services/department/department.service';
+import { DepartmentService } from 'src/app/services/department.service';
 
 declare var $ : any;
 var f = new Date();

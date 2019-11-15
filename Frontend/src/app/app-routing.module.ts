@@ -43,7 +43,7 @@ import { SupervisorTasksComponent } from './components/supervisor/supervisor-tas
 
 //SERVICES
 import { AuthGuard } from './guards/authguard.service';
-import { AuthAdmineService } from './services/admine/auth-admine.service';
+import { AuthAdmineService } from './services/auth-admine.service';
 
 
 const routes: Routes = [

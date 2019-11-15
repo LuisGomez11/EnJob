@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { EmployeeService } from 'src/app/services/employee/employee.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmineModel } from '../../models/admine/admine-model';
-import { AdmineServiceService } from '../../services/admine/admine-service.service';
+import { AdmineModel } from '../../models/admine-model';
+import { AdmineServiceService } from '../../services/admine-service.service';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 
 declare var $: any;
