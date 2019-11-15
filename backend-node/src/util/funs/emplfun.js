@@ -35,7 +35,7 @@ employeefun.employee = (req) => {
         position,
         departament,
         salary,
-        points:0
+        points: '0'
     }
 }
 

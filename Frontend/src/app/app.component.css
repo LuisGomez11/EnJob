@@ -207,12 +207,14 @@ a.link-bg:hover{
     transform: translateX(0);
 }
 
+#icon-home, #icon-homes{
+    display: none;
+}
+
 
 @media screen and (max-width: 991px){
 
-    /* ADMIN */
-
-    .menu-admin{
+    .menu-admin,#content-icons,#content-iconss{
         width: 100%;
     }
 
@@ -220,8 +222,12 @@ a.link-bg:hover{
         display: none;
     }
 
-    #link-notification, #link-messages-a{
+    #link-notification, #link-messages-a, #icon-home, #icon-homes{
         display: block;
+    }
+
+    #name-usere,#name-users, #nav-employe-brand,#nav-supervisor-brand{
+        display: none;
     }
 
 }

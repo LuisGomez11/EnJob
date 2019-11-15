@@ -41,6 +41,10 @@ import { SupervisorKanbanComponent } from './components/supervisor/supervisor-ka
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
 
+//SERVICES
+import { AuthGuard } from './guards/authguard.service';
+import { AuthAdmineService } from './services/admine/auth-admine.service';
+
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -50,24 +54,24 @@ const routes: Routes = [
   {path:'sadmin',component: SadminHomeComponent},
   {path:'sadmin/home',component: SadminHomeComponent},
   {path:'sadmin/subscribed',component: SubscribedComponent},
-  {path:'admin',component: AdminHomeComponent},
-  {path:'admin/home',component: AdminHomeComponent},
-  {path:'admin/departments',component: DepartmentsComponent},
-  {path:'admin/employees',component: EmployeesComponent},
-  {path:'admin/chat',component: AdminChatComponent},
-  {path:'admin/profile/employee',component: EmployeeProfileComponent},
-  {path:'admin/kanban',component: AdminKanbanComponent},
-  {path:'admin/config',component: AdminConfigComponent},
-  {path:'admin/notifications',component: AdminNotificationsComponent},
-  {path:'admin/bonus',component: AdminBonusComponent},
-  {path:'admin/profile',component: AdminProfileComponent},
-  {path:'supervisor',component: SupervisorHomeComponent},
+  {path:'admin',redirectTo: 'admin/home', pathMatch: 'full'},
+  {path:'admin/home',component: AdminHomeComponent, canActivate: [AuthGuard]},
+  {path:'admin/departments',component: DepartmentsComponent, canActivate: [AuthGuard]},
+  {path:'admin/employees',component: EmployeesComponent, canActivate: [AuthGuard]},
+  {path:'admin/chat',component: AdminChatComponent, canActivate: [AuthGuard]},
+  {path:'admin/profile/employee',component: EmployeeProfileComponent, canActivate: [AuthGuard]},
+  {path:'admin/kanban',component: AdminKanbanComponent, canActivate: [AuthGuard]},
+  {path:'admin/config',component: AdminConfigComponent, canActivate: [AuthGuard]},
+  {path:'admin/notifications',component: AdminNotificationsComponent, canActivate: [AuthGuard]},
+  {path:'admin/bonus',component: AdminBonusComponent, canActivate: [AuthGuard]},
+  {path:'admin/profile',component: AdminProfileComponent, canActivate: [AuthGuard]},
+  {path:'supervisor',redirectTo: 'supervisor/home', pathMatch: 'full'},
   {path:'supervisor/home',component: SupervisorHomeComponent},
   {path:'supervisor/chat',component: SupervisorChatComponent},
   {path:'supervisor/kanban',component: SupervisorKanbanComponent},
   {path:'supervisor/tasks',component: SupervisorTasksComponent},
   {path:'supervisor/config',component: SupervisorConfigComponent},
-  {path:'employee',component: EmployeeHomeComponent},
+  {path:'employee',redirectTo: 'employee/home', pathMatch: 'full'},
   {path:'employee/home',component: EmployeeHomeComponent},
   {path:'employee/chat',component: EmployeeChatComponent},
   {path:'employee/kanban',component: EmployeeKanbanComponent},
@@ -82,6 +86,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  providers: [AuthGuard, AuthAdmineService],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

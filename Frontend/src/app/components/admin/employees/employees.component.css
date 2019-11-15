@@ -16,7 +16,7 @@
 }
 
 .max-he{
-    height: calc(100vh - 146px);;
+    height: calc(100vh - 153px);;
 }
 
 .list-employees{
@@ -51,4 +51,8 @@ td{
 
 .fa-star{
     color: rgb(201, 201, 15);
+}
+
+.card-img-top{
+    height: 250px;
 }

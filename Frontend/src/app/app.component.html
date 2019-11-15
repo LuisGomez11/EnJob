@@ -132,7 +132,7 @@
             class="fas fa-trophy mr-3 text-white"></i>Bonificaciones</a>
       </li>
       <li>
-        <a class="links-admin border-top" style="display: block; cursor: pointer;">
+        <a (click)="logOut()" class="links-admin border-top" style="display: block; cursor: pointer;">
           <i class="fas fa-sign-out-alt mr-3 text-white"></i>Cerrar sesión</a>
       </li>
     </ul>
@@ -147,7 +147,7 @@
         <span id="text-home">ENJOB</span>
       </a>
     </div>
-    <div id="content-iconss" class="d-flex justify-content-between navbar-nav float-right style-none">
+    <div id="content-iconss" class="d-flex justify-content-between float-right style-none">
       <li class="nav-item mr-5" style="cursor: pointer" id="homes" title="Pagina principal | Inicio">
         <a routerLink="/supervisor/home"><i class="fas fa-home mt-2 text-white" id="icon-homes"></i></a>
       </li>
@@ -183,7 +183,7 @@
         <span id="text-home">ENJOB</span>
       </a>
     </div>
-    <div id="content-icons" class="d-flex justify-content-between navbar-nav float-right style-none">
+    <div id="content-icons" class="d-flex justify-content-between float-right style-none">
       <li class="nav-item mr-5" style="cursor: pointer" id="home" title="Pagina principal | Inicio">
         <a routerLink="/employee/home"><i class="fas fa-home mt-2 text-white" id="icon-home"></i></a>
       </li>

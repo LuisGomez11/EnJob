@@ -30,11 +30,23 @@ export class AuthAdmineService {
     this.user = admin;
   }
 
+  public logOut(){
+    localStorage.clear();
+  }
+
   public getUser(): any {
     if (!this.user) {
       this.user = JSON.parse(localStorage.getItem("USER"));
       this.user =  this.user.userName;
     }
     return this.user;
+  }
+
+  isAuthenticated(): boolean {
+    const authToken = localStorage.getItem('ACCESS_TOKEN');
+    if (authToken != null){
+      return true;
+    }
+    return false;
   }
 }
