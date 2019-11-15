@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 
-const { plantedPassword } = require('../config/data');
+const { plantedPassword } = require('../../config/data');
 
 let salt = bcrypt.genSaltSync(10);
 let hash = bcrypt.hashSync(plantedPassword, salt);
@@ -14,26 +14,24 @@ employeefun.employee = (req) => {
         userName,
         password,
         numDocument,
-        nameCompany,
         email,
         phone,
         position,
         departament,
         salary,
-        availability,
     } = req.body
     return {
         name,
         lastName,
         numDocument,
-        nameCompany,
-        state: 'inactive',
+        nameCompany:'Condor Labs',
+        state: 'Activo',
         userName,
         password: hash,
         email,
-        role: 'employee',
+        role: 'Empleado',
         phone,
-        availability,
+        availability: 'Disponible',
         position,
         departament,
         salary,

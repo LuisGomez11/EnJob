@@ -1,16 +1,8 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('../assets/img/bg-01.jpg');">
         <div class="wrap-login100">
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <form class="login100-form validate-form" #frmLogin="ngForm" class="login-container"
-                (ngSubmit)="onLogin(frmLogin)" autocomplete="off">
-=======
-            <form class="login100-form validate-form" autocomplete="off">
->>>>>>> parent of 3715302... login
-=======
-            <form class="login100-form validate-form" autocomplete="off">
->>>>>>> parent of 3715302... login
+            <form class="login100-form validate-form" [formGroup]="FormLogin" class="login-container"
+                (ngSubmit)="onLogin()" autocomplete="off">
                 <span class="login100-form-logo">
                     <img src="../../../assets/img/blanco.png" width="140" height="140">
                 </span>
@@ -20,19 +12,22 @@
                 </span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Ingrese usuario">
-                    <input class="input100" type="text" name="usuario" placeholder="Usuario">
+                    <input class="input100" type="text" name="usuario" placeholder="Usuario" formControlName="userName" required>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Ingrese contraseña">
-                    <input class="input100" type="password" name="contraseña" placeholder="Contraseña">
+                    <input class="input100" type="password" name="contraseña" placeholder="Contraseña" formControlName="password" required>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <a class="login100-form-btn" routerLink="/admin/home">
+                    <!-- <a class="login100-form-btn" routerLink="/admin/home">
                         Ingresar
-                    </a>
+                    </a> -->
+                    <button class="login100-form-btn" type="submit">
+                        Ingresar
+                    </button>
                 </div>
 
                 <div class="text-center mt-4">

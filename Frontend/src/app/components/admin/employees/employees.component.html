@@ -79,73 +79,73 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="">
+            <form [formGroup]="Form" (ngSubmit)="createEmployee()">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label for="name">Nombre completo:</label>
-                                <input type="text" id="name" class="form-control">
+                                <label for="name">Nombre:</label>
+                                <input type="text" id="name" formControlName="name" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="number">Nro. Documento:</label>
-                                <input type="text" id="number" class="form-control">
+                                <label for="lastName">Apellido:</label>
+                                <input type="text" id="lastName" formControlName="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="numDocument">Nro. Documento:</label>
+                                <input type="text" id="numDocument" formControlName="numDocument" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="phone">Telefono:</label>
-                                <input type="text" id="phone" class="form-control">
+                                <input type="text" id="phone" formControlName="phone" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="mail">Correo electronico:</label>
-                                <input type="email" id="mail" class="form-control">
+                                <input type="email" id="mail" formControlName="email" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="department">Departamento:</label>
-                                <input type="text" id="company" class="form-control">
+                                <input type="text" id="company" formControlName="departament" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="salary">Salario:</label>
-                                    <input type="text" id="salary" class="form-control">
+                                    <input type="text" id="salary" formControlName="salary" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="position">Posición:</label>
-                                    <input type="text" id="position" class="form-control">
+                                    <input type="text" id="position" formControlName="position" class="form-control" required>
                                 </div>
                             </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="user">Usuario:</label>
-                                <input type="text" id="user" class="form-control">
+                                <input type="text" id="user" formControlName="userName" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="pass">Contraseña:</label>
-                                <input type="password" id="pass" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="photo">Subir foto de perfil:</label>
-                                <input type="file" id="photo" class="form-control">
+                                <input type="password" id="pass" formControlName="password" class="form-control" required>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary">Registrar</button>
+                    <button type="submit" class="btn btn-secondary">Registrar</button>
                     <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
             </form>

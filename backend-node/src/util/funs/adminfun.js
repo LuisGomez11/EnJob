@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 
-const { plantedPassword } = require('../config/data');
+const { plantedPassword } = require('../../config/data');
 
 let salt = bcrypt.genSaltSync(10);
 let hash = bcrypt.hashSync(plantedPassword, salt);

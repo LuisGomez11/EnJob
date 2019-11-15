@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthAdmineService } from './services/admine/auth-admine.service';
 
 declare var $: any;
 
@@ -9,7 +10,13 @@ declare var $: any;
 })
 export class AppComponent implements OnInit {
   title = 'ENJOB';
-  constructor() { }
+
+  user = '';
+
+
+  constructor(private auth: AuthAdmineService) { }
+
+  
 
   sadmin = function () {
     $('#nav-principal').hide();
@@ -58,7 +65,7 @@ export class AppComponent implements OnInit {
       }
 
     });
-    $('.links-admin').click(function () {
+    $('.links-admin').click( () => {
       $('.menu-admin').removeClass('menu-activado');
     });
     $('.menu-slides').click(function () {
@@ -237,7 +244,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.user = this.auth.getUser();
   }
 
 }

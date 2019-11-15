@@ -1,5 +1,5 @@
 const emplModel = require('../models/EmployeeModel');
-const { employee } = require('../util/emplfun');
+const { employee } = require('../util/funs/emplfun');
 const { bad_requestSend, bad_requestStatus, createdSend, createdStatus, non_authoritative_informationSend, non_authoritative_informationStatus, not_foundSend, not_foundStatus } = require('../util/HttpStatus');
 
 const employeeCtrl = {};
