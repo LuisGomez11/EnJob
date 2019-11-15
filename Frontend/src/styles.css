@@ -57,3 +57,15 @@ body::-webkit-scrollbar-thumb {
     outline:none;
     box-shadow:none;
 }
+
+.ocultar{
+    display: none;
+}
+
+.mostrar{
+    display: block;
+}
+
+nav{
+    height: 56px;
+}

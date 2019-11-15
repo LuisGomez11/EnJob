@@ -15,6 +15,10 @@
     transform: translateX(0);
 }
 
+#link-notification, #link-messages-a{
+    display: none;
+}
+
 i{
     font-size: 25px;
     color: rgb(90, 90, 90);
@@ -201,4 +205,23 @@ a.link-bg:hover{
 
 .slide-active{
     transform: translateX(0);
+}
+
+
+@media screen and (max-width: 991px){
+
+    /* ADMIN */
+
+    .menu-admin{
+        width: 100%;
+    }
+
+    #notification-admin, #admin-messages{
+        display: none;
+    }
+
+    #link-notification, #link-messages-a{
+        display: block;
+    }
+
 }

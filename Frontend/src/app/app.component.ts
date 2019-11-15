@@ -13,59 +13,28 @@ export class AppComponent implements OnInit {
 
   user = '';
 
-
   constructor(private auth: AuthAdmineService) { }
 
-  
-
   sadmin = function () {
-    $('#nav-principal').hide();
-    $('#nav-admin').hide();
-    $('.menu-admin').hide();
-    $('#nav-empo').hide();
-    $('#nav-sadmin').show();
-    $('#nav-supervisor').hide();
-    $('#nav-empo').hide();
+    document.getElementById('nav-principal').style.display = 'none';
+    document.getElementById('nav-admin').style.display = 'none';
+    document.getElementById('menu-admin').style.display = 'none';
+    document.getElementById('nav-empo').style.display = 'none';
+    document.getElementById('nav-supervisor').style.display = 'none';
+    document.getElementById('nav-empo').style.display = 'none';
+    document.getElementById('nav-sadmin').style.display = 'block';
   }
 
   admin = function () {
-    $('#nav-principal').hide();
-    $('#nav-admin').show();
-    $('.menu-admin').show();
-    $('#nav-empo').hide();
-    $('#nav-sadmin').hide();
-    $('#nav-supervisor').hide();
+    document.getElementById('nav-principal').style.display = 'none';
+    document.getElementById('nav-admin').style.display = 'block';
+    document.getElementById('menu-admin').style.display = 'block';
+    document.getElementById('nav-empo').style.display = 'none';
+    document.getElementById('nav-supervisor').style.display = 'none';
+    document.getElementById('nav-empo').style.display = 'none';
+    document.getElementById('nav-sadmin').style.display = 'none';
     $('.messages').animate({ scrollTop: $(document).height() }, "fast");
-    if ($(window).width() <= 991) {
-      $('.menu-admin').css("width", "100%");
-      $('#notification-admin').hide();
-      $('#admin-messages').hide();
-      $('#link-notification').show();
-      $('#link-messages-a').show();
-    } else {
-      $('.menu-admin').css("width", "280px");
-      $('#notification-admin').show();
-      $('#admin-messages').show();
-      $('#link-notification').hide();
-      $('#link-messages-a').hide();
-    }
-    $(window).resize(function () {
-      if ($(window).width() <= 991) {
-        $('.menu-admin').css("width", "100%");
-        $('#notification-admin').hide();
-        $('#admin-messages').hide();
-        $('#link-notification').show();
-        $('#link-messages-a').show();
-      } else {
-        $('.menu-admin').css("width", "280px");
-        $('#notification-admin').show();
-        $('#admin-messages').show();
-        $('#link-notification').hide();
-        $('#link-messages-a').hide();
-      }
-
-    });
-    $('.links-admin').click( () => {
+    $('.links-admin').click(() => {
       $('.menu-admin').removeClass('menu-activado');
     });
     $('.menu-slides').click(function () {
@@ -242,8 +211,13 @@ export class AppComponent implements OnInit {
     });
 
   }
+  
 
+  
   ngOnInit() {
+
+    
+
     this.user = this.auth.getUser();
   }
 
