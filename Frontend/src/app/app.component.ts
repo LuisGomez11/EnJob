@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthAdmineService } from './services/admine/auth-admine.service';
 
 declare var $: any;
 
@@ -9,7 +10,13 @@ declare var $: any;
 })
 export class AppComponent implements OnInit {
   title = 'ENJOB';
-  constructor() { }
+
+  user = 'LuisGomez11';
+
+
+  constructor(private auth: AuthAdmineService) { }
+
+  
 
   sadmin = function () {
     $('#nav-principal').hide();
@@ -237,7 +244,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // this.user = this.auth.getUser();
   }
 
 }

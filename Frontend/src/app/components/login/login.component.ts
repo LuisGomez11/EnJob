@@ -12,7 +12,7 @@ declare var $: any;
 })
 export class LoginComponent implements OnInit {
 
-  role = '';
+  userNameAdmin = '';
   FormLogin: FormGroup = new FormGroup({
     userName: new FormControl('', {
       validators: Validators.required
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     })
   });
 
-  constructor(private auth: AuthAdmineService, private router: Router) { } y
+  constructor(private auth: AuthAdmineService, private router: Router) { }
 
 
   ngOnInit() {
@@ -38,15 +38,14 @@ export class LoginComponent implements OnInit {
   async onLogin() {
 
     this.auth.login(this.FormLogin.value).toPromise().then(res => {
-      console.log(res)
       this.router.navigateByUrl('/admin');  
 
             if (res) {
-                // guardar token
-                console.log(res)
-                // this.saveToken(res.dataUser.accessToken);
-                // this.AdmineUser =  res.dataUser.userName;
-                // this.role = res.dataUser.role;
+                console.log(res);
+                // Guardar token
+                this.auth.saveToken(res.dataUser.accessToken);
+                // Guardar username
+                this.auth.saveAdmin(res.dataUser);
             }     
 
     }).catch( (err)=>{
@@ -54,10 +53,5 @@ export class LoginComponent implements OnInit {
     }) ;
 
   }
-
-
-
-
-
 
 }

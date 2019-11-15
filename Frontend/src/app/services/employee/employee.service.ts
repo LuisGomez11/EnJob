@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { JwtResponseI } from '../../models/admine/jwt-response-i';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -17,19 +16,19 @@ export class EmployeeService {
   roleE = '';
   constructor(private httpClient: HttpClient) { }
 
-  login(employee: Employee): Observable<JwtResponseI> {
-    return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/employee/create`,
-      employee).pipe(tap(
-        (res: JwtResponseI) => {
-          if (res) {
-            // guardar token
-            this.saveToken(res.dataUser.accessToken);
-            this.roleE = res.dataUser.role;
-          }
-        })
-      );
+  // login(employee: Employee): Observable<JwtResponseI> {
+  //   return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/employee/create`,
+  //     employee).pipe(tap(
+  //       (res: JwtResponseI) => {
+  //         if (res) {
+  //           // guardar token
+  //           this.saveToken(res.dataUser.accessToken);
+  //           this.roleE = res.dataUser.role;
+  //         }
+  //       })
+  //     );
 
-  }
+  // }
   private saveToken(accessToken: string): void {
     localStorage.setItem("ACCESS_TOKEN", accessToken);
     this.token = accessToken;
