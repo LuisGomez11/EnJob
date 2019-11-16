@@ -45,8 +45,8 @@ export class EmployeesComponent implements OnInit {
     })
   });
 
-  Employees: Subject<Array<any>> = new BehaviorSubject([]);
-  listEmployees: Employee[];
+  // Employees: Subject<Array<any>> = new BehaviorSubject([]);
+  listEmployees: Employee[] = [];
 
   constructor(public app: AppComponent, private service: EmployeeService) { }
 
@@ -54,10 +54,13 @@ export class EmployeesComponent implements OnInit {
     this.app.admin();
     this.getEmployees();
   }
-  getEmployees(){
+  getEmployees() {
     this.service.getEmployees()
-    .subscribe(data =>
-      this.listEmployees = data);
+      .subscribe((data: any) => {
+        console.log(this.listEmployees);
+        console.log(data)
+        this.listEmployees = data.users;
+      });
   }
   createEmployee() {
     this.service.createEmployee(this.Form.value)

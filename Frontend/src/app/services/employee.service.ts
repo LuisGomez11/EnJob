@@ -20,8 +20,9 @@ export class EmployeeService {
     return this.httpClient.post(`${this.url}/admine/employee/create`, employee);
    }
 
-  getEmployees(): Observable<Employee[]>{
-    return this.httpClient.get(`${this.url}/admine/employees`).pipe(
+  getEmployees(): Observable<Employee[]> {
+    return this.httpClient.get(`${this.url}/admine/employees`)
+    .pipe(
       map(data => data as Employee[])
     );
   }

@@ -12,7 +12,6 @@ declare var $: any;
 export class AppComponent implements OnInit {
   title = 'ENJOB';
 
-  user = '';
 
   constructor(private auth: AuthAdmineService, private router: Router) { }
 
@@ -160,12 +159,16 @@ export class AppComponent implements OnInit {
   }
 
 
+  user = ''; nameCompany = '';name = ''; lastName = '';
 
   ngOnInit() {
     if (localStorage.getItem("USER") === null) {
-      this.user = 'Indefinido'
+      this.user = 'Indefinido';
     } else {
-      this.user = this.auth.getUser();
+      this.name = this.auth.getUser().name;
+      this.lastName = this.auth.getUser().lastName;
+      this.user = this.auth.getUser().userName;
+      this.nameCompany = this.auth.getUser().nameCompany;
     }
   }
 
