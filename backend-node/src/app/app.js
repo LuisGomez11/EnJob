@@ -9,6 +9,6 @@ app.use(cors())
 app.use(json());
 app.use(urlencoded({extended:false}));
 
-require('../routes/AdmineRoute')(app);
+require('../routes/userRoute')(app);
 
 module.exports = app;

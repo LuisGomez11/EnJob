@@ -10,7 +10,7 @@ const { createEmployee, findEmployees } = require('../controller/EmployeeControl
 module.exports = (app) =>{
   app.post('/v1/api/admine/login', LoginAdmine);
 
-  app.post('/v1/api/admine/create',admineVo, CreateAdmine);
+  app.post('/v1/api/admine/create', CreateAdmine);
   
   app.post('/v1/api/admine/employee/create', createEmployee);
   
