@@ -34,10 +34,10 @@ export class AuthAdmineService {
     localStorage.clear();
   }
 
-  public getUser(): any {
+  public getUser() {
     if (!this.user) {
       this.user = JSON.parse(localStorage.getItem("USER"));
-      this.user =  this.user.data.userName;
+      this.user =  this.user.Admine;
     }
     return this.user;
   }
