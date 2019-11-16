@@ -8,28 +8,37 @@ const { bad_requestSend, bad_requestStatus, createdSend, createdStatus, non_auth
 const admineCtrl = {};
 
 admineCtrl.LoginAdmine = async (req, res) => {
-    let Admine = admine(req);
+    let Admine_2 = admine(req);
     const auth = false;
-    await AdmineModel.findOne({
-        $or: [{ userName: Admine.userName }]
-    }, async (err, data) => {
-        let Admine = admine(req);
-        if (err) return res.status(bad_requestStatus).send({ error1: bad_requestSend });
-        if (!data) return res.status(not_foundStatus).send({ auth });
 
-        let comp = compare(req.body.password, data.password);
+
+    try {
+        const data = await AdmineModel.findOne({
+            $or: [{ userName: Admine_2.userName }]
+        });
         
+        let comp = compare(req.body.password, data.password);
         if (comp == false) return res.status(not_foundStatus).send({ auth });
 
         const token = createToken(data);
+        // quitar la contraseña de la respuesta
+        data.password = undefined;
         const dataUser = {
-            userName: Admine.userName,
-            role: Admine.role,
+            Admine: data,
             accessToken: token
         }
 
         return res.status(200).send({ dataUser });
-    });
+
+    } catch (err) {
+        console.warn(err)
+        if (err) return res.status(bad_requestStatus).send({ error1: bad_requestSend });
+        if (!data) return res.status(not_foundStatus).send({ auth });
+       
+    }
+    // let Admine = admine(req);
+
+
 };
 
 admineCtrl.CreateAdmine = async (req, res) => {
