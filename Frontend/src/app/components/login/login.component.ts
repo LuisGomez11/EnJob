@@ -33,6 +33,11 @@ export class LoginComponent implements OnInit {
     $('#nav-sadmin').hide();
     $('#nav-supervisor').hide();
     $('#nav-empo').hide();
+
+    if (localStorage.getItem("USER") !== null) {
+      this.router.navigateByUrl('/admin');
+    }
+
   }
 
 
@@ -41,20 +46,12 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.FormLogin.value).toPromise().then(res => {
       if (res) {
         console.log(res);
-        this.router.navigateByUrl('/admin');
-        swal.fire({
-          position: 'center',
-          type: 'success',
-          title: 'Bienvenido!',
-          text: `${res.dataUser.userName}`,
-          showConfirmButton: false,
-          timer: 3000
-        });
-
         // Guardar token
         this.auth.saveToken(res.dataUser.accessToken);
         // Guardar Admin
         this.auth.saveAdmin(res.dataUser);
+
+        window.location.reload();
       }
 
     }).catch((err) => {

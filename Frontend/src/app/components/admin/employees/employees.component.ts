@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { Employee } from 'src/app/models/employee';
 
 @Component({
   selector: 'app-employees',
@@ -43,12 +45,20 @@ export class EmployeesComponent implements OnInit {
     })
   });
 
+  Employees: Subject<Array<any>> = new BehaviorSubject([]);
+  listEmployees: Employee[];
+
   constructor(public app: AppComponent, private service: EmployeeService) { }
 
   ngOnInit() {
     this.app.admin();
+    this.getEmployees();
   }
-
+  getEmployees(){
+    this.service.getEmployees()
+    .subscribe(data =>
+      this.listEmployees = data);
+  }
   createEmployee() {
     this.service.createEmployee(this.Form.value)
       .subscribe(res => {

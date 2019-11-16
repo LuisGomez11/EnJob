@@ -162,7 +162,11 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.user = this.auth.getUser();
+    if (localStorage.getItem("USER") === null) {
+      this.user = 'Indefinido'
+    } else {
+      this.user = this.auth.getUser();
+    }
   }
 
 }
