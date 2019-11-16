@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthAdmineService } from 'src/app/services/auth-admine.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import swal from "sweetalert2";
 
 declare var $: any;
 
@@ -27,12 +26,12 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    $('#nav-principal').hide();
-    $('#nav-admin').hide();
-    $('.menu-admin').hide();
-    $('#nav-sadmin').hide();
-    $('#nav-supervisor').hide();
-    $('#nav-empo').hide();
+    document.getElementById('nav-principal').style.display = 'none';
+    document.getElementById('nav-admin').style.display = 'none';
+    document.getElementById('menu-admin').style.display = 'none';
+    document.getElementById('nav-empo').style.display = 'none';
+    document.getElementById('nav-supervisor').style.display = 'none';
+    document.getElementById('nav-sadmin').style.display = 'none';
 
     if (localStorage.getItem("USER") !== null) {
       this.router.navigateByUrl('/admin');
