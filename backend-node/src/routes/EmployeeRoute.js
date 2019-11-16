@@ -2,11 +2,13 @@ const { Router } = require('express');
 const router = Router();
 
 
-const { company } = require('../controller/adminController')
+const { loginEmployee } = require('../controller/EmployeeController')
 
 
-router.get('/v1/api/admin/companys', company)
-
-
-
-module.exports = router;  
+module.exports = (app) =>{
+    app.post('/v1/api/employee/login', loginEmployee);
+    
+    app.get('*', (req, res) => {
+        res.status(500).send({ err: 'servido no encontrado' });
+      })
+  }
