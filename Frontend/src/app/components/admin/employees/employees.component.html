@@ -116,11 +116,20 @@
                                 <input type="text" id="user" formControlName="userName" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="pass">Contraseña:</label>
                                 <input type="password" id="pass" formControlName="password" class="form-control"
                                     required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="rol">Rol:</label>
+                                <select id="rol" formControlName="role" class="form-control">
+                                    <option value="Empleado">Empleado</option>
+                                    <option value="Supervisor">Supervisor</option>
+                                </select>
                             </div>
                         </div>
                     </div>

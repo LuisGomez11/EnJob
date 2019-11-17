@@ -48,6 +48,9 @@ export class EmployeesComponent implements OnInit {
     }),
     nameCompany: new FormControl('', {
       validators: Validators.required
+    }),
+    role: new FormControl('', {
+      validators: Validators.required
     })
   });
 
