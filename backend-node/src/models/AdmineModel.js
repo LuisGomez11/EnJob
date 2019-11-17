@@ -8,6 +8,7 @@ const admineSchema = new Schema({
   password: { type: String, required: true },
   numDocument: { type: String, required: true, unique: true },
   nameCompany: { type: String, required: true },
+  subscriptionTime: { type: String, required: true },
   email: { type: String, unique: true },
   phone: { type: String, required: true },
   role: { type: String, required: true },

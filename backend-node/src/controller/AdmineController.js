@@ -16,7 +16,7 @@ admineCtrl.LoginAdmine = async (req, res) => {
         const data = await AdmineModel.findOne({
             $or: [{ userName: Admine_2.userName }]
         });
-        
+
         let comp = compare(req.body.password, data.password);
         if (comp == false) return res.status(not_foundStatus).send({ auth });
 
@@ -34,7 +34,7 @@ admineCtrl.LoginAdmine = async (req, res) => {
         console.warn(err)
         if (err) return res.status(bad_requestStatus).send({ error1: bad_requestSend });
         if (!data) return res.status(not_foundStatus).send({ auth });
-       
+
     }
 };
 
@@ -53,6 +53,15 @@ admineCtrl.CreateAdmine = async (req, res) => {
             return res.status(createdStatus).send({ Admine, created: createdSend });
         });
     });
+};
+
+admineCtrl.findByIdAdmine = async (req, res) => {
+    try {
+        const Adminee = await AdmineModel.findById(req.params.id);
+        return res.status(200).send({ users: Adminee });
+    } catch (error) {
+        return res.status(404).send({ err });
+    }
 };
 
 module.exports = admineCtrl;

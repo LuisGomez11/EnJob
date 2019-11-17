@@ -68,8 +68,12 @@ employeeCtrl.findEmployees = async (req, res) => {
 };
 
 employeeCtrl.findByIdEmployee = async (req, res) => {
-    const employee = await emplModel.findById(req.params.id);
-    return res.status(200).send({ users: employee });
+    try {
+        const employee = await emplModel.findById(req.params.id);
+        return res.status(200).send({ users: employee });
+    } catch (error) {
+        return res.status(404).send({ err });
+    }
 };
 
 module.exports = employeeCtrl;

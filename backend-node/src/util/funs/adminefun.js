@@ -21,12 +21,14 @@ adminefun.admine = (req) => {
         password,
         numDocument,
         nameCompany,
+        subscriptionTime,
         email,
         phone
     } = req.body
     return {
         name,
         lastName,
+        subscriptionTime,
         numDocument,
         nameCompany,
         state: 'Inactivo',

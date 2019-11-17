@@ -4,7 +4,7 @@ const { loginEmployee, findByIdEmployee} = require('../controller/EmployeeContro
 module.exports = (app) =>{
   app.post('/v1/api/employee/login', loginEmployee);
   
-  app.post('/v1/api/employee', findByIdEmployee);
+  app.get('/v1/api/employee', findByIdEmployee);
   
   app.get('*', (req, res) => {
       res.status(500).send({ err: 'servido no encontrado' });
