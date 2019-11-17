@@ -10,11 +10,8 @@ const admineCtrl = {};
 admineCtrl.LoginAdmine = async (req, res) => {
     let Admine_2 = admine(req);
     const auth = false;
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 18cd6f9edaedaacf244233c80553eb949a38638b
     try {
         const data = await AdmineModel.findOne({
             $or: [{ userName: Admine_2.userName }]
@@ -39,11 +36,13 @@ admineCtrl.LoginAdmine = async (req, res) => {
         if (!data) return res.status(not_foundStatus).send({ auth });
        
     }
+    // let Admine = admine(req);
+
+
 };
 
 admineCtrl.CreateAdmine = async (req, res) => {
     let Admine = admine(req);
-<<<<<<< HEAD
     AdmineModel.findOne({
         $or: [{ userName: Admine.userName, email: Admine.email, numDocument: Admine.numDocument }]
     }, async (err, data) => {
@@ -55,22 +54,8 @@ admineCtrl.CreateAdmine = async (req, res) => {
             //const token = createToken(data);
 
             return res.status(createdStatus).send({ Admine, created: createdSend });
-=======
-    try {
-        userModel.findOne({
-            $or: [{ userName: Admine.userName, email: Admine.email, numDocument: Admine.numDocument }]
-        }, async (err, data) => {
-            await userModel.create(Admine, (err, data) => {
-                if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
-                //const token = createToken(data);
-                return res.status(createdStatus).send({ Admine, created: createdSend });
-            });
->>>>>>> 18cd6f9edaedaacf244233c80553eb949a38638b
         });
-    } catch (err) {
-        if (err) res.status(bad_requestStatus).send({ error1: bad_requestSend });
-            if (data != null) return res.status(bad_requestStatus).send({ error2: bad_requestSend });
-    }
+    });
 };
 
 module.exports = admineCtrl;
