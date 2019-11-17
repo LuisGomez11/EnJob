@@ -36,8 +36,10 @@ export class AuthAdmineService {
 
   public getUser() {
     if (!this.user) {
-      this.user = JSON.parse(localStorage.getItem("USER"));
-      this.user =  this.user.Data;
+      if(localStorage.getItem("USER") !==null){
+        this.user = JSON.parse(localStorage.getItem("USER"));
+        this.user =  this.user.Data;
+      }
     }
     return this.user;
   }

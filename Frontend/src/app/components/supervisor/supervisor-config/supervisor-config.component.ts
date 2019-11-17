@@ -16,8 +16,13 @@ export class SupervisorConfigComponent implements OnInit {
 
   ngOnInit() {
     this.app.employee();
-    this.name = this.auth.getUser().name;
-    this.lastName = this.auth.getUser().lastName;
+    if (localStorage.getItem("USER") === null) {
+      this.name = 'Indefinido';
+      this.lastName = 'Indefinido';
+    } else {
+      this.name = this.auth.getUser().name;
+      this.lastName = this.auth.getUser().lastName;
+    }
   }
 
   logOut() {

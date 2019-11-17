@@ -76,7 +76,6 @@ export class AppComponent implements OnInit {
 
   home = function () {
     $('.menu-home').hide();
-
     $('.logo-nav').hide();
     $('#nav-principal').show();
     $('#nav-admin').hide();
@@ -163,7 +162,10 @@ export class AppComponent implements OnInit {
   
   ngOnInit() {
     if (localStorage.getItem("USER") === null) {
+      this.name = 'Indefinido';
+      this.lastName = 'Indefinido';
       this.user = 'Indefinido';
+      this.nameCompany = 'Indefinido';
     } else {
       this.name = this.auth.getUser().name;
       this.lastName = this.auth.getUser().lastName;

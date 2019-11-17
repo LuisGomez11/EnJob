@@ -17,7 +17,6 @@ export class BonificationService {
 
   constructor( private http: HttpClient ) {
     this.selectedBonification = new Bonification();
-    this.selectedBonification.company = 'Condor Labs';
   }
 
   getBonifications(): Observable<Bonification[]>{

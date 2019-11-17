@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, NgForm } from "@angular/forms";
 import { BonificationService } from "../../../services/bonification.service";
 import { Bonification } from "../../../models/bonification";
 import swal from "sweetalert2";
+import { AuthAdmineService } from 'src/app/services/auth-admine.service';
 
 @Component({
   selector: 'app-admin-bonus',
@@ -15,14 +16,16 @@ export class AdminBonusComponent implements OnInit {
   bonification: Bonification = new Bonification();
   listBonifications: Bonification[];
   public form: FormGroup;
-
+  nameCompany = '';
   constructor(public app: AppComponent,
     private service: BonificationService,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private auth: AuthAdmineService) { }
 
   ngOnInit() {
     this.app.admin();
     this.getBonifications();
+    this.nameCompany = this.auth.getUser().nameCompany;
   }
 
   getBonifications() {
@@ -33,6 +36,7 @@ export class AdminBonusComponent implements OnInit {
 
   createBonification(form: NgForm) {
     if (form.value.idBonification) {
+      form.value.company = this.nameCompany;
       this.service.updateBonification(form.value).subscribe(data => {
         swal.fire({
           position: 'center',
@@ -46,6 +50,7 @@ export class AdminBonusComponent implements OnInit {
         this.resetForm(form);
       });
     } else {
+      form.value.company = this.nameCompany;
       this.service.createBonification(form.value).subscribe(data => {
         swal.fire({
           position: 'center',
