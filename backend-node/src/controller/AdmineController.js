@@ -19,7 +19,7 @@ admineCtrl.LoginAdmine = async (req, res) => {
 
         let comp = compare(req.body.password, data.password);
         if (comp == false) return res.status(not_foundStatus).send({ auth });
-        
+        if (data.state === 'Inactivo') return res.status(non_authoritative_informationStatus).send({ error: non_authoritative_informationSend });
         const token = createToken(data);
         // quitar la contraseña de la respuesta
         data.password = undefined;
@@ -59,6 +59,28 @@ admineCtrl.findByIdAdmine = async (req, res) => {
     try {
         const Adminee = await AdmineModel.findById(req.params.id);
         return res.status(200).send({ users: Adminee });
+    } catch (error) {
+        return res.status(404).send({ err });
+    }
+};
+
+admineCtrl.findAdmine = async (req, res) => {
+    try {
+        const admines = await AdmineModel.find();
+
+        return res.status(200).send({ users: admines });
+    } catch (error) {
+        return res.status(404).send({ err });
+    }
+};
+
+admineCtrl.updateAdmine = async (req, res) => {
+    try {
+        const { id } = req.params;
+        let Admine = admine(req);
+        await AdmineModel.findByIdAndUpdate(id, { $set: Admine }, { new: true });
+
+        return res.status(200).send({ users: admines });
     } catch (error) {
         return res.status(404).send({ err });
     }
