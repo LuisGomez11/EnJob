@@ -1,4 +1,4 @@
-  
+
 const { Schema, model } = require('mongoose');
 
 const admineSchema = new Schema({
@@ -12,7 +12,6 @@ const admineSchema = new Schema({
   phone: { type: String, required: true },
   role: { type: String, required: true },
   state: { type: String, required: true },
-  //  photo: { type: String },
   lastLogin: { type: Date, default: Date.now }
 });
 

@@ -16,8 +16,7 @@ const employeeSchema = new Schema({
     departament: { type: String },
     salary: { type: String },
     points: { type: String },
-
-    lastLogin: { type: Date, default: Date.now }
+lastLogin: { type: Date, default: Date.now }
 });
 
 module.exports = model('emplpoyees', employeeSchema);
