@@ -10,5 +10,6 @@ app.use(json());
 app.use(urlencoded({extended:false}));
 
 require('../routes/AdmineRoute')(app);
+require('../routes/EmployeeRoute')(app);
 
 module.exports = app;

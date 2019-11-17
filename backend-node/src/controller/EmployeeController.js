@@ -22,7 +22,7 @@ employeeCtrl.loginEmployee = async (req, res) => {
         // quitar la contraseña de la respuesta
         data.password = undefined;
         const dataUser = {
-            Emplo: data,
+            Data: data,
             accessToken: token
         }
 

@@ -5,6 +5,7 @@ import { Task } from 'src/app/models/task';
 import { NgForm } from '@angular/forms';
 import swal from "sweetalert2";
 import { Router } from '@angular/router';
+import { AuthAdmineService } from 'src/app/services/auth-admine.service';
 
 declare var $: any;
 
@@ -19,13 +20,12 @@ export class EmployeeKanbanComponent implements OnInit {
   listTasks: Task[];
   currentState: Task = undefined;
 
-  constructor(public app: AppComponent, private service: TaskService, private router: Router) { }
-
+  constructor(public app: AppComponent, private service: TaskService, private router: Router,
+    private auth: AuthAdmineService) { }
+    _id = '';
   ngOnInit() {
     this.app.employee();
-    $('.config-perfil').click(function () {
-      $('.content-configurations').toggleClass('config-active');
-    });
+    this._id = this.auth.getUser()._id;
     this.getTasks();
   }
 

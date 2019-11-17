@@ -37,7 +37,7 @@ export class AuthAdmineService {
   public getUser() {
     if (!this.user) {
       this.user = JSON.parse(localStorage.getItem("USER"));
-      this.user =  this.user.Admine;
+      this.user =  this.user.Data;
     }
     return this.user;
   }

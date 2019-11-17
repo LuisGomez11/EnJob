@@ -1,77 +1,89 @@
 <div class="contenedor p-4">
     <div class="row h-100">
-        <div class="col-lg-4 d-flex justify-content-center p-2 h-100" mwlDroppable id="Pendiente" (drop)="changeDrag('Pendiente')">
-            <div class="bg-white-transparent shadow h-100 p-2" >
+        <div class="col-lg-4 d-flex justify-content-center p-2 h-100" mwlDroppable id="Pendiente"
+            (drop)="changeDrag('Pendiente')">
+            <div class="bg-white-transparent shadow h-100 p-2">
                 <h3>Pendientes</h3>
                 <div class="tasks p-1">
-                    <div *ngFor="let t of listTasks">
-                        <div class="bg-white card mb-3" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='Pendiente'" style="z-index: 100;">
-                            <div class="card-body">
-                                <div class="float-left title-task">
-                                    Organizar los datos en la hoja de excel
+                    <ng-container *ngFor="let t of listTasks">
+                        <div *ngIf="t.assigned === _id">
+                            <div class="bg-white card mb-3" mwlDraggable (dragEnd)="this.currentState = t"
+                                *ngIf="t.stateTask==='Pendiente'" style="z-index: 100;">
+                                <div class="card-body">
+                                    <div class="float-left title-task">
+                                        {{ t.title }}
+                                    </div>
+                                    <div class="float-right details-task">
+                                        <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right"
+                                            title="Ver detalles"><i class="fas fa-eye"></i></button>
+                                    </div>
                                 </div>
-                                <div class="float-right details-task">
-                                    <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right" title="Ver detalles"><i
-                                            class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="float-left text-muted" title="Fecha limite">
-                                    12/12/2019
+                                <div class="card-footer">
+                                    <div class="float-left text-muted" title="Fecha limite">
+                                        {{ t.term }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ng-container>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 d-flex justify-content-center p-2 h-100" mwlDroppable id="En Proceso" (drop)="changeDrag('En Proceso')">
-            <div class="bg-white-transparent shadow h-100 p-2" >
+        <div class="col-lg-4 d-flex justify-content-center p-2 h-100" mwlDroppable id="En Proceso"
+            (drop)="changeDrag('En Proceso')">
+            <div class="bg-white-transparent shadow h-100 p-2">
                 <h3>En proceso</h3>
                 <div class="tasks p-1">
-                    <div *ngFor="let t of listTasks">
-                        <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='En Proceso'" style="z-index: 100;">
-                            <div class="card-body">
-                                <div class="float-left text-truncate title-task">
-                                    {{ t.title }}
+                    <ng-container *ngFor="let t of listTasks">
+                        <div *ngIf="t.assigned === _id">
+                            <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t"
+                                *ngIf="t.stateTask==='En Proceso'" style="z-index: 100;">
+                                <div class="card-body">
+                                    <div class="float-left text-truncate title-task">
+                                        {{ t.title }}
+                                    </div>
+                                    <div class="float-right details-task">
+                                        <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right"
+                                            title="Ver detalles"><i class="fas fa-eye"></i></button>
+                                    </div>
                                 </div>
-                                <div class="float-right details-task">
-                                    <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right" title="Ver detalles"><i
-                                            class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="float-left text-muted" title="Fecha limite">
-                                    {{ t.term }}
+                                <div class="card-footer">
+                                    <div class="float-left text-muted" title="Fecha limite">
+                                        {{ t.term }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ng-container>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 d-flex justify-content-center mb-2 p-2 h-100" mwlDroppable id="Finalizada" (drop)="changeDrag('Finalizada')">
-            <div class="bg-white-transparent shadow h-100 p-2" >
+        <div class="col-lg-4 d-flex justify-content-center mb-2 p-2 h-100" mwlDroppable id="Finalizada"
+            (drop)="changeDrag('Finalizada')">
+            <div class="bg-white-transparent shadow h-100 p-2">
                 <h3>Finalizadas</h3>
                 <div class="tasks p-1">
-                    <div *ngFor="let t of listTasks">
-                        <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t" *ngIf="t.stateTask==='Finalizada'" style="z-index: 100;">
-                            <div class="card-body">
-                                <div class="float-left text-truncate title-task">
-                                    {{ t.title }}
+                    <ng-container *ngFor="let t of listTasks">
+                        <div *ngIf="t.assigned === _id">
+                            <div class="bg-white card mb-1" mwlDraggable (dragEnd)="this.currentState = t"
+                                *ngIf="t.stateTask==='Finalizada'" style="z-index: 100;">
+                                <div class="card-body">
+                                    <div class="float-left text-truncate title-task">
+                                        {{ t.title }}
+                                    </div>
+                                    <div class="float-right details-task">
+                                        <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right"
+                                            title="Ver detalles"><i class="fas fa-eye"></i></button>
+                                    </div>
                                 </div>
-                                <div class="float-right details-task">
-                                    <button (click)="viewDetails(t)" class="bg-transparent border-0 float-right" title="Ver detalles"><i
-                                            class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="float-left text-muted" title="Fecha limite">
-                                    {{ t.term }}
+                                <div class="card-footer">
+                                    <div class="float-left text-muted" title="Fecha limite">
+                                        {{ t.term }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ng-container>
                 </div>
             </div>
         </div>

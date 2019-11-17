@@ -36,7 +36,7 @@ export class EmployeeService {
     console.log('Token guardado');
   }
 
-  public saveAdmin(emp: Employee): void {
+  public saveEmplo(emp: Employee): void {
     localStorage.setItem("USER", JSON.stringify(emp));
     this.user = emp;
   }
@@ -45,10 +45,10 @@ export class EmployeeService {
     localStorage.clear();
   }
 
-  public getUser(): any {
+  public getUser() {
     if (!this.user) {
       this.user = JSON.parse(localStorage.getItem("USER"));
-      this.user =  this.user.userName;
+      this.user =  this.user.Data;
     }
     return this.user;
   }

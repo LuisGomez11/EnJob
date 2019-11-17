@@ -93,8 +93,12 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="department">Departamento:</label>
-                                <input type="text" id="company" formControlName="departament" class="form-control"
-                                    required>
+                                <select class="form-control" id="department" formControlName="departament">
+                                    <ng-container *ngFor="let d of departments">
+                                        <option *ngIf="d.company=== nameCompany" value="{{ d.name }}">{{ d.name }}
+                                        </option>
+                                    </ng-container>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6">

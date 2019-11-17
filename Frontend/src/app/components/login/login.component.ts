@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthAdmineService } from 'src/app/services/auth-admine.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 declare var $: any;
 
@@ -19,10 +20,13 @@ export class LoginComponent implements OnInit {
     }),
     password: new FormControl('', {
       validators: Validators.required
+    }),
+    role: new FormControl('', {
+      validators: Validators.required
     })
   });
 
-  constructor(private auth: AuthAdmineService, private router: Router) { }
+  constructor(private auth: AuthAdmineService, private router: Router, private authEmplo: EmployeeService) { }
 
 
   ngOnInit() {
@@ -34,28 +38,52 @@ export class LoginComponent implements OnInit {
     document.getElementById('nav-sadmin').style.display = 'none';
 
     if (localStorage.getItem("USER") !== null) {
-      this.router.navigateByUrl('/admin');
+      if(this.auth.getUser().role === 'Admin RH'){
+        this.router.navigateByUrl('/admin');
+      } else if(this.auth.getUser().role === 'Empleado'){
+        this.router.navigateByUrl('/employee');
+      } else if(this.auth.getUser().role === 'Supervisor'){
+        this.router.navigateByUrl('/supervisor');
+      }
+      
     }
 
   }
 
 
   async onLogin() {
-
-    this.auth.login(this.FormLogin.value).toPromise().then(res => {
-      if (res) {
-        console.log(res);
-        // Guardar token
-        this.auth.saveToken(res.dataUser.accessToken);
-        // Guardar Admin
-        this.auth.saveAdmin(res.dataUser);
-
-        window.location.reload();
-      }
-
-    }).catch((err) => {
-
-    });
+    if(this.FormLogin.value.role === 'Admin RH'){
+      this.auth.login(this.FormLogin.value).toPromise().then(res => {
+        if (res) {
+          console.log(res);
+          // Guardar token
+          this.auth.saveToken(res.dataUser.accessToken);
+          // Guardar Admin
+          this.auth.saveAdmin(res.dataUser);
+  
+          window.location.reload();
+        }
+  
+      }).catch((err) => {
+  
+      });
+    }else if(this.FormLogin.value.role === 'Empleado'){
+      this.authEmplo.login(this.FormLogin.value).toPromise().then(res => {
+        if (res) {
+          console.log(res);
+          // Guardar token
+          this.authEmplo.saveToken(res.dataUser.accessToken);
+          // Guardar Employee
+          this.authEmplo.saveEmplo(res.dataUser);
+  
+          window.location.reload();
+        }
+  
+      }).catch((err) => {
+  
+      });
+    }
+    
 
   }
 

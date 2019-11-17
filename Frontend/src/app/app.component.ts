@@ -160,7 +160,7 @@ export class AppComponent implements OnInit {
 
 
   user = ''; nameCompany = '';name = ''; lastName = '';
-
+  
   ngOnInit() {
     if (localStorage.getItem("USER") === null) {
       this.user = 'Indefinido';

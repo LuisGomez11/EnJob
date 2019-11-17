@@ -24,7 +24,7 @@ admineCtrl.LoginAdmine = async (req, res) => {
         // quitar la contraseña de la respuesta
         data.password = undefined;
         const dataUser = {
-            Admine: data,
+            Data: data,
             accessToken: token
         }
 
