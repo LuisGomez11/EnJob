@@ -31,7 +31,7 @@ adminefun.admine = (req) => {
         subscriptionTime,
         numDocument,
         nameCompany,
-        state: 'Inactivo',
+        state: 'Activo',
         userName,
         password: Passcrypt(password),
         email,

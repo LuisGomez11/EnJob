@@ -7,6 +7,7 @@
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "celebrate": "^10.1.0",
+    "cloudinary": "^1.17.0",
     "cors": "^2.8.5",
     "cross-env": "^6.0.3",
     "express": "^4.17.1",
@@ -21,7 +22,7 @@
     "nodemon": "^1.19.4"
   },
   "scripts": {
-    "dev": "set DEBUG=app:*&& nodemon index.js"
+    "dev": "set DEBUG=app:*&& nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
