@@ -11,7 +11,7 @@ module.exports = (app) => {
 
   app.post('/v1/api/admine/employee/create', createEmployee);
 
-  app.get('/v1/api/employee', findByIdAdmine);
+  app.get('/v1/api/admine/:id', findByIdAdmine);
 
   app.get('/v1/api/admine/employees', findEmployees);
 

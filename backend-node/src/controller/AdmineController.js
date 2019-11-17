@@ -19,7 +19,7 @@ admineCtrl.LoginAdmine = async (req, res) => {
 
         let comp = compare(req.body.password, data.password);
         if (comp == false) return res.status(not_foundStatus).send({ auth });
-
+        
         const token = createToken(data);
         // quitar la contraseña de la respuesta
         data.password = undefined;
