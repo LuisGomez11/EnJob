@@ -41,12 +41,12 @@ input {
     border: none;
 }
 
-textarea {
+select {
   outline: none;
   border: none;
 }
 
-textarea:focus, input:focus {
+input:focus ,select:focus{
   border-color: transparent !important;
 }
 
@@ -55,20 +55,15 @@ input:focus:-moz-placeholder { color:transparent; }
 input:focus::-moz-placeholder { color:transparent; }
 input:focus:-ms-input-placeholder { color:transparent; }
 
-textarea:focus::-webkit-input-placeholder { color:transparent; }
-textarea:focus:-moz-placeholder { color:transparent; }
-textarea:focus::-moz-placeholder { color:transparent; }
-textarea:focus:-ms-input-placeholder { color:transparent; }
+select:focus::-webkit-input-placeholder { color:transparent; }
+select:focus:-moz-placeholder { color:transparent; }
+select:focus::-moz-placeholder { color:transparent; }
+select:focus:-ms-input-placeholder { color:transparent; }
 
 input::-webkit-input-placeholder { color: #fff;}
 input:-moz-placeholder { color: #fff;}
 input::-moz-placeholder { color: #fff;}
 input:-ms-input-placeholder { color: #fff;}
-
-textarea::-webkit-input-placeholder { color: #fff;}
-textarea:-moz-placeholder { color: #fff;}
-textarea::-moz-placeholder { color: #fff;}
-textarea:-ms-input-placeholder { color: #fff;}
 
 label {
   margin: 0;

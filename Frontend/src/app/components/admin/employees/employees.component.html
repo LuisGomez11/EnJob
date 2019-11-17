@@ -8,32 +8,35 @@
             <hr>
             <div class="form-group">
                 <label for="filter">Filtrar por departamento</label>
-                <select id="filter" class="form-control">
-                    <option>Administrativo</option>
-                    <option>Educativo</option>
-                    <option>Informatico</option>
+                <select class="form-control" id="filter">
+                    <ng-container *ngFor="let d of departments">
+                        <option *ngIf="d.company=== nameCompany" value="{{ d.name }}">{{ d.name }}</option>
+                    </ng-container>
                 </select>
             </div>
         </div>
         <div class="col-md-9 max-he">
             <div class="card shadow bg-white p-2 max-he list-employees">
                 <div class="row">
-                    <div class="col-sm-6 col-11 col-lg-5 p-4" *ngFor="let emp of listEmployees">
-                        <div class="px-4">
-                            <div class="card">
-                                <img class="card-img-top" src="../../../../assets/img/test-photos/foto2.jpg"
-                                    alt="Card image" style="width:100%">
-                                <div class="card-body">
-                                    <h4 class="card-title">John Doe</h4>
-                                    <p class="card-text">
-                                        <strong>Puntos: </strong><span>12</span><i class="fas fa-star"></i>
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Ver perfil</a>
+                    <ng-container *ngFor="let emp of listEmployees">
+                        <div class="col-sm-6 col-12 col-lg-4 p-4" *ngIf="emp.nameCompany=== nameCompany">
+                            <div class="px-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="../../../../assets/img/foto-default.png"
+                                        alt="Card image" style="width:100%">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ emp.name }} {{ emp.lastName }}</h4>
+                                        <p class="card-text">
+                                            <strong>Puntos: </strong><span class="mr-1">{{ emp.points }}</span><i
+                                                class="fas fa-star"></i>
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ver perfil</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </div>
+                        </div>
+                    </ng-container>
                 </div>
 
             </div>

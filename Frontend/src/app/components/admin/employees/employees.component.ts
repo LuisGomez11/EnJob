@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { Employee } from 'src/app/models/employee';
+import  swal  from "sweetalert2";
+import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { DepartmentService } from 'src/app/services/department.service';
+import { Department } from 'src/app/models/department';
 
 @Component({
   selector: 'app-employees',
@@ -42,18 +45,31 @@ export class EmployeesComponent implements OnInit {
     }),
     password: new FormControl('', {
       validators: Validators.required
+    }),
+    nameCompany: new FormControl('', {
+      validators: Validators.required
     })
   });
 
-  // Employees: Subject<Array<any>> = new BehaviorSubject([]);
   listEmployees: Employee[] = [];
+  departments: Department[];
 
-  constructor(public app: AppComponent, private service: EmployeeService) { }
-
+  constructor(public app: AppComponent, private service: EmployeeService,
+    private auth: AuthAdmineService,private serviceDep: DepartmentService) { }
+    nameCompany = '';
   ngOnInit() {
     this.app.admin();
     this.getEmployees();
+    this.nameCompany = this.auth.getUser().nameCompany;
+    this.getDepartments();
   }
+
+  getDepartments(){
+    this.serviceDep.getDepartments()
+    .subscribe(data =>
+      this.departments = data);
+  }
+  
   getEmployees() {
     this.service.getEmployees()
       .subscribe((data: any) => {
@@ -63,9 +79,18 @@ export class EmployeesComponent implements OnInit {
       });
   }
   createEmployee() {
+    this.Form.value.nameCompany = this.nameCompany;
     this.service.createEmployee(this.Form.value)
       .subscribe(res => {
-        console.log(res)
+        swal.fire({
+          position: 'center',
+          type: 'success',
+          title: 'Correcto!',
+          text: 'Empleado creado correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.getEmployees();
       });
   }
 

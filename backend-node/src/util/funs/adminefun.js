@@ -22,27 +22,19 @@ adminefun.admine = (req) => {
         numDocument,
         nameCompany,
         email,
-        phone,
-        position,
-        departament,
-        salary,
+        phone
     } = req.body
     return {
         name,
         lastName,
         numDocument,
         nameCompany,
-        state: 'Activo',
+        state: 'Inactivo',
         userName,
         password: Passcrypt(password),
         email,
-        role: 'admine',
-        phone,
-        availability: 'Disponible',
-        position,
-        departament,
-        salary,
-        points: '0'
+        role: 'Admin RH',
+        phone
     }
 }
 

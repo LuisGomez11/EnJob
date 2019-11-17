@@ -1,7 +1,7 @@
 'use strict'
 const { compare } = require('../util/password');
 const { createToken } = require('../util/jwt');
-const userModel = require('../models/user');
+const AdmineModel = require('../models/AdmineModel');
 const { admine } = require('../util/funs/adminefun');
 const { bad_requestSend, bad_requestStatus, createdSend, createdStatus, non_authoritative_informationSend, non_authoritative_informationStatus, not_foundSend, not_foundStatus } = require('../util/HttpStatus');
 
@@ -10,12 +10,6 @@ const admineCtrl = {};
 admineCtrl.LoginAdmine = async (req, res) => {
     let Admine_2 = admine(req);
     const auth = false;
-    await userModel.findOne({
-        $or: [{ userName: Admine.userName }]
-    }, async (err, data) => {
-        let Admine = admine(req);
-        if (err) return res.status(bad_requestStatus).send({ error1: bad_requestSend });
-        if (!data) return res.status(not_foundStatus).send({ auth });
 
 
     try {
@@ -49,12 +43,12 @@ admineCtrl.LoginAdmine = async (req, res) => {
 
 admineCtrl.CreateAdmine = async (req, res) => {
     let Admine = admine(req);
-    userModel.findOne({
+    AdmineModel.findOne({
         $or: [{ userName: Admine.userName, email: Admine.email, numDocument: Admine.numDocument }]
     }, async (err, data) => {
         if (err) res.status(bad_requestStatus).send({ error1: bad_requestSend });
         if (data != null) return res.status(bad_requestStatus).send({ error2: bad_requestSend });
-        await userModel.create(Admine, (err, data) => {
+        await AdmineModel.create(Admine, (err, data) => {
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
 
             //const token = createToken(data);

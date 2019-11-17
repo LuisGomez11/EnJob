@@ -4,8 +4,7 @@ import { FormBuilder, FormGroup, Validators, NgForm  } from "@angular/forms";
 import { DepartmentService } from "../../../services/department.service";
 import { Department } from "../../../models/department";
 import  swal  from "sweetalert2";
-
-declare var $ : any;
+import { AuthAdmineService } from 'src/app/services/auth-admine.service';
 
 @Component({
   selector: 'app-departments',
@@ -17,14 +16,17 @@ export class DepartmentsComponent implements OnInit {
   department: Department = new Department();
   listDepartments: Department[];
   public form: FormGroup;
+  nameCompany = '';
 
   constructor(public app : AppComponent,
     private service: DepartmentService,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private auth: AuthAdmineService) { }
 
   ngOnInit() {
     this.app.admin();
     this.getDepartments();
+    this.nameCompany = this.auth.getUser().nameCompany;
   }
 
   getDepartments(){
@@ -35,6 +37,7 @@ export class DepartmentsComponent implements OnInit {
 
   createDepartment(form: NgForm){
     if(form.value.idDepartment){
+      form.value.company = this.auth.getUser().nameCompany;
       this.service.updateDepartment(form.value).subscribe(data => {
         swal.fire({
           position: 'center',
@@ -48,6 +51,7 @@ export class DepartmentsComponent implements OnInit {
         this.resetForm(form);
       });
     }else{
+      form.value.company = this.auth.getUser().nameCompany;
       this.service.createDepartment(form.value).subscribe(data => {
         swal.fire({
           position: 'center',

@@ -22,6 +22,7 @@ employeefun.employee = (req) => {
         email,
         phone,
         position,
+        nameCompany,
         departament,
         salary,
     } = req.body
@@ -34,7 +35,7 @@ employeefun.employee = (req) => {
         userName,
         password: Passcrypt(password),
         email,
-        role: 'employee',
+        role: 'Empleado',
         phone,
         availability: 'Disponible',
         position,
