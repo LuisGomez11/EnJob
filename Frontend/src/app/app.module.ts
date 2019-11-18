@@ -16,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 //SADMIN-COMPONENTS
 import { SadminHomeComponent } from './components/sadmin/sadmin-home/sadmin-home.component';
 import { SubscribedComponent } from './components/sadmin/subscribed/subscribed.component';
+import { SubscriptionsComponent } from './components/sadmin/subscriptions/subscriptions.component';
 
 //ADMIN-COMPONENTS
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
@@ -52,6 +53,7 @@ import { DragAndDropModule } from "angular-draggable-droppable";
 import { AuthAdmineService } from './services/auth-admine.service';
 import { AuthGuard } from './guards/authguard.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +87,7 @@ import { AuthGuard } from './guards/authguard.service';
     EmployeeEditProfileComponent,
     AdminProfileComponent,
     EmployeeChangepassComponent,
+    SubscriptionsComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 //SADMIN-COMPONENTS
 import { SadminHomeComponent } from './components/sadmin/sadmin-home/sadmin-home.component';
 import { SubscribedComponent } from './components/sadmin/subscribed/subscribed.component';
+import { SubscriptionsComponent } from './components/sadmin/subscriptions/subscriptions.component';
 
 //ADMIN-COMPONENTS
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path:'sadmin',component: SadminHomeComponent},
   {path:'sadmin/home',component: SadminHomeComponent},
   {path:'sadmin/subscribed',component: SubscribedComponent},
+  {path:'sadmin/subscritions',component: SubscriptionsComponent},
   {path:'admin',redirectTo: 'admin/home', pathMatch: 'full'},
   {path:'admin/home',component: AdminHomeComponent, canActivate: [AuthGuard]},
   {path:'admin/departments',component: DepartmentsComponent, canActivate: [AuthGuard]},
