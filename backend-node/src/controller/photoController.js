@@ -8,11 +8,12 @@ const photoCtrl = {};
 
 photoCtrl.uploadPhoto = async (req, res) => {
     try {
+        const { id } = req.params;
         const result = await cloudinary.v2.uploader.upload(req.file.path)
         const photo = new photoModel({
             imageURL: result.url,
             public_id: result.public_id,
-            id_user: req.body.id_user,
+            id_user: id,
             imagePath: req.file.path
         });
         await photo.save();
