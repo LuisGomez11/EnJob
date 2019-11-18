@@ -5,12 +5,12 @@ const { bad_requestSend, bad_requestStatus, createdSend, createdStatus, non_auth
 
 const adminCtrl = {};
 
-adminCtrl.loginadmin = async (req, res) =>{
+adminCtrl.loginadmin = async (req, res) => {
     let Admin = admin(req);
     await adminModel.findOne({
         $or: [{ userName: Admin.userName }]
     }, async (err, data) => {
-        
+
         if (err) return res.status(bad_requestStatus).send({ error1: bad_requestSend });
         if (!data) return res.status(not_foundStatus).send({ error1: not_foundSend });
 
@@ -22,14 +22,14 @@ adminCtrl.loginadmin = async (req, res) =>{
         const dataadmin = {
             userName: Admine.userName,
             accessToken: token
-          }
-          
-        return res.status(200).send({  auth: true , dataadmin});
+        }
+
+        return res.status(200).send({ auth: true, dataadmin });
     });
 };
 
-adminCtrl.company = async (req, res) =>{
-    const admind = await admineModel.find();      
+adminCtrl.company = async (req, res) => {
+    const admind = await admineModel.find();
     return res.json(admind)
 };
 
