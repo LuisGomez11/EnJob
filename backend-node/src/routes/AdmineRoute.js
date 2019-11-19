@@ -19,7 +19,7 @@ module.exports = (app) => {
 
   app.get('/v1/api/admine/employees', findEmployees);
 
-  app.get('*', (req, res) => {
-    res.status(500).send({ err: 'servido no encontrado' });
-  })
+  // app.get('*', (req, res) => {
+  //   res.status(500).send({ err: 'servidor no encontrado' });
+  // })
 }

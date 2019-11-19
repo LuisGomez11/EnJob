@@ -46,7 +46,9 @@ admineCtrl.CreateAdmine = async (req, res) => {
         if (err) res.status(bad_requestStatus).send({ error1: bad_requestSend });
         if (data != null) return res.status(bad_requestStatus).send({ error2: bad_requestSend });
         await AdmineModel.create(Admine, (err, data) => {
+            console.log(err)
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
+            
 
             //const token = createToken(data);
 
@@ -69,19 +71,21 @@ admineCtrl.findAdmine = async (req, res) => {
         const admines = await AdmineModel.find();
 
         return res.status(200).send({ users: admines });
-    } catch (error) {
+    } catch (err) {
         return res.status(404).send({ err });
     }
 };
 
 admineCtrl.updateAdmine = async (req, res) => {
+    console.log('sdfsdfs')
     try {
-        const { id } = req.params;
+        console.log('sdf')
+        console.log(req.params.id)
         let Admine = admine(req);
-        await AdmineModel.findByIdAndUpdate(id, { $set: Admine }, { new: true });
+        await AdmineModel.findByIdAndUpdate(req.params.id, { $set: Admine }, { new: true });
 
-        return res.status(200).send({ users: admines });
-    } catch (error) {
+        return res.status(200).send({ users:'ads'});
+    } catch (err) {
         return res.status(404).send({ err });
     }
 };

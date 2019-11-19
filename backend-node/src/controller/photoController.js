@@ -8,12 +8,12 @@ const photoCtrl = {};
 
 photoCtrl.uploadPhoto = async (req, res) => {
     try {
-        const { id } = req.params;
+        
         const result = await cloudinary.v2.uploader.upload(req.file.path)
         const photo = new photoModel({
             imageURL: result.url,
             public_id: result.public_id,
-            id_user: id,
+            id_user: req.body.id_user,
             imagePath: req.file.path
         });
         await photo.save();
@@ -24,5 +24,17 @@ photoCtrl.uploadPhoto = async (req, res) => {
         console.log(error)
     }
 };
+
+photoCtrl.findImages = async (req,res) => {
+    const photos = await photoModel.find();
+    return res.status(200).send({ photos: photos });
+}
+
+photoCtrl.findImages = async (req,res) => {
+    const {photo_id} = req.params;
+    const photod = await photo.findById(photo_id);
+    console.log(result);  
+    res.redirect('/images/add')
+}
 
 module.exports = photoCtrl;

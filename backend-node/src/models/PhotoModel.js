@@ -7,4 +7,4 @@ const photoSchema = new Schema({
     id_user: { type: String },
 });
 
-module.exports = model('photo', photoSchema);
+module.exports = model('photo', photoSchema );
