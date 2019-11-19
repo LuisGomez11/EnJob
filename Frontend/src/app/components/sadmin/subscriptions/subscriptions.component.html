@@ -1,1 +1,62 @@
-<p>subscriptions works!</p>
+<div class="contenedor p-4">
+    <div class="d-flex justify-content-between">
+        <h3>Suscripciones disponibles</h3>
+        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+    <hr>
+    <div>
+        <div class="row">
+            <div class="col-xl-2 col-md-3 col-sm-4 mb-3" *ngFor="let s of listSubscriptions">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-dollar-sign display-2"></i>
+                        <p class="mt-3 h3">{{ s.duration }} meses</p>
+                        <p class="h3"> ${{ s.price }} </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button (click)="deleteSubscription(s)" class="btn btn-danger" title="Eliminar suscripción">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Suscripción</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form #form="ngForm" (ngSubmit)="createSubscription(form)">
+                <input type="hidden" name="idSubscription" #idSubscription="ngModel"
+                    [(ngModel)]="service.selectedSubscription.idSubscription">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="duration">Duración (meses):</label>
+                        <input type="number" id="duration" class="form-control" name="duration" #duration="ngModel"
+                            [(ngModel)]="service.selectedSubscription.duration" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Precio:</label>
+                        <input type="number" id="price" class="form-control" name="price" #price="ngModel"
+                            [(ngModel)]="service.selectedSubscription.price" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

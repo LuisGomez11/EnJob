@@ -15,11 +15,10 @@ export class AdminBonusComponent implements OnInit {
 
   bonification: Bonification = new Bonification();
   listBonifications: Bonification[];
-  public form: FormGroup;
   nameCompany = '';
+  
   constructor(public app: AppComponent,
     private service: BonificationService,
-    private formBuilder: FormBuilder,
     private auth: AuthAdmineService) { }
 
   ngOnInit() {
