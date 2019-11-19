@@ -21,17 +21,18 @@ adminefun.admine = (req) => {
         password,
         numDocument,
         nameCompany,
-        subscriptionTime,
         email,
         phone
     } = req.body
     return {
         name,
         lastName,
-        subscriptionTime,
+        subscriptionTime: 'N/A',
+        initSubscription: 'N/A',
+        endSubscription: 'N/A',
         numDocument,
         nameCompany,
-        state: 'Activo',
+        state: 'Inactivo',
         userName,
         password: Passcrypt(password),
         email,

@@ -39,7 +39,11 @@ export class LoginComponent implements OnInit {
 
     if (localStorage.getItem("USER") !== null) {
       if(this.auth.getUser().role === 'Admin RH'){
-        this.router.navigateByUrl('/admin');
+        if(this.auth.getUser().state === 'Inactivo'){
+          this.router.navigateByUrl('/admin/subscriptions');
+        }else{
+          this.router.navigateByUrl('/admin');
+        }        
       } else if(this.auth.getUser().role === 'Empleado'){
         this.router.navigateByUrl('/employee');
       } else if(this.auth.getUser().role === 'Supervisor'){

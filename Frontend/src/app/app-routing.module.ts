@@ -23,6 +23,7 @@ import { AdminConfigComponent } from './components/admin/admin-config/admin-conf
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
 import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
+import { AdminSubscriptionsComponent } from './components/admin/admin-subscriptions/admin-subscriptions.component';
 
 //EMPLOYEE-COMPONENTS
 import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
@@ -55,8 +56,9 @@ const routes: Routes = [
   {path:'sadmin',component: SadminHomeComponent},
   {path:'sadmin/home',component: SadminHomeComponent},
   {path:'sadmin/subscribed',component: SubscribedComponent},
-  {path:'sadmin/subscritions',component: SubscriptionsComponent},
+  {path:'sadmin/subscriptions',component: SubscriptionsComponent},
   {path:'admin',redirectTo: 'admin/home', pathMatch: 'full'},
+  {path:'admin/subscriptions',component: AdminSubscriptionsComponent},
   {path:'admin/home',component: AdminHomeComponent, canActivate: [AuthGuard]},
   {path:'admin/departments',component: DepartmentsComponent, canActivate: [AuthGuard]},
   {path:'admin/employees',component: EmployeesComponent, canActivate: [AuthGuard]},

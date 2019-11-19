@@ -52,6 +52,7 @@ import { SupervisorTasksComponent } from './components/supervisor/supervisor-tas
 import { DragAndDropModule } from "angular-draggable-droppable";
 import { AuthAdmineService } from './services/auth-admine.service';
 import { AuthGuard } from './guards/authguard.service';
+import { AdminSubscriptionsComponent } from './components/admin/admin-subscriptions/admin-subscriptions.component';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import { AuthGuard } from './guards/authguard.service';
     AdminProfileComponent,
     EmployeeChangepassComponent,
     SubscriptionsComponent,
+    AdminSubscriptionsComponent,
   ],
   imports: [
     BrowserModule,

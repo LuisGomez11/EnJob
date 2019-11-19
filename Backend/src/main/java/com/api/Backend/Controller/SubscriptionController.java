@@ -24,18 +24,18 @@ public class SubscriptionController {
 	@Autowired
 	SubscriptionService service;
 	
-	@GetMapping("/subscrition")
+	@GetMapping("/subscription")
 	public List<Subscription> getSubscriptions() {
         return service.getSubscriptions();
     }
 	
-	@GetMapping("/subscrition/{subscritionId}")
+	@GetMapping("/subscription/{subscritionId}")
     public Subscription getSubscription(@PathVariable String subscritionId) {
 		Subscription s = service.getSubscription(subscritionId);
         return s;
     }
     
-    @PostMapping("/subscrition")
+    @PostMapping("/subscription")
     @ResponseStatus(HttpStatus.CREATED)
     public Subscription save(@RequestBody Subscription s) {
         s.setIdSubscription("");
@@ -43,14 +43,14 @@ public class SubscriptionController {
         return s;
     }
     
-    @PutMapping("/subscrition")
+    @PutMapping("/subscription")
     @ResponseStatus(HttpStatus.CREATED)
     public Subscription update(@RequestBody Subscription s){
         service.save(s);
         return s;
     }  
     
-    @DeleteMapping("/subscrition/{id}")
+    @DeleteMapping("/subscription/{id}")
     public void delete(@PathVariable String id) {
         service.delete(id);
     }
