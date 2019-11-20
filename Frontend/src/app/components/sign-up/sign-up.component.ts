@@ -9,7 +9,7 @@ declare var $: any;
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
-  providers:[AdmineServiceService]
+  providers: [AdmineServiceService]
 })
 export class SignUpComponent implements OnInit {
 
@@ -28,9 +28,12 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp(form: NgForm) {
-    console.log('estoy')
-     this.admineService.signup(form.value)
-    .subscribe(res => {
+    form.value.state = 'Inactivo';
+    form.value.subscriptionTime = 'N/A';
+    form.value.initSubscription = 'N/A';
+    form.value.endSubscription = 'N/A';
+    this.admineService.signup(form.value)
+      .subscribe(res => {
         console.log(res)
       });
   }

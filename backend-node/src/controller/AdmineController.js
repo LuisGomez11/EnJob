@@ -60,7 +60,7 @@ admineCtrl.CreateAdmine = async (req, res) => {
 admineCtrl.findByIdAdmine = async (req, res) => {
     try {
         const Adminee = await AdmineModel.findById(req.params.id);
-        return res.status(200).send({ users: Adminee });
+        return res.status(200).send({ Adminee });
     } catch (error) {
         return res.status(404).send({ err });
     }

@@ -21,6 +21,7 @@ export class AdminSubscriptionsComponent implements OnInit {
   ngOnInit() {
     this.app.admin();
     this.getSubscriptions();
+    console.log(this.auth.getUser()._id);
     document.getElementById('nav-admin').style.display = 'none';
     document.getElementById('menu-admin').style.display = 'none';
   }
@@ -33,8 +34,11 @@ export class AdminSubscriptionsComponent implements OnInit {
 
   updateSubscription(duration: String) {
     this.serviceAdmine.getAdmine(this.auth.getUser()._id)
-      .subscribe(data => {
-        this.serviceAdmine.selectedAdmine = data;
+      .subscribe((data: any) => {
+        this.serviceAdmine.selectedAdmine = this.auth.getUser();
+        this.serviceAdmine.selectedAdmine._id =this.auth.getUser()._id;
+        // console.log(data.Adminee.password);
+        this.serviceAdmine.selectedAdmine.password = data.Adminee.password;
         this.serviceAdmine.selectedAdmine.subscriptionTime = duration;
         this.serviceAdmine.updateAdmine(this.serviceAdmine.selectedAdmine)
           .subscribe(res => {
