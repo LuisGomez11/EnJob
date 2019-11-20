@@ -13,7 +13,7 @@ const admineSchema = new Schema({
   phone: { type: String,  },
   role: { type: String,  },
   state: { type: String,  },
-  //photo: {type: String , ref: 'photo', default:'https://res.cloudinary.com/divl37evs/image/upload/v1574130941/fyzji3dzlgdl2ffxtfgz.jpg' },
+  photo: {type: String , ref: 'photo', default:'https://res.cloudinary.com/divl37evs/image/upload/v1574130941/fyzji3dzlgdl2ffxtfgz.jpg' },
   lastLogin: { type: Date, default: Date.now }
 });
 
