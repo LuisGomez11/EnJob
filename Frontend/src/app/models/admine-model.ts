@@ -18,19 +18,19 @@ export class AdmineModel {
         this.state = state;
     }
 
-    _id: String;
-    name: String;
-    userName: String;
-    lastName: String;
-    password: String;
-    subscriptionTime: String;
-    initSubscription: String;
-    endSubscription: String;
-    email: String;
-    phone: String;
-    role: String;
-    nameCompany: String;
-    state: String;
-    numDocument: String;
+    _id: string;
+    name: string;
+    userName: string;
+    lastName: string;
+    password: string;
+    subscriptionTime: string;
+    initSubscription: string;
+    endSubscription: string;
+    email: string;
+    phone: string;
+    role: string;
+    nameCompany: string;
+    state: string;
+    numDocument: string;
 
 }

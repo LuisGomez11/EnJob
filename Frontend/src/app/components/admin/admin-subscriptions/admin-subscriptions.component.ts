@@ -32,13 +32,10 @@ export class AdminSubscriptionsComponent implements OnInit {
         this.listSubscriptions = data);
   }
 
-  updateSubscription(duration: String) {
+  updateSubscription(duration: string) {
     this.serviceAdmine.getAdmine(this.auth.getUser()._id)
       .subscribe((data: any) => {
-        this.serviceAdmine.selectedAdmine = this.auth.getUser();
-        this.serviceAdmine.selectedAdmine._id =this.auth.getUser()._id;
-        // console.log(data.Adminee.password);
-        this.serviceAdmine.selectedAdmine.password = data.Adminee.password;
+        this.serviceAdmine.selectedAdmine = data.Adminee;
         this.serviceAdmine.selectedAdmine.subscriptionTime = duration;
         this.serviceAdmine.updateAdmine(this.serviceAdmine.selectedAdmine)
           .subscribe(res => {

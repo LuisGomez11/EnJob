@@ -48,9 +48,6 @@ admineCtrl.CreateAdmine = async (req, res) => {
         await AdmineModel.create(Admine, (err, data) => {
             console.log(err)
             if (err) return res.status(bad_requestStatus).send({ error3: bad_requestSend });
-            
-
-            //const token = createToken(data);
 
             return res.status(createdStatus).send({ Admine, created: createdSend });
         });
@@ -77,11 +74,10 @@ admineCtrl.findAdmine = async (req, res) => {
 };
 
 admineCtrl.updateAdmine = async (req, res) => {
-    console.log('sdfsdfs')
     try {
-        console.log('sdf')
         console.log(req.params.id)
         let Admine = admine(req);
+        delete Admine.password;
         await AdmineModel.findByIdAndUpdate(req.params.id, { $set: Admine }, { new: true });
 
         return res.status(200).send({ users:'ads'});

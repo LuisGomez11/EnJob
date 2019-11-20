@@ -12,17 +12,10 @@ const admineSchema = new Schema({
   initSubscription: { type: String },
   endSubscription: { type: String },
   email: { type: String },
-<<<<<<< HEAD
-  phone: { type: String },
-  role: { type: String },
-  state: { type: String },
-  //photo: {type: String , ref: 'photo', default:'https://res.cloudinary.com/divl37evs/image/upload/v1574130941/fyzji3dzlgdl2ffxtfgz.jpg' },
-=======
   phone: { type: String,  },
   role: { type: String,  },
   state: { type: String,  },
-  photo: {type: String , ref: 'photo', default:'https://res.cloudinary.com/divl37evs/image/upload/v1574130941/fyzji3dzlgdl2ffxtfgz.jpg' },
->>>>>>> b8ca2f37c33b511b205734e5ed2ea73c415155a2
+  photo: {type: String , ref: 'photo', default:'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' },
   lastLogin: { type: Date, default: Date.now }
 });
 

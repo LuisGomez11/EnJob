@@ -1,20 +1,27 @@
 <div class="contenedor p-4">
     <h3>Solicitudes</h3>
+    <hr>
     <div class="cont-solicitudes mt-3">
         <div class="row">
-            <div class="col-md-4" *ngFor="let item of [1,1,1,1,1];let i=index">
-                <div class="card mb-3 shadow">
-                    <div class="card-header">
-                        Cualquier persona en el mundo
+            <ng-container *ngFor="let a of listAdmines">
+                <ng-container *ngIf="a.state === 'Inactivo'">
+                    <div class="col-md-4" *ngIf="a.subscriptionTime !== 'N/A'">
+                        <div class="card mb-3 shadow">
+                            <div class="card-header">
+                                {{ a.name }} {{ a.lastName }}
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Correo: </strong>{{ a.email }}</p>
+                                <p><strong>Empresa: </strong>{{ a.nameCompany }}</p>
+                                <p><strong>Suscripción de: </strong>{{ a.subscriptionTime }} mes(es)</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button (click)="activeCount(a)">Activar</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <strong>Empresa: </strong>Condor Labs
-                    </div>
-                    <div class="card-footer text-center">
-                        <button>Activar</button>
-                    </div>
-                </div>
-            </div>
+                </ng-container>
+            </ng-container>
         </div>
     </div>
 </div>

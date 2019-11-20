@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AdmineModel } from '../models/admine-model';
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdmineServiceService {
 
-  readonly url='http://localhost:3000/v1/api/admine';
+  readonly url='http://localhost:3000/v1/api';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   selectedAdmine: AdmineModel;
@@ -19,16 +20,22 @@ export class AdmineServiceService {
   } 
 
   signup(admine: AdmineModel){
-   return this.http.post(`${this.url}/create`, admine);
-    // console.log(admine)
+   return this.http.post(`${this.url}/admine/create`, admine);
   }
 
-  getAdmine(id: String){
-    return this.http.get<AdmineModel>(`${this.url}/${id}`);
+  getAdmines(): Observable<AdmineModel[]> {
+    return this.http.get(`${this.url}/admines`)
+    .pipe(
+      map(data => data as AdmineModel[])
+    );
+  }
+
+  getAdmine(id: string){
+    return this.http.get<AdmineModel>(`${this.url}/admine/${id}`);
   }
 
   updateAdmine(admine: AdmineModel): Observable<AdmineModel>{
-    return this.http.put<AdmineModel>(`${this.url}/update/${admine._id}`, admine, { headers: this.httpHeaders });
+    return this.http.put<AdmineModel>(`${this.url}/admine/update/${admine._id}`, admine, { headers: this.httpHeaders });
   }
 
 }

@@ -6,29 +6,25 @@
                 <tr>
                     <th>Nombre</th>
                     <th class="text-center">Empresa</th>
-                    <th class="text-center">Plazo de vencimiento</th>
-                    <th class="text-center">Acciones</th>
+                    <th class="text-center">Suscripción</th>
+                    <th class="text-center">Vencimiento de suscripción</th>
+                    <th class="text-center">Desactivar</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Luis Alberto Gomez</td>
-                    <td class="text-center">Condor Labs</td>
-                    <td class="text-center">30/10/2019</td>
-                    <td class="text-center">
-                        <button>Desactivar</button>
-                    </td>
-                </tr>
-                <tr>
-
-                    <td>Luis Alberto Gomez</td>
-                    <td class="text-center">Condor Labs</td>
-                    <td class="text-center">30/10/2019</td>
-                    <td class="text-center">
-                        <button>Desactivar</button>
-                    </td>
-
-                </tr>
+                <ng-container *ngFor="let a of listAdmines">
+                    <tr *ngIf="a.state === 'Activo'">
+                        <td>{{ a.name }} {{ a.lastName }}</td>
+                        <td class="text-center">{{ a.nameCompany }}</td>
+                        <td class="text-center">{{ a.subscriptionTime }} mes(es)</td>
+                        <td class="text-center">{{ a.endSubscription }}</td>
+                        <td class="text-center">
+                            <button class="btn bg-transparent p-0" title="Desactivar cuenta">
+                                <i class="fas fa-times text-danger h4"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </div>
