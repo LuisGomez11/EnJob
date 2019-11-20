@@ -13,7 +13,7 @@ photoCtrl.uploadPhoto = async (req, res) => {
         const photo = new photoModel({
             imageURL: result.url,
             public_id: result.public_id,
-            id_user: req.body.id_user,
+            id_user: req.params.id,
             imagePath: req.file.path
         });
         await photo.save();
@@ -30,11 +30,10 @@ photoCtrl.findImages = async (req,res) => {
     return res.status(200).send({ photos: photos });
 }
 
-photoCtrl.findImages = async (req,res) => {
+photoCtrl.findImage = async (req,res) => {
     const {photo_id} = req.params;
-    const photod = await photo.findById(photo_id);
-    console.log(result);  
-    res.redirect('/images/add')
+    const photo = await photo.findById(photo_id);
+    
 }
 
 module.exports = photoCtrl;
