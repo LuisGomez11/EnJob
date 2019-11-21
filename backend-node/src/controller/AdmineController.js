@@ -58,7 +58,7 @@ admineCtrl.findByIdAdmine = async (req, res) => {
     try {
         const Adminee = await AdmineModel.findById(req.params.id);
         return res.status(200).send({ Adminee });
-    } catch (error) {
+    } catch (err) {
         return res.status(404).send({ err });
     }
 };

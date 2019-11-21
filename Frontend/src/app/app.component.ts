@@ -166,7 +166,7 @@ export class AppComponent implements OnInit {
       this.lastName = 'Indefinido';
       this.user = 'Indefinido';
       this.nameCompany = 'Indefinido';
-      this.photo = 'Indefinido';
+      this.photo = '../assets/img/image-not-found.png';
     } else {
       this.name = this.auth.getUser().name;
       this.lastName = this.auth.getUser().lastName;

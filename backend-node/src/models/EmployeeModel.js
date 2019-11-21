@@ -16,7 +16,7 @@ const employeeSchema = new Schema({
     departament: { type: String },
     salary: { type: String },
     points: { type: String },
-    photo: { type: Schema.ObjectId, ref: 'photo' },
+    // photo: {type: String , ref: 'photo', default:'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' },
     lastLogin: { type: Date, default: Date.now }
 });
 

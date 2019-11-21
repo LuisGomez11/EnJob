@@ -62,7 +62,7 @@ employeeCtrl.findEmployees = async (req, res) => {
         const employees = await emplModel.find();
 
         return res.status(200).send({ users: employees });
-    } catch (error) {
+    } catch (err) {
         return res.status(404).send({ err });
     }
 };
@@ -71,7 +71,7 @@ employeeCtrl.findByIdEmployee = async (req, res) => {
     try {
         const employee = await emplModel.findById(req.params.id);
         return res.status(200).send({ users: employee });
-    } catch (error) {
+    } catch (err) {
         return res.status(404).send({ err });
     }
 };

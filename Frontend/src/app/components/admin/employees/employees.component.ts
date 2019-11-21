@@ -94,6 +94,7 @@ export class EmployeesComponent implements OnInit {
           timer: 1500
         });
         this.getEmployees();
+        this.Form.reset();
       });
   }
 

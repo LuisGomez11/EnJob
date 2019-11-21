@@ -9,15 +9,11 @@ module.exports = (app) => {
 
   app.post('/v1/api/admine/create',  CreateAdmine);
 
-  app.post('/v1/api/admine/employee/create', createEmployee);
-
   app.put('/v1/api/admine/update/:id', updateAdmine)
 
   app.get('/v1/api/admine/:id', findByIdAdmine);
 
   app.get('/v1/api/admines', findAdmine);
-
-  app.get('/v1/api/admine/employees', findEmployees);
 
   // app.get('*', (req, res) => {
   //   res.status(500).send({ err: 'servidor no encontrado' });
