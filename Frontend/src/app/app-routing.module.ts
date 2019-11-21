@@ -58,7 +58,7 @@ const routes: Routes = [
   {path:'sadmin/subscribed',component: SubscribedComponent},
   {path:'sadmin/subscriptions',component: SubscriptionsComponent},
   {path:'admin',redirectTo: 'admin/home', pathMatch: 'full'},
-  {path:'admin/subscriptions',component: AdminSubscriptionsComponent},
+  {path:'admin/subscriptions',component: AdminSubscriptionsComponent, canActivate: [AuthGuard]},
   {path:'admin/home',component: AdminHomeComponent, canActivate: [AuthGuard]},
   {path:'admin/departments',component: DepartmentsComponent, canActivate: [AuthGuard]},
   {path:'admin/employees',component: EmployeesComponent, canActivate: [AuthGuard]},

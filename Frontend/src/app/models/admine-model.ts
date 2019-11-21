@@ -32,5 +32,5 @@ export class AdmineModel {
     nameCompany: string;
     state: string;
     numDocument: string;
-
+    photo: string;
 }

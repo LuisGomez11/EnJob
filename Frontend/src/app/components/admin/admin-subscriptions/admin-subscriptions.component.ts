@@ -4,6 +4,7 @@ import { Subscription } from 'src/app/models/subscription';
 import { SubscriptionService } from 'src/app/services/subscription.service';
 import { AdmineServiceService } from 'src/app/services/admine-service.service';
 import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-subscriptions',
@@ -16,7 +17,7 @@ export class AdminSubscriptionsComponent implements OnInit {
   listSubscriptions: Subscription[];
 
   constructor(public app: AppComponent, private service: SubscriptionService, private serviceAdmine: AdmineServiceService,
-    private auth: AuthAdmineService) { }
+    private auth: AuthAdmineService, private router: Router) { }
 
   ngOnInit() {
     this.app.admin();
@@ -24,6 +25,11 @@ export class AdminSubscriptionsComponent implements OnInit {
     console.log(this.auth.getUser()._id);
     document.getElementById('nav-admin').style.display = 'none';
     document.getElementById('menu-admin').style.display = 'none';
+  }
+
+  logOut() {
+    this.auth.logOut();
+    this.router.navigateByUrl('/login');
   }
 
   getSubscriptions() {

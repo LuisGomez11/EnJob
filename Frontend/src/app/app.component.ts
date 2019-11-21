@@ -158,7 +158,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  user = ''; nameCompany = '';name = ''; lastName = '';
+  user = ''; nameCompany = '';name = ''; lastName = ''; photo = '';
   
   ngOnInit() {
     if (localStorage.getItem("USER") === null) {
@@ -166,11 +166,13 @@ export class AppComponent implements OnInit {
       this.lastName = 'Indefinido';
       this.user = 'Indefinido';
       this.nameCompany = 'Indefinido';
+      this.photo = 'Indefinido';
     } else {
       this.name = this.auth.getUser().name;
       this.lastName = this.auth.getUser().lastName;
       this.user = this.auth.getUser().userName;
       this.nameCompany = this.auth.getUser().nameCompany;
+      this.photo = this.auth.getUser().photo;
     }
   }
 
