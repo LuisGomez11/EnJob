@@ -27,13 +27,13 @@ export class SupervisorTasksComponent implements OnInit {
   constructor(public app: AppComponent, private service: TaskService, private serviceDep: DepartmentService,
     private serviceEmp: EmployeeService, private auth: AuthAdmineService) { }
 
-  nameCompany = '';
+  company = '';
   
   ngOnInit() {
     this.app.supervisor();
     this.getDepartments();
     this.getEmployees();
-    this.nameCompany = this.auth.getUser().nameCompany;
+    this.company = this.auth.getUser().nameCompany;
   }
 
   getDepartments() {
@@ -45,8 +45,6 @@ export class SupervisorTasksComponent implements OnInit {
   getEmployees() {
     this.serviceEmp.getEmployees()
       .subscribe((data: any) => {
-        console.log(this.listEmployees);
-        console.log(data)
         this.listEmployees = data.users;
       });
   }

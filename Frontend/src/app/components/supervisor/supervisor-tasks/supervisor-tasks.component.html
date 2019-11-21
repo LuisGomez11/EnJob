@@ -28,7 +28,8 @@
 								<select class="form-control" id="department" name="department" #department="ngModel"
 									[(ngModel)]="service.selectedTask.department">
 									<ng-container *ngFor="let d of departments">
-									<option *ngIf="d.company=== nameCompany" value="{{ d.name }}">{{ d.name }}</option>
+										<option *ngIf="d.company=== company" value="{{ d.idDepartment }}">{{ d.name }}
+										</option>
 									</ng-container>
 								</select>
 							</div>
@@ -39,8 +40,11 @@
 								<select class="form-control" name="assigned" #assigned="ngModel"
 									[(ngModel)]="service.selectedTask.assigned">
 									<ng-container *ngFor="let e of listEmployees">
-									<option *ngIf="e.nameCompany=== nameCompany" value="{{ e._id }}">{{ e.name }} {{ e.lastName }}</option>
-								</ng-container>
+										<ng-container *ngIf="e.nameCompany=== company">
+											<option *ngIf="e.role=== 'Empleado'" value="{{ e._id }}">{{ e.name }}
+												{{ e.lastName }}</option>
+										</ng-container>
+									</ng-container>
 								</select>
 							</div>
 						</div>

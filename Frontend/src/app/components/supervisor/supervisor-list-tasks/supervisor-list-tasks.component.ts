@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { NgForm  } from "@angular/forms";
-import { TaskService } from "../../../services/task.service";
-import { Task } from "../../../models/task";
+import { Task } from 'src/app/models/task';
 import  swal  from "sweetalert2";
-
-declare var $ : any;
+import { TaskService } from 'src/app/services/task.service';
+import { EmployeeService } from 'src/app/services/employee.service';
+import { Employee } from 'src/app/models/employee';
 
 @Component({
-  selector: 'app-supervisor-kanban',
-  templateUrl: './supervisor-kanban.component.html',
-  styleUrls: ['./supervisor-kanban.component.css']
+  selector: 'app-supervisor-list-tasks',
+  templateUrl: './supervisor-list-tasks.component.html',
+  styleUrls: ['./supervisor-list-tasks.component.css']
 })
-export class SupervisorKanbanComponent implements OnInit {
+export class SupervisorListTasksComponent implements OnInit {
 
   task: Task = new Task();
   listTasks: Task[];
 
-  constructor(public app : AppComponent, private service: TaskService) { }
+  constructor(public app: AppComponent, private service: TaskService, private serviceEmplo: EmployeeService) { }
 
   ngOnInit() {
     this.app.supervisor();
@@ -51,6 +50,5 @@ export class SupervisorKanbanComponent implements OnInit {
     }
 
   }
-
 
 }

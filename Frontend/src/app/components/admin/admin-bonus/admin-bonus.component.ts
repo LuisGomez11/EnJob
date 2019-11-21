@@ -15,7 +15,7 @@ export class AdminBonusComponent implements OnInit {
 
   bonification: Bonification = new Bonification();
   listBonifications: Bonification[];
-  nameCompany = '';
+  company = '';
   
   constructor(public app: AppComponent,
     private service: BonificationService,
@@ -24,7 +24,7 @@ export class AdminBonusComponent implements OnInit {
   ngOnInit() {
     this.app.admin();
     this.getBonifications();
-    this.nameCompany = this.auth.getUser().nameCompany;
+    this.company = this.auth.getUser()._id;
   }
 
   getBonifications() {
@@ -35,7 +35,7 @@ export class AdminBonusComponent implements OnInit {
 
   createBonification(form: NgForm) {
     if (form.value.idBonification) {
-      form.value.company = this.nameCompany;
+      form.value.company = this.company;
       this.service.updateBonification(form.value).subscribe(data => {
         swal.fire({
           position: 'center',
@@ -49,7 +49,7 @@ export class AdminBonusComponent implements OnInit {
         this.resetForm(form);
       });
     } else {
-      form.value.company = this.nameCompany;
+      form.value.company = this.company;
       this.service.createBonification(form.value).subscribe(data => {
         swal.fire({
           position: 'center',

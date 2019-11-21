@@ -6,7 +6,7 @@ module.exports = (app) =>{
 
   app.post('/v1/api/employee/create', createEmployee);
   
-  app.get('/v1/api/employee', findByIdEmployee);
+  app.get('/v1/api/employee/:id', findByIdEmployee);
   
   app.get('/v1/api/employees', findEmployees);
 

@@ -10,7 +10,7 @@
                 <label for="filter">Filtrar por departamento</label>
                 <select class="form-control" id="filter">
                     <ng-container *ngFor="let d of departments">
-                        <option *ngIf="d.company=== nameCompany" value="{{ d.name }}">{{ d.name }}</option>
+                        <option *ngIf="d.company=== company" value="{{ d.name }}">{{ d.name }}</option>
                     </ng-container>
                 </select>
             </div>
@@ -19,9 +19,9 @@
             <div class="card shadow bg-white p-2 max-he list-employees">
                 <div class="row">
                     <ng-container *ngFor="let emp of listEmployees">
-                        <div class="col-sm-6 col-12 col-lg-4 p-4" *ngIf="emp.nameCompany=== nameCompany">
+                        <div class="col-sm-6 col-12 col-lg-4 p-4" *ngIf="emp.nameCompany=== company">
                             <div class="px-4">
-                                <div class="card">
+                                <div class="card card-employee">
                                     <img class="card-img-top" src="../../../../assets/img/foto-default.png"
                                         alt="Card image" style="width:100%">
                                     <div class="card-body">
@@ -95,7 +95,7 @@
                                 <label for="department">Departamento:</label>
                                 <select class="form-control" id="department" formControlName="departament">
                                     <ng-container *ngFor="let d of departments">
-                                        <option *ngIf="d.company=== nameCompany" value="{{ d.name }}">{{ d.name }}
+                                        <option *ngIf="d.company=== company" value="{{ d.idDepartment }}">{{ d.name }}
                                         </option>
                                     </ng-container>
                                 </select>

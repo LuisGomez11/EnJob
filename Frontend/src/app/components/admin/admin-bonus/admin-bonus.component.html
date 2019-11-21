@@ -9,7 +9,7 @@
   <div>
     <div class="row">
       <ng-container *ngFor="let b of listBonifications">
-        <div class="col-xl-3 col-md-4 col-sm-6 mb-3" *ngIf="b.company=== nameCompany">
+        <div class="col-xl-3 col-md-4 col-sm-6 mb-3" *ngIf="b.company=== company">
           <div class="card">
             <div class="card-header" style="background: rgb(121, 5, 121); height: 50px;">
               <button (click)="deleteBonification(b)" id="btn-delete" class="btn mt-n3" title="Eliminar bonificación">

@@ -59,11 +59,13 @@ export class EmployeesComponent implements OnInit {
 
   constructor(public app: AppComponent, private service: EmployeeService,
     private auth: AuthAdmineService,private serviceDep: DepartmentService) { }
-    nameCompany = '';
+
+    company = '';
+
   ngOnInit() {
     this.app.admin();
     this.getEmployees();
-    this.nameCompany = this.auth.getUser().nameCompany;
+    this.company = this.auth.getUser()._id;
     this.getDepartments();
   }
 
@@ -82,7 +84,7 @@ export class EmployeesComponent implements OnInit {
       });
   }
   createEmployee() {
-    this.Form.value.nameCompany = this.nameCompany;
+    this.Form.value.nameCompany = this.company;
     this.service.createEmployee(this.Form.value)
       .subscribe(res => {
         swal.fire({

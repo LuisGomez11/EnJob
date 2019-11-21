@@ -56,3 +56,11 @@ td{
 .card-img-top{
     height: 250px;
 }
+
+.card-employee{
+    transition: all .2s;
+}
+
+.card-employee:hover{
+    border-color: #000;
+}

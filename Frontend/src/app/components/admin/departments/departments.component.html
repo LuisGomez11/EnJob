@@ -2,22 +2,21 @@
     <h3>Departamentos</h3>
     <div class="row mt-3">
         <div class="col-md-5 mb-2">
-            <div class="bg-white p-3 shadow">
+            <div class="card shadow">
+                <div class="card-header">
+                    Agregar departamento
+                </div>
                 <form #form="ngForm" (ngSubmit)="createDepartment(form)">
-                    <input type="hidden" name="idDepartment" #idDepartment="ngModel"
-                        [(ngModel)]="service.selectedDepartment.idDepartment">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" #name="ngModel"
-                            [(ngModel)]="service.selectedDepartment.name" class="form-control">
+                    <div class="card-body">
+                        <input type="hidden" name="idDepartment" #idDepartment="ngModel"
+                            [(ngModel)]="service.selectedDepartment.idDepartment">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" #name="ngModel"
+                                [(ngModel)]="service.selectedDepartment.name" class="form-control">
+                        </div>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="company">Empresa</label>
-                        <input type="text" id="company" name="company" #company="ngModel"
-                            [(ngModel)]="service.selectedDepartment.company" class="form-control">
-                    </div> -->
-                    <hr>
-                    <div class="ml-auto">
+                    <div class="card-footer">
                         <button type="reset" class="btn btn-danger mr-2">Cancelar</button>
                         <button type="submit" class="btn btn-secondary">Registrar</button>
                     </div>
@@ -37,23 +36,21 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>Nombre</th>
-                            <th>Empresa</th>
                             <th class="text-center">Editar</th>
                             <th class="text-center">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody id="myTable">
                         <ng-container *ngFor="let d of listDepartments">
-                            <tr *ngIf="d.company=== nameCompany">
+                            <tr *ngIf="d.company=== company">
                                 <td>{{ d.name }}</td>
-                                <td>{{ d.company }}</td>
                                 <td class="text-center">
-                                    <button title="Editar empleado" (click)="editDepartment(d)"
+                                    <button title="Editar departamento" (click)="editDepartment(d)"
                                         class="bg-transparent border-0"><i
                                             class="fas fa-edit text-primary h4"></i></button>
                                 </td>
                                 <td class="text-center">
-                                    <button title="Eliminar empleado" (click)="deleteDepartment(d)"
+                                    <button title="Eliminar departamento" (click)="deleteDepartment(d)"
                                         class="bg-transparent border-0"><i
                                             class="fas fa-times text-danger h4"></i></button>
                                 </td>

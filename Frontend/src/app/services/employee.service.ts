@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from "rxjs/operators";
 import { Employee } from '../models/employee';
@@ -10,10 +10,12 @@ import { Employee } from '../models/employee';
 export class EmployeeService {
 
   readonly url='http://localhost:3000/v1/api';
-  authSubject = new BehaviorSubject(false);
   private token: string;
   private user: any;
   employees: Employee[];
+
+  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+
   constructor(private httpClient: HttpClient) { }
 
   createEmployee(employee: Employee){
@@ -25,6 +27,10 @@ export class EmployeeService {
     .pipe(
       map(data => data as Employee[])
     );
+  }
+
+  getEmployee(id: String): Observable<Employee> {
+    return this.httpClient.get<Employee>(`${this.url}/employee/${id}`, { headers: this.httpHeaders });
   }
 
   login(user: Employee): Observable<any> {

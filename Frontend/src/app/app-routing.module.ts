@@ -42,6 +42,7 @@ import { SupervisorChatComponent } from './components/supervisor/supervisor-chat
 import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
+import { SupervisorListTasksComponent } from './components/supervisor/supervisor-list-tasks/supervisor-list-tasks.component';
 
 //SERVICES
 import { AuthGuard } from './guards/authguard.service';
@@ -75,6 +76,7 @@ const routes: Routes = [
   {path:'supervisor/kanban',component: SupervisorKanbanComponent, canActivate: [AuthGuard]},
   {path:'supervisor/tasks',component: SupervisorTasksComponent, canActivate: [AuthGuard]},
   {path:'supervisor/config',component: SupervisorConfigComponent, canActivate: [AuthGuard]},
+  {path:'supervisor/listTasks',component: SupervisorListTasksComponent, canActivate: [AuthGuard]},
   {path:'employee',redirectTo: 'employee/home', pathMatch: 'full'},
   {path:'employee/home',component: EmployeeHomeComponent, canActivate: [AuthGuard]},
   {path:'employee/chat',component: EmployeeChatComponent, canActivate: [AuthGuard]},
