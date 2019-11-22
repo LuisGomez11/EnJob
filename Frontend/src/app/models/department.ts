@@ -6,8 +6,8 @@ constructor(idDepartment = '', name = '', company = ''){
     this.company = company;
 }
 
-    idDepartment:String;
-    name:String;
-    company:String;
+    idDepartment:string;
+    name:string;
+    company:string;
 
 }

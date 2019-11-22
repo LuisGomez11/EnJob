@@ -11,19 +11,21 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Tarea</th>
-                    <th>Encargado</th>
                     <th class="text-center">Estado</th>
                     <th class="text-center">Plazo</th>
+                    <th class="text-center">Valor</th>
                     <th class="text-center">Editar</th>
                     <th class="text-center">Eliminar</th>
+                    <th class="text-center">Detalles</th>
                 </tr>
             </thead>
             <tbody>
                     <tr *ngFor="let t of listTasks">
                         <td>{{ t.title }}</td>
-                        <td>Luis Gomez</td>
                         <td class="text-center">{{ t.stateTask }}</td>
                         <td class="text-center">{{ t.term }}</td>
+                        <td class="text-center"><span class="mr-1">{{ t.value }}</span><i
+                            class="fas fa-star"></i></td>
                         <td class="text-center">
                             <button class="btn bg-transparent p-0" title="Editar tarea">
                                 <i class="fas fa-edit text-primary h4"></i>
@@ -32,6 +34,11 @@
                         <td class="text-center">
                             <button class="btn bg-transparent p-0" title="Eliminar tarea">
                                 <i class="fas fa-times text-danger h4"></i>
+                            </button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn bg-transparent p-0" title="Ver detalles de la tarea">
+                                <i class="fas fa-eye text-success h4"></i>
                             </button>
                         </td>
                     </tr>

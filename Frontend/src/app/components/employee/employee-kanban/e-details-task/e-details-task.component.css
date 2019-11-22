@@ -1,9 +1,6 @@
 .contenedor{
-    background-image: url(../../../../../assets/img/bg-kanban.png);
+    background-color: #eee;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
     height: calc(100vh - 56px);
     overflow-y: scroll;
     overflow-x: hidden;
@@ -30,18 +27,33 @@ input{
 }
 
 span.task{
-    font-size: 20px;
-    margin-top: 47px;
+    margin-top: 85px;
 }
 
 .cont-image img{
     margin-top: 50%;
     margin-left: 50%;
     transform: translate(-50%,-50%);
-    width: 65%;
-    height: 65%;
+    width: 70%;
+    height: 70%;
 }
 
 .body{
-    height: calc(100% - 136px);
+    height: calc(100% - 206px);
 }
+
+.body{
+    height: calc(100% - 170px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  .body::-webkit-scrollbar{
+      width: 5px;
+      background: transparent;
+  }
+  
+  .body::-webkit-scrollbar-thumb{
+    background-color: #797979;
+    border-radius: 20px;
+  }

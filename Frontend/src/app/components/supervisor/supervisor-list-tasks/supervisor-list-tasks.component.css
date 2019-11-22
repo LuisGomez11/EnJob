@@ -4,3 +4,7 @@
     height: auto;
     min-height: calc(100vh - 56px);
 }
+
+.fa-star{
+    color: rgb(201, 201, 15);
+}

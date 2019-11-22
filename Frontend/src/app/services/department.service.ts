@@ -25,7 +25,7 @@ export class DepartmentService {
     );
   }
 
-  getDepartment(id: String): Observable<Department>{
+  getDepartment(id: string): Observable<Department>{
     return this.http.get<Department>(`${this.url}/${id}`);
   }
 
@@ -37,7 +37,7 @@ export class DepartmentService {
     return this.http.put<Department>(this.url, department, { headers: this.httpHeaders });
   }
 
-  deleteDepartment(id: String): Observable<Department>{
+  deleteDepartment(id: string): Observable<Department>{
     return this.http.delete<Department>(`${this.url}/${id}`, { headers: this.httpHeaders });
   }
 
