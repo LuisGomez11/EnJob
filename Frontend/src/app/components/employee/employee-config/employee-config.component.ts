@@ -14,16 +14,18 @@ export class EmployeeConfigComponent implements OnInit {
 
   constructor(public app: AppComponent, private auth: AuthAdmineService, private router: Router) { }
 
-  name = ''; lastName = '';
+  name = ''; lastName = ''; points = '';
 
   ngOnInit() {
     this.app.employee();
     if (localStorage.getItem("USER") === null) {
       this.name = 'Indefinido';
       this.lastName = 'Indefinido';
+      this.points = '0';
     } else {
       this.name = this.auth.getUser().name;
       this.lastName = this.auth.getUser().lastName;
+      this.points = this.auth.getUser().points;
     }
 
   }

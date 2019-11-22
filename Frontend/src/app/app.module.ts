@@ -29,6 +29,8 @@ import { AdminConfigComponent } from './components/admin/admin-config/admin-conf
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
 import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
+import { AdminSubscriptionsComponent } from './components/admin/admin-subscriptions/admin-subscriptions.component';
+import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
 
 //EMPLOYEE-COMPONENTS
 import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
@@ -47,13 +49,12 @@ import { SupervisorChatComponent } from './components/supervisor/supervisor-chat
 import { SupervisorKanbanComponent } from './components/supervisor/supervisor-kanban/supervisor-kanban.component';
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
+import { SupervisorListTasksComponent } from './components/supervisor/supervisor-list-tasks/supervisor-list-tasks.component';
 
 //EXTERNAL
 import { DragAndDropModule } from "angular-draggable-droppable";
 import { AuthAdmineService } from './services/auth-admine.service';
 import { AuthGuard } from './guards/authguard.service';
-import { AdminSubscriptionsComponent } from './components/admin/admin-subscriptions/admin-subscriptions.component';
-import { SupervisorListTasksComponent } from './components/supervisor/supervisor-list-tasks/supervisor-list-tasks.component';
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import { SupervisorListTasksComponent } from './components/supervisor/supervisor
     SubscriptionsComponent,
     AdminSubscriptionsComponent,
     SupervisorListTasksComponent,
+    AdminRequestsComponent,
   ],
   imports: [
     BrowserModule,

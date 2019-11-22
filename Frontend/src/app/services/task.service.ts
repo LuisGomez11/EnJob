@@ -28,7 +28,7 @@ export class TaskService {
     );
   }
 
-  getTask(id: String): Observable<Task>{
+  getTask(id: string): Observable<Task>{
     return this.http.get<Task>(`${this.url}/${id}`);
   }
 
@@ -40,7 +40,7 @@ export class TaskService {
     return this.http.put<Task>(this.url, task, { headers: this.httpHeaders });
   }
 
-  deleteTask(id: String): Observable<Task>{
+  deleteTask(id: string): Observable<Task>{
     return this.http.delete<Task>(`${this.url}/${id}`, { headers: this.httpHeaders });
   }
 

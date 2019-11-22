@@ -28,6 +28,8 @@ export class SupervisorTasksComponent implements OnInit {
     private serviceEmp: EmployeeService, private auth: AuthAdmineService) { }
 
   company = '';
+
+  
   
   ngOnInit() {
     this.app.supervisor();

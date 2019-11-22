@@ -9,7 +9,7 @@ module.exports = (app) => {
 
   app.post('/v1/api/admine/create',  CreateAdmine);
 
-  app.put('/v1/api/admine/update/:id', updateAdmine)
+  app.put('/v1/api/admine/update/:id', updateAdmine);
 
   app.get('/v1/api/admine/:id', findByIdAdmine);
 

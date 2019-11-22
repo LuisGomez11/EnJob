@@ -33,17 +33,7 @@ export class AdmineServiceService {
 
   getAdmine(id: string){
     return this.http.get<AdmineModel>(`${this.url}/admine/${id}`);
-  }
-
-  public getCompanyName(idCompany: string): any{
-    this.getAdmine(idCompany)
-    .subscribe((res: any) => {
-      this.nameCompany = res.Adminee.nameCompany;
-    }, error => {
-      console.log(error);
-    });
-  }
-  
+  } 
 
   updateAdmine(admine: AdmineModel): Observable<AdmineModel>{
     return this.http.put<AdmineModel>(`${this.url}/admine/update/${admine._id}`, admine, { headers: this.httpHeaders });

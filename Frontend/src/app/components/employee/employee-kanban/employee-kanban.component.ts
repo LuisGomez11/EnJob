@@ -35,7 +35,7 @@ export class EmployeeKanbanComponent implements OnInit {
         this.listTasks = data);
   }
 
-  changeDrag(id: String) {
+  changeDrag(id: string) {
     if (this.currentState.stateTask !== id && this.currentState !== undefined) {
       this.currentState.stateTask = id;
       this.service.updateTask(this.currentState).subscribe(data => {

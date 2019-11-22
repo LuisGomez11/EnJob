@@ -57,11 +57,19 @@ box-shadow: 0px 2px 0px 0px rgba(64,64,64,0.82);
 }
 
 .card-body, .card-footer{
-padding: 10px;
+  padding: 3px 10px
 }
 
 i{
 color: gray;
+}
+
+i.fa-check{
+  color: green;
+}
+
+i.cancel{
+  color: red;
 }
 
 .delete-task:hover{

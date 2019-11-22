@@ -26,6 +26,7 @@ employeefun.employee = (req) => {
         nameCompany,
         departament,
         salary,
+        points
     } = req.body
     return {
         name,
@@ -42,7 +43,7 @@ employeefun.employee = (req) => {
         position,
         departament,
         salary,
-        points: '0'
+        points
     }
 }
 

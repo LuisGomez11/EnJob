@@ -13,14 +13,14 @@ export class Task {
     this.value = value;
   }
 
-  idTask: String;
-  title: String;
-  description: String;
-  department: String;
-  assigned: String;
-  stateTask: String;
-  changeDate: String;
-  term: String;
-  value: String;
+  idTask: string;
+  title: string;
+  description: string;
+  department: string;
+  assigned: string;
+  stateTask: string;
+  changeDate: string;
+  term: string;
+  value: string;
 
 }

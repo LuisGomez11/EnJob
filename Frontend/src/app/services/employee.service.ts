@@ -13,6 +13,7 @@ export class EmployeeService {
   private token: string;
   private user: any;
   employees: Employee[];
+  selectedEmployee: Employee;
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
@@ -29,8 +30,12 @@ export class EmployeeService {
     );
   }
 
-  getEmployee(id: String): Observable<Employee> {
+  getEmployee(id: string): Observable<Employee> {
     return this.httpClient.get<Employee>(`${this.url}/employee/${id}`, { headers: this.httpHeaders });
+  }
+
+  updateEmployee(employee: Employee): Observable<Employee>{
+    return this.httpClient.put<Employee>(`${this.url}/employee/update/${employee._id}`, employee, { headers: this.httpHeaders });
   }
 
   login(user: Employee): Observable<any> {

@@ -1,10 +1,12 @@
 const emplVo = require('../middleware/EmployeeCelebrate');
-const { loginEmployee, findByIdEmployee, findEmployees, createEmployee} = require('../controller/EmployeeController');
+const { loginEmployee, findByIdEmployee, findEmployees, createEmployee, updateEmployee} = require('../controller/EmployeeController');
 
 module.exports = (app) =>{
   app.post('/v1/api/employee/login', loginEmployee);
 
   app.post('/v1/api/employee/create', createEmployee);
+
+  app.put('/v1/api/employee/update/:id', updateEmployee);
   
   app.get('/v1/api/employee/:id', findByIdEmployee);
   

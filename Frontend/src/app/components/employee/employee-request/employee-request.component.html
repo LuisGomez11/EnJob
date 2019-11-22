@@ -10,26 +10,20 @@
                                 <label for="type">Tipo:</label>
                                 <select class="form-control" id="type" name="type" #type="ngModel"
                                     [(ngModel)]="service.selectedRequest.type">
-                                    <option>Permiso</option>
-                                    <option>Queja / Reclamo</option>
+                                    <option value="Permiso">Permiso</option>
+                                    <option value="Queja / Reclamo">Queja / Reclamo</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="task">Asunto:</label>
-                                <textarea id="descri" name="description" #description="ngModel"
-                                    [(ngModel)]="service.selectedRequest.description"
-                                    placeholder="Escriba una descripción de la solicitud..." class="form-control"
+                                <label for="affair">Asunto:</label>
+                                <textarea id="affair" name="affair" #affair="ngModel"
+                                    [(ngModel)]="service.selectedRequest.affair"
+                                    placeholder="Escriba el asunto de la solicitud..." class="form-control"
                                     rows="3"></textarea>
                             </div>
                         </div>
-                        <input type="hidden" id="date" readonly name="dateRequest" #dateRequest="ngModel"
-                            [(ngModel)]="service.selectedRequest.dateRequest" class="form-control">
-
-                        <input type="hidden" id="state" readonly name="stateRequest" #stateRequest="ngModel"
-                            [(ngModel)]="service.selectedRequest.stateRequest" class="form-control">
-
                     </div>
 
                 </div>

@@ -76,4 +76,17 @@ employeeCtrl.findByIdEmployee = async (req, res) => {
     }
 };
 
+employeeCtrl.updateEmployee = async (req, res) => {
+    try {
+        console.log(req.params.id)
+        let Employee = employee(req);
+        delete Employee.password;
+        await emplModel.findByIdAndUpdate(req.params.id, { $set: Employee }, { new: true });
+
+        return res.status(200).send({ users:Employee});
+    } catch (err) {
+        return res.status(404).send({ err });
+    }
+};
+
 module.exports = employeeCtrl;

@@ -23,7 +23,7 @@
 .bg-white-transparent{
   background: rgba(255, 255, 255, 0.5);
   border-radius: 15px;
-  width: 80%;
+  width: 90%;
 }
 
 
@@ -45,7 +45,7 @@
 }
 
 .card-body, .card-footer{
-	padding: 10px;
+	padding: 3px 10px;
 }
 
 i{

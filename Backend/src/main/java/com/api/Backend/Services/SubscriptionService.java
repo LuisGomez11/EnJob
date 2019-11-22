@@ -2,7 +2,7 @@ package com.api.Backend.Services;
 
 import java.util.List;
 
-import com.api.Backend.Models.Subscription;;
+import com.api.Backend.Models.Subscription;
 
 public interface SubscriptionService {
 

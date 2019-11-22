@@ -41,7 +41,6 @@ export class SadminHomeComponent implements OnInit {
     this.service.updateAdmine(this.service.selectedAdmine)
       .subscribe(res => {
         console.log(res);
-        // window.location.reload();
       }, error => {
         console.log(error);
       });

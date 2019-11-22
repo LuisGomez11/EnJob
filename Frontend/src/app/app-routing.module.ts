@@ -24,6 +24,7 @@ import { AdminProfileComponent } from './components/admin/admin-profile/admin-pr
 import { EmployeeProfileComponent } from './components/admin/employee-profile/employee-profile.component';
 import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
 import { AdminSubscriptionsComponent } from './components/admin/admin-subscriptions/admin-subscriptions.component';
+import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
 
 //EMPLOYEE-COMPONENTS
 import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
@@ -68,6 +69,7 @@ const routes: Routes = [
   {path:'admin/kanban',component: AdminKanbanComponent, canActivate: [AuthGuard]},
   {path:'admin/config',component: AdminConfigComponent, canActivate: [AuthGuard]},
   {path:'admin/notifications',component: AdminNotificationsComponent, canActivate: [AuthGuard]},
+  {path:'admin/requests',component: AdminRequestsComponent, canActivate: [AuthGuard]},
   {path:'admin/bonus',component: AdminBonusComponent, canActivate: [AuthGuard]},
   {path:'admin/profile',component: AdminProfileComponent, canActivate: [AuthGuard]},
   {path:'supervisor',redirectTo: 'supervisor/home', pathMatch: 'full'},

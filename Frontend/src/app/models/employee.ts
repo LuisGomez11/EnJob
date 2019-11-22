@@ -19,21 +19,21 @@ export class Employee {
         this.position = position;
         this.availability = availability;
     }
-    _id: String
-    name: String
-    lastName: String
-    userName: String
-    password: String
-    numDocument: String
-    nameCompany: String
-    email: String
-    phone: String
-    role: String
-    state: String
-    availability: String
-    position: String
-    departament: String
-    salary: String
-    points: String
+    _id: string
+    name: string
+    lastName: string
+    userName: string
+    password: string
+    numDocument: string
+    nameCompany: string
+    email: string
+    phone: string
+    role: string
+    state: string
+    availability: string
+    position: string
+    departament: string
+    salary: string
+    points: string
 }
 

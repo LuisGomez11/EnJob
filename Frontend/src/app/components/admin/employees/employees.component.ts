@@ -85,6 +85,7 @@ export class EmployeesComponent implements OnInit {
   }
   createEmployee() {
     this.Form.value.nameCompany = this.company;
+    this.Form.value.points = '0';
     this.service.createEmployee(this.Form.value)
       .subscribe(res => {
         swal.fire({
