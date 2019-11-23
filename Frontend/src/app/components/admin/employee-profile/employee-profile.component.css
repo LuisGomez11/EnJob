@@ -34,3 +34,10 @@
 .margin-not{
     margin: 0;
 }
+
+.btn-primary{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

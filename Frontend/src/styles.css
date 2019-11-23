@@ -69,3 +69,7 @@ body::-webkit-scrollbar-thumb {
 nav{
     height: 56px;
 }
+
+.fa-star{
+    color: rgb(201, 201, 15);
+}

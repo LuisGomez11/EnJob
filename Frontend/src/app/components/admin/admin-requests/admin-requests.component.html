@@ -1,6 +1,6 @@
 <div class="contenedor p-4">
     <div class="d-flex justify-content-between">
-      <h3>Solicitudes de los empleados</h3>
+        <h3>Solicitudes de los empleados</h3>
     </div>
     <hr>
     <div class="bg-white">
@@ -14,16 +14,16 @@
                 </tr>
             </thead>
             <tbody>
-                    <tr *ngFor="let r of listRequests">
-                        <td>{{ r.type }}</td>
-                        <td>{{ r.affair }}</td>
-                        <td class="text-center">{{ r.submitDate }}</td>
-                        <td class="text-center">
-                            <button class="btn bg-transparent p-0" title="Ver detalles de la solicitud">
-                                <i class="fas fa-eye text-primary h4"></i>
-                            </button>
-                        </td>
-                    </tr>
+                <tr *ngFor="let r of listRequests">
+                    <td>{{ r.type }}</td>
+                    <td>{{ r.affair }}</td>
+                    <td class="text-center">{{ r.submitDate }}</td>
+                    <td class="text-center">
+                        <button class="btn bg-transparent p-0" title="Ver detalles de la solicitud">
+                            <i class="fas fa-eye text-primary h4"></i>
+                        </button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

@@ -7,6 +7,7 @@ import  swal  from "sweetalert2";
 import { AuthAdmineService } from 'src/app/services/auth-admine.service';
 import { DepartmentService } from 'src/app/services/department.service';
 import { Department } from 'src/app/models/department';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employees',
@@ -57,8 +58,8 @@ export class EmployeesComponent implements OnInit {
   listEmployees: Employee[] = [];
   departments: Department[];
 
-  constructor(public app: AppComponent, private service: EmployeeService,
-    private auth: AuthAdmineService,private serviceDep: DepartmentService) { }
+  constructor(public app: AppComponent, private service: EmployeeService, private auth: AuthAdmineService,
+    private serviceDep: DepartmentService, private router: Router) { }
 
     company = '';
 
@@ -99,6 +100,12 @@ export class EmployeesComponent implements OnInit {
         this.getEmployees();
         this.Form.reset();
       });
+  }
+
+  viewProfile(id: string) {
+    localStorage.removeItem('idEmployee');
+    localStorage.setItem('idEmployee', id);
+    this.router.navigate(['admin/profile/employee']);
   }
 
 }
