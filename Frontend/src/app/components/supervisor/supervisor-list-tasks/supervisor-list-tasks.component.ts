@@ -5,6 +5,7 @@ import  swal  from "sweetalert2";
 import { TaskService } from 'src/app/services/task.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Employee } from 'src/app/models/employee';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supervisor-list-tasks',
@@ -16,7 +17,7 @@ export class SupervisorListTasksComponent implements OnInit {
   task: Task = new Task();
   listTasks: Task[];
 
-  constructor(public app: AppComponent, private service: TaskService, private serviceEmplo: EmployeeService) { }
+  constructor(public app: AppComponent, private service: TaskService, private router: Router) { }
 
   ngOnInit() {
     this.app.supervisor();
@@ -27,6 +28,12 @@ export class SupervisorListTasksComponent implements OnInit {
     this.service.getTasks()
     .subscribe(data =>
       this.listTasks = data);
+  }
+
+  viewDetails(task: Task) {
+    localStorage.removeItem('IdTask');
+    localStorage.setItem('IdTask', task.idTask.toString());
+    this.router.navigate(['supervisor/task/details']);
   }
 
   async deleteTask(task: Task){

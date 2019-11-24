@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { Task } from 'src/app/models/task';
+import { TaskService } from 'src/app/services/task.service';
 
 declare var $ : any;
 
@@ -10,10 +12,21 @@ declare var $ : any;
 })
 export class AdminKanbanComponent implements OnInit {
 
-  constructor(public app : AppComponent) { }
+  listTasks: Task[];
+
+  assigned = ''; newPoints = 0;
+
+  constructor(public app: AppComponent, private service: TaskService) { }
 
   ngOnInit() {
     this.app.admin();
+    this.getTasks();
+  }
+
+  getTasks() {
+    this.service.getTasks()
+      .subscribe(data =>
+        this.listTasks = data);
   }
 
 }

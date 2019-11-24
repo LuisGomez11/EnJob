@@ -1,8 +1,77 @@
 .contenedor{
-    background-image: url(../../../../assets/img/bg-kanban.png);
+    background-image: url(../../../../assets/img/bg-02.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: calc(100vh - 56px);
-}
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  .contenedor::-webkit-scrollbar{
+    width: 8px;
+    background: transparent;
+  }
+  
+  .contenedor::-webkit-scrollbar-thumb{
+  background-color: #797979;
+  }
+  
+  .bg-white-transparent{
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  width: 95%;
+  }
+  
+  .tasks{
+  height: calc(100% - 56px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  }
+  
+  .tasks::-webkit-scrollbar{
+    width: 5px;
+    background: transparent;
+  }
+  
+  .tasks::-webkit-scrollbar-thumb{
+  background-color: #797979;
+  border-radius: 20px;
+  }
+  
+  .title-task{
+  width: 90%;
+  max-width: 90%;
+  }
+  
+  .details-task{
+  width: 10%;
+  max-width: 10%;
+  }
+  
+  .card{
+  -webkit-box-shadow: 0px 2px 0px 0px rgba(64,64,64,0.82);
+  -moz-box-shadow: 0px 2px 0px 0px rgba(64,64,64,0.82);
+  box-shadow: 0px 2px 0px 0px rgba(64,64,64,0.82);
+  }
+  
+  .card-body, .card-footer{
+    padding: 3px 10px
+  }
+  
+  i{
+  color: gray;
+  }
+  
+  i.fa-check{
+    color: green;
+  }
+  
+  i.cancel{
+    color: red;
+  }
+  
+  .delete-task:hover{
+  color:red;
+  }

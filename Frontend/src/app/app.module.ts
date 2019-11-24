@@ -34,7 +34,6 @@ import { AdminRequestsComponent } from './components/admin/admin-requests/admin-
 
 //EMPLOYEE-COMPONENTS
 import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
-import { EDetailsTaskComponent } from './components/employee/employee-kanban/e-details-task/e-details-task.component';
 import { EmployeePersonalProfileComponent } from './components/employee/employee-personal-profile/employee-personal-profile.component';
 import { EmployeeRequestComponent } from './components/employee/employee-request/employee-request.component';
 import { EmployeeEditProfileComponent } from './components/employee/employee-edit-profile/employee-edit-profile.component';
@@ -55,6 +54,10 @@ import { SupervisorListTasksComponent } from './components/supervisor/supervisor
 import { DragAndDropModule } from "angular-draggable-droppable";
 import { AuthAdmineService } from './services/auth-admine.service';
 import { AuthGuard } from './guards/authguard.service';
+import { EDetailsTaskComponent } from './components/employee/e-details-task/e-details-task.component';
+import { SDetailsTaskComponent } from './components/supervisor/s-details-task/s-details-task.component';
+import { ADetailsTaskComponent } from './components/admin/a-details-task/a-details-task.component';
+
 
 
 @NgModule({
@@ -84,7 +87,6 @@ import { AuthGuard } from './guards/authguard.service';
     EmployeeProfileComponent,
     SignUpComponent,
     AdminBonusComponent,
-    EDetailsTaskComponent,
     EmployeePersonalProfileComponent,
     EmployeeRequestComponent,
     EmployeeEditProfileComponent,
@@ -94,6 +96,9 @@ import { AuthGuard } from './guards/authguard.service';
     AdminSubscriptionsComponent,
     SupervisorListTasksComponent,
     AdminRequestsComponent,
+    EDetailsTaskComponent,
+    SDetailsTaskComponent,
+    ADetailsTaskComponent,
   ],
   imports: [
     BrowserModule,

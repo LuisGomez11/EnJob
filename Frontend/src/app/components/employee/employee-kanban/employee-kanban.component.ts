@@ -50,7 +50,7 @@ export class EmployeeKanbanComponent implements OnInit {
   
   viewDetails(task: Task) {
     localStorage.removeItem('IdTask');
-    localStorage.setItem('idTask', task.idTask.toString());
+    localStorage.setItem('IdTask', task.idTask.toString());
     this.router.navigate(['employee/task/details']);
   }
 

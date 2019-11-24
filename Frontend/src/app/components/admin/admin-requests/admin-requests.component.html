@@ -19,12 +19,36 @@
                     <td>{{ r.affair }}</td>
                     <td class="text-center">{{ r.submitDate }}</td>
                     <td class="text-center">
-                        <button class="btn bg-transparent p-0" title="Ver detalles de la solicitud">
+                        <button class="btn bg-transparent p-0" data-toggle="modal" data-target="#modal" title="Ver detalles de la solicitud" (click)="viewRequest(r)">
                             <i class="fas fa-eye text-primary h4"></i>
                         </button>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalles de la solicitud</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>De: </strong>{{ nameEmployee }}</p>
+                <p><strong>Para: </strong>{{ nameAdmin }}</p>
+                <p><strong>Asunto:</strong></p>
+                <p>{{ service.selectedRequest.affair }}</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
     </div>
 </div>

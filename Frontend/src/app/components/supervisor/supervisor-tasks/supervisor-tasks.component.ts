@@ -36,6 +36,7 @@ export class SupervisorTasksComponent implements OnInit {
     this.getDepartments();
     this.getEmployees();
     this.company = this.auth.getUser().nameCompany;
+    this.service.selectedTask = new Task();
   }
 
   getDepartments() {
