@@ -15,7 +15,7 @@ const admineSchema = new Schema({
   phone: { type: String,  },
   role: { type: String,  },
   state: { type: String,  },
-  photo: {type: String , ref: 'photo', default:'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' },
+  photo: {type: String ,  default:'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' },
   lastLogin: { type: Date, default: Date.now }
 });
 

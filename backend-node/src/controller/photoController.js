@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 
+const admineModel = require('../models/AdmineModel')
 const cloudinary = require('../database/cloudinary')
 const photoModel = require('../models/PhotoModel');
 const { bad_requestSend, bad_requestStatus, createdSend, createdStatus, non_authoritative_informationSend, non_authoritative_informationStatus, not_foundSend, not_foundStatus } = require('../util/HttpStatus');
@@ -8,7 +9,7 @@ const photoCtrl = {};
 
 photoCtrl.uploadPhoto = async (req, res) => {
     try {
-        
+
         const result = await cloudinary.v2.uploader.upload(req.file.path)
         const photo = new photoModel({
             imageURL: result.url,
@@ -16,24 +17,37 @@ photoCtrl.uploadPhoto = async (req, res) => {
             id_user: req.params.id,
             imagePath: req.file.path
         });
+        console.log(result.url)
         await photo.save();
-        await fs.unlink(req.file.path);
 
-        return res.status(200).send({ photo: photo });
+        await fs.unlink(req.file.path);
+        
+        switch (req.body.role) {
+            case 'AdminRH':
+                const admine = {
+                    photo: result.url,
+                }
+                await admineModel.findByIdAndUpdate(req.params.id, { $set: admine }, { new: true })
+                return res.status(200).send({ photo: photo });
+              break;
+            case valor2:
+              console.log('234')
+              break;
+          }
     } catch (error) {
         console.log(error)
     }
 };
 
-photoCtrl.findImages = async (req,res) => {
+photoCtrl.findImages = async (req, res) => {
     const photos = await photoModel.find();
     return res.status(200).send({ photos: photos });
 }
 
-photoCtrl.findImage = async (req,res) => {
-    const {photo_id} = req.params;
+photoCtrl.findImage = async (req, res) => {
+    const { photo_id } = req.params;
     const photo = await photo.findById(photo_id);
-    
+
 }
 
 module.exports = photoCtrl;

@@ -40,7 +40,7 @@ adminefun.admine = (req) => {
         userName,
         password: Passcrypt(password),
         email,
-        role: 'Admin RH',
+        role: 'AdminRH',
         phone
     }
 }
