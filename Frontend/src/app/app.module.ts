@@ -41,6 +41,7 @@ import { EmployeeChatComponent } from './components/employee/employee-chat/emplo
 import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
 import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
 import { EmployeeChangepassComponent } from './components/employee/employee-changepass/employee-changepass.component';
+import { EmployeeBonusComponent } from './components/employee/employee-bonus/employee-bonus.component';
 
 //SUPERVISOR-COMPONENTS
 import { SupervisorHomeComponent } from './components/supervisor/supervisor-home/supervisor-home.component';
@@ -93,6 +94,7 @@ import { AuthGuard } from './guards/authguard.service';
     AdminSubscriptionsComponent,
     SupervisorListTasksComponent,
     AdminRequestsComponent,
+    EmployeeBonusComponent,
   ],
   imports: [
     BrowserModule,

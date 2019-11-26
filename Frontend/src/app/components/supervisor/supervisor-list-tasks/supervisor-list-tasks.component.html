@@ -20,28 +20,37 @@
                 </tr>
             </thead>
             <tbody>
-                    <tr *ngFor="let t of listTasks">
-                        <td>{{ t.title }}</td>
-                        <td class="text-center">{{ t.stateTask }}</td>
-                        <td class="text-center">{{ t.term }}</td>
-                        <td class="text-center"><span class="mr-1">{{ t.value }}</span><i
-                            class="fas fa-star"></i></td>
-                        <td class="text-center">
-                            <button class="btn bg-transparent p-0" title="Editar tarea">
-                                <i class="fas fa-edit text-primary h4"></i>
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <button class="btn bg-transparent p-0" title="Eliminar tarea">
-                                <i class="fas fa-times text-danger h4"></i>
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <button data-toggle="modal" data-target="#modal" (click)="viewDetails(t)" class="btn bg-transparent p-0" title="Ver detalles de la tarea">
-                                <i class="fas fa-eye text-success h4"></i>
-                            </button>
-                        </td>
-                    </tr>
+                <tr *ngFor="let t of listTasks">
+                    <td>{{ t.title }}</td>
+                    <td class="text-center">
+                        <span class="badge badge-danger" *ngIf="t.stateTask === 'Pendiente'">{{ t.stateTask }}</span>
+                        <span class="badge badge-warning" *ngIf="t.stateTask === 'En Proceso'">{{ t.stateTask }}</span>
+                        <span class="badge badge-primary" *ngIf="t.stateTask === 'Revision'">{{ t.stateTask }}</span>
+                        <span class="badge badge-success" *ngIf="t.stateTask === 'Finalizada'">{{ t.stateTask }}</span>
+                    </td>
+                    <td class="text-center">{{ t.term }}</td>
+                    <td class="text-center"><span class="mr-1">{{ t.value }}</span><i class="fas fa-star"></i></td>
+                    <td class="text-center">
+                        <button class="btn bg-transparent p-0" title="Editar tarea">
+                            <i class="fas fa-edit text-primary h4"></i>
+                        </button>
+                    </td>
+                    <td class="text-center">
+                        <button class="btn bg-transparent p-0" *ngIf="t.stateTask === 'Pendiente'"
+                            (click)="deleteTask(t)" title="Eliminar tarea">
+                            <i class="fas fa-times text-danger h4"></i>
+                        </button>
+                        <button class="btn bg-transparent p-0" *ngIf="t.stateTask !== 'Pendiente'">
+                            <i class="fas fa-times text-secondary h4"></i>
+                        </button>
+                    </td>
+                    <td class="text-center">
+                        <button data-toggle="modal" data-target="#modal" (click)="viewDetails(t)"
+                            class="btn bg-transparent p-0" title="Ver detalles de la tarea">
+                            <i class="fas fa-eye text-success h4"></i>
+                        </button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

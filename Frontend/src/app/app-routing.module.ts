@@ -35,6 +35,7 @@ import { EmployeeChatComponent } from './components/employee/employee-chat/emplo
 import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
 import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
 import { EmployeeChangepassComponent } from './components/employee/employee-changepass/employee-changepass.component';
+import { EmployeeBonusComponent } from './components/employee/employee-bonus/employee-bonus.component';
 
 //SUPERVISOR-COMPONENTS
 import { SupervisorHomeComponent } from './components/supervisor/supervisor-home/supervisor-home.component';
@@ -87,6 +88,7 @@ const routes: Routes = [
   {path:'employee/profile/edit',component: EmployeeEditProfileComponent, canActivate: [AuthGuard]},
   {path:'employee/request',component: EmployeeRequestComponent, canActivate: [AuthGuard]},
   {path:'employee/changePass',component: EmployeeChangepassComponent, canActivate: [AuthGuard]},
+  {path:'employee/bonus',component: EmployeeBonusComponent, canActivate: [AuthGuard]},
   {path:'**',component: NotfoundComponent},
 ];
 
