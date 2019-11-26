@@ -37,12 +37,53 @@
                             </button>
                         </td>
                         <td class="text-center">
-                            <button (click)="viewDetails(t)" class="btn bg-transparent p-0" title="Ver detalles de la tarea">
+                            <button data-toggle="modal" data-target="#modal" (click)="viewDetails(t)" class="btn bg-transparent p-0" title="Ver detalles de la tarea">
                                 <i class="fas fa-eye text-success h4"></i>
                             </button>
                         </td>
                     </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tarea de {{ nameEmployee }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Tarea: </strong>{{ service.selectedTask.title }}</p>
+                <p><strong>Descripción: </strong></p>
+                <p>{{ service.selectedTask.description }}</p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p><strong>Departamento: </strong>{{ nameDepartment }}</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p><strong>Plazo: </strong>{{ service.selectedTask.term }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><strong>Estado: </strong>{{ service.selectedTask.stateTask }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><strong>Valor: </strong><span class="mr-1">{{ service.selectedTask.value }}</span><i
+                                class="fas fa-star"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <span>{{ service.selectedTask.changeDate }}</span>
+                <button class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
     </div>
 </div>

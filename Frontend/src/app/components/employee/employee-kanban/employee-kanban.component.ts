@@ -5,7 +5,9 @@ import { Task } from 'src/app/models/task';
 import { NgForm } from '@angular/forms';
 import swal from "sweetalert2";
 import { Router } from '@angular/router';
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
+import { DepartmentService } from 'src/app/services/department.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 declare var $: any;
 
@@ -19,9 +21,10 @@ export class EmployeeKanbanComponent implements OnInit {
   task: Task = new Task();
   listTasks: Task[];
   currentState: Task = undefined;
+  nameEmployee = ''; nameDepartment = '';
 
-  constructor(public app: AppComponent, private service: TaskService, private router: Router,
-    private auth: AuthAdmineService) { }
+  constructor(public app: AppComponent, private service: TaskService, private serviceEmplo: EmployeeService, private serviceDep: DepartmentService, private auth: AuthAdmineService) { }
+
     _id = '';
   ngOnInit() {
     this.app.employee();
@@ -49,9 +52,16 @@ export class EmployeeKanbanComponent implements OnInit {
   }
   
   viewDetails(task: Task) {
-    localStorage.removeItem('IdTask');
-    localStorage.setItem('IdTask', task.idTask.toString());
-    this.router.navigate(['employee/task/details']);
+    this.service.selectedTask = task;
+
+    this.serviceEmplo.getEmployee(this.service.selectedTask.assigned).subscribe((res: any) => {
+      this.nameEmployee = res.users.name + ' ' + res.users.lastName;
+    });
+
+    this.serviceDep.getDepartment(this.service.selectedTask.department).subscribe(res => {
+      this.nameDepartment = res.name;
+    });
+
   }
 
   resetForm(form?: NgForm) {

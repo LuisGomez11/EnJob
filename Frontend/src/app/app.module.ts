@@ -52,11 +52,8 @@ import { SupervisorListTasksComponent } from './components/supervisor/supervisor
 
 //EXTERNAL
 import { DragAndDropModule } from "angular-draggable-droppable";
-import { AuthAdmineService } from './services/auth-admine.service';
+import { AuthAdmineService } from './services/auth.service';
 import { AuthGuard } from './guards/authguard.service';
-import { EDetailsTaskComponent } from './components/employee/e-details-task/e-details-task.component';
-import { SDetailsTaskComponent } from './components/supervisor/s-details-task/s-details-task.component';
-import { ADetailsTaskComponent } from './components/admin/a-details-task/a-details-task.component';
 
 
 
@@ -96,9 +93,6 @@ import { ADetailsTaskComponent } from './components/admin/a-details-task/a-detai
     AdminSubscriptionsComponent,
     SupervisorListTasksComponent,
     AdminRequestsComponent,
-    EDetailsTaskComponent,
-    SDetailsTaskComponent,
-    ADetailsTaskComponent,
   ],
   imports: [
     BrowserModule,

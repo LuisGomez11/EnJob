@@ -4,8 +4,8 @@ import { FormGroup, NgForm } from "@angular/forms";
 import { DepartmentService } from "../../../services/department.service";
 import { Department } from "../../../models/department";
 import swal from "sweetalert2";
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
-import { AdmineServiceService } from 'src/app/services/admine-service.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
+import { AdmineServiceService } from 'src/app/services/admine.service';
 
 @Component({
   selector: 'app-departments',

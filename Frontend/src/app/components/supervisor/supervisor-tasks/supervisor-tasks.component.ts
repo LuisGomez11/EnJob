@@ -8,7 +8,7 @@ import swal from "sweetalert2";
 import { DepartmentService } from 'src/app/services/department.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Employee } from 'src/app/models/employee';
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 
 declare var $: any;
 var f = new Date();

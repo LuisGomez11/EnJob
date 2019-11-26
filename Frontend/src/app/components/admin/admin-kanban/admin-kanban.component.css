@@ -75,3 +75,7 @@
   .delete-task:hover{
   color:red;
   }
+
+  .fa-star{
+    color: rgb(201, 201, 15);
+}

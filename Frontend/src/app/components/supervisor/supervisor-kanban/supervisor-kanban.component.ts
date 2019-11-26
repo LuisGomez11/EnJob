@@ -5,6 +5,7 @@ import { TaskService } from "../../../services/task.service";
 import { Task } from "../../../models/task";
 import swal from "sweetalert2";
 import { EmployeeService } from 'src/app/services/employee.service';
+import { DepartmentService } from 'src/app/services/department.service';
 
 declare var $: any;
 
@@ -20,7 +21,9 @@ export class SupervisorKanbanComponent implements OnInit {
 
   assigned = ''; newPoints = 0;
 
-  constructor(public app: AppComponent, private service: TaskService, private serviceEmplo: EmployeeService) { }
+  nameEmployee = ''; nameDepartment = '';
+
+  constructor(public app: AppComponent, private service: TaskService, private serviceEmplo: EmployeeService, private serviceDep: DepartmentService) { }
 
   ngOnInit() {
     this.app.supervisor();
@@ -66,6 +69,19 @@ export class SupervisorKanbanComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
       });
+  }
+
+  viewDetails(task: Task) {
+    this.service.selectedTask = task;
+
+    this.serviceEmplo.getEmployee(this.service.selectedTask.assigned).subscribe((res: any) => {
+      this.nameEmployee = res.users.name + ' ' + res.users.lastName;
+    });
+
+    this.serviceDep.getDepartment(this.service.selectedTask.department).subscribe(res => {
+      this.nameDepartment = res.name;
+    });
+
   }
 
   async deleteTask(task: Task) {

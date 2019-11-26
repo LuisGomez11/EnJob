@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators, NgForm } from "@angular/forms";
 import { BonificationService } from "../../../services/bonification.service";
 import { Bonification } from "../../../models/bonification";
 import swal from "sweetalert2";
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-admin-bonus',

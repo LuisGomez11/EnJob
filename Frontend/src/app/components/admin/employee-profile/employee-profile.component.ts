@@ -3,10 +3,10 @@ import { AppComponent } from 'src/app/app.component';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Router } from '@angular/router';
 import { DepartmentService } from 'src/app/services/department.service';
-import { AdmineServiceService } from 'src/app/services/admine-service.service';
+import { AdmineServiceService } from 'src/app/services/admine.service';
 import { TaskService } from 'src/app/services/task.service';
 import { Task } from 'src/app/models/task';
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 import { Chart } from 'chart.js';
 import { Employee } from 'src/app/models/employee';
 

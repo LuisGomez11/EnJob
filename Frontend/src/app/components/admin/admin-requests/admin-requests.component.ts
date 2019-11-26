@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { RequestService } from 'src/app/services/request.service';
 import { Request } from 'src/app/models/request';
-import { AdmineServiceService } from 'src/app/services/admine-service.service';
+import { AdmineServiceService } from 'src/app/services/admine.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 import swal from "sweetalert2";
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-admin-requests',

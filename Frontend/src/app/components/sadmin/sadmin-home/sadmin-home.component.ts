@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { AdmineServiceService } from 'src/app/services/admine-service.service';
+import { AdmineServiceService } from 'src/app/services/admine.service';
 import { AdmineModel } from 'src/app/models/admine-model';
 
 declare var $: any;

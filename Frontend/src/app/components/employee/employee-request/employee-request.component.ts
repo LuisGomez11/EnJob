@@ -5,7 +5,7 @@ import { NgForm } from '@angular/forms';
 import { RequestService } from 'src/app/services/request.service';
 import swal from "sweetalert2";
 import { Request } from 'src/app/models/request';
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-employee-request',

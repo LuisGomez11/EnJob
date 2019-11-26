@@ -4,8 +4,7 @@ import { Task } from 'src/app/models/task';
 import  swal  from "sweetalert2";
 import { TaskService } from 'src/app/services/task.service';
 import { EmployeeService } from 'src/app/services/employee.service';
-import { Employee } from 'src/app/models/employee';
-import { Router } from '@angular/router';
+import { DepartmentService } from 'src/app/services/department.service';
 
 @Component({
   selector: 'app-supervisor-list-tasks',
@@ -17,7 +16,9 @@ export class SupervisorListTasksComponent implements OnInit {
   task: Task = new Task();
   listTasks: Task[];
 
-  constructor(public app: AppComponent, private service: TaskService, private router: Router) { }
+  nameEmployee = ''; nameDepartment = '';
+
+  constructor(public app: AppComponent, private service: TaskService, private serviceEmplo: EmployeeService, private serviceDep: DepartmentService) { }
 
   ngOnInit() {
     this.app.supervisor();
@@ -31,9 +32,16 @@ export class SupervisorListTasksComponent implements OnInit {
   }
 
   viewDetails(task: Task) {
-    localStorage.removeItem('IdTask');
-    localStorage.setItem('IdTask', task.idTask.toString());
-    this.router.navigate(['supervisor/task/details']);
+    this.service.selectedTask = task;
+
+    this.serviceEmplo.getEmployee(this.service.selectedTask.assigned).subscribe((res: any) => {
+      this.nameEmployee = res.users.name + ' ' + res.users.lastName;
+    });
+
+    this.serviceDep.getDepartment(this.service.selectedTask.department).subscribe(res => {
+      this.nameDepartment = res.name;
+    });
+
   }
 
   async deleteTask(task: Task){
