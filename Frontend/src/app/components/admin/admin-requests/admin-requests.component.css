@@ -4,3 +4,8 @@
     height: auto;
     min-height: calc(100vh - 56px);
 }
+
+.input-answer{
+    box-shadow: none;
+    outline: none;
+}

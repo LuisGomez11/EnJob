@@ -52,9 +52,9 @@
 </div>
 
 <!-- MODAL -->
-<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade bd-example-modal-xl" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Tareas de {{ serviceEmplo.selectedEmployee.name }}
@@ -66,15 +66,27 @@
             <div class="modal-body">
                 <ul class="list-group list-group-flush list-employee-actions">
                     <ng-container *ngFor="let t of listTasks">
-                        <li class="list-group-item d-flex" *ngIf="t.assigned === serviceEmplo.selectedEmployee._id">
-                            <div>
-                                <p class="text-muted margin-not" style="font-size: 13px">{{ t.changeDate }}</p>
-                                <p class="margin-not"><strong>{{ t.title }}:</strong> {{ t.description }}</p>
+                        <li class="list-group-item" *ngIf="t.assigned === serviceEmplo.selectedEmployee._id">
+                            <p class="text-muted margin-not" style="font-size: 13px">{{ t.changeDate }}</p>
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <p class="margin-not"><strong>{{ t.title }}:</strong> {{ t.description }}</p>
+                                </div>
+                                <span *ngIf="t.stateTask === 'Pendiente'" class="badge badge-danger">-</span>
+                                <span *ngIf="t.stateTask === 'En Proceso'" class="badge badge-warning">-</span>
+                                <span *ngIf="t.stateTask === 'Revision'" class="badge badge-primary">-</span>
+                                <span *ngIf="t.stateTask === 'Finalizada'" class="badge badge-success">-</span>
                             </div>
                         </li>
                     </ng-container>
                 </ul>
-
+                <div class="d-flex justify-content-between mt-3 rounded p-2" style="background-color: rgb(230, 230, 230);">
+                    <div><span class="badge badge-danger">-</span> Pendiente</div>
+                    <div><span class="badge badge-warning">-</span> En proceso</div>
+                    <div><span class="badge badge-primary">-</span> En revisión</div>
+                    <div><span class="badge badge-success">-</span> Finalizada</div>
+                </div>
+                
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger" data-dismiss="modal">Cerrar</button>

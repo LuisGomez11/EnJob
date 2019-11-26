@@ -11,19 +11,27 @@
                     <th>Asunto</th>
                     <th class="text-center">Fecha</th>
                     <th class="text-center">Detalles</th>
+                    <th class="text-center">Respondido</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let r of listRequests">
-                    <td>{{ r.type }}</td>
-                    <td>{{ r.affair }}</td>
-                    <td class="text-center">{{ r.submitDate }}</td>
-                    <td class="text-center">
-                        <button class="btn bg-transparent p-0" data-toggle="modal" data-target="#modal" title="Ver detalles de la solicitud" (click)="viewRequest(r)">
-                            <i class="fas fa-eye text-primary h4"></i>
-                        </button>
-                    </td>
-                </tr>
+                <ng-container *ngFor="let r of listRequests">
+                    <tr *ngIf="admin === r.receiver">
+                        <td>{{ r.type }}</td>
+                        <td>{{ r.affair }}</td>
+                        <td class="text-center">{{ r.submitDate }}</td>
+                        <td class="text-center">
+                            <button class="btn bg-transparent p-0" data-toggle="modal" data-target="#modal"
+                                title="Ver detalles de la solicitud" (click)="viewRequest(r)">
+                                <i class="fas fa-eye text-primary h4"></i>
+                            </button>
+                        </td>
+                        <td class="text-center">
+                            <i class="fas fa-times text-danger h4" title="No" *ngIf="r.answer === 'N/A'"></i>
+                            <i class="fas fa-check text-success h4" title="Si" *ngIf="r.answer !== 'N/A'"></i>
+                        </td>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </div>
@@ -45,8 +53,24 @@
                 <p><strong>Para: </strong>{{ nameAdmin }}</p>
                 <p><strong>Asunto:</strong></p>
                 <p>{{ service.selectedRequest.affair }}</p>
+                <hr>
+                <div *ngIf="answered === 'No'">
+                    <form [formGroup]="Form" (ngSubmit)="updateAnswer()">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-answer" formControlName="answer"
+                                placeholder="Responder..." required>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div *ngIf="answered === 'Si'">
+                    <p><strong>Respuesta: </strong>{{ service.selectedRequest.answer }}</p>
+                </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer d-flex justify-content-between">
+                <span>{{ service.selectedRequest.submitDate }}</span>
                 <button class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
         </div>

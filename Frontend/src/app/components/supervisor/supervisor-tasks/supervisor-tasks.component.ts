@@ -29,7 +29,7 @@ export class SupervisorTasksComponent implements OnInit {
 
   company = '';
 
-  
+  f = new Date();
   
   ngOnInit() {
     this.app.supervisor();
@@ -53,6 +53,8 @@ export class SupervisorTasksComponent implements OnInit {
   }
 
   createTask(form: NgForm) {
+    form.value.stateTask = 'Pendiente';
+    form.value.changeDate = this.f.getDate() + '/' + (this.f.getMonth()+1) + '/' + this.f.getFullYear();
     this.service.createTask(form.value).subscribe(data => {
       swal.fire({
         position: 'center',
