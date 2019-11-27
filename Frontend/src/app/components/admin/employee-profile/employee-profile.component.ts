@@ -22,6 +22,7 @@ export class EmployeeProfileComponent implements OnInit {
 
   nameCompany = ''; nameDepartment = '';
   listTasks: Task[];
+  filter: Task[];
   chart = [];
   pendiente = 0; enProceso = 0; revision = 0; finalizada = 0;
   ngOnInit() {
@@ -57,7 +58,6 @@ export class EmployeeProfileComponent implements OnInit {
         var revision = 0;
         var finalizado = 0;
         this.listTasks = data;
-
         this.listTasks.forEach(task => {
           if (task.assigned == idEmployee) {
             switch (task.stateTask) {

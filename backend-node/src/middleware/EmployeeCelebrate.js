@@ -16,6 +16,7 @@ module.exports = celebrate({
     position: Joi.string().required(),
     departament: Joi.string().required(),
     salary: Joi.string().required(),
+    bonus: Joi.string().required(),
     points: Joi.string(),
   })
 });

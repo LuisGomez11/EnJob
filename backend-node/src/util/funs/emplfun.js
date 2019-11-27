@@ -22,28 +22,32 @@ employeefun.employee = (req) => {
         email,
         role,
         phone,
+        state,
+        availability,
         position,
         nameCompany,
         departament,
         salary,
-        points
+        points,
+        bonus
     } = req.body
     return {
         name,
         lastName,
         numDocument,
         nameCompany,
-        state: 'Activo',
+        state,
         userName,
         password: Passcrypt(password),
         email,
         role,
         phone,
-        availability: 'Disponible',
+        availability,
         position,
         departament,
         salary,
-        points
+        points,
+        bonus
     }
 }
 

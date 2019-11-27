@@ -48,6 +48,7 @@ export class EmployeeService {
   }
 
   public saveEmplo(emp: Employee): void {
+    localStorage.removeItem('USER');
     localStorage.setItem("USER", JSON.stringify(emp));
     this.user = emp;
   }

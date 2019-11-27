@@ -10,14 +10,15 @@ const employeeSchema = new Schema({
     email: { type: String, },
     phone: { type: String, },
     role: { type: String, },
-    state: { type: String, },
-    availability: { type: String },
+    state: { type: String, default: 'Activo' },
+    availability: { type: String, default: 'Disponible' },
     position: { type: String },
     departament: { type: String },
     salary: { type: String },
-    points: { type: String },
+    points: { type: String, default: '0' },
+    bonus: { type: String, default: 'No' },
     // photo: {type: String , ref: 'photo', default:'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' },
     lastLogin: { type: Date, default: Date.now }
 });
 
-module.exports = model('emplpoyees', employeeSchema);
+module.exports = model('employees', employeeSchema);

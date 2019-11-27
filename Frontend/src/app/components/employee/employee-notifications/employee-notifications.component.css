@@ -1,0 +1,15 @@
+.notification:hover{
+    background-color: rgba(100, 100, 100, .1);
+}
+
+.border-notification{
+    border-bottom: 0.5px solid rgba(200, 200, 200, .7)
+}
+
+.margin-not{
+    margin: 0;
+}
+
+.list-notifications .notification:last-child{
+    border: none;
+}

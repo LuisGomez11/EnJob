@@ -7,9 +7,9 @@ export class Bonification {
     this.company = company;
   }
 
-  idBonification: String;
-  incentive: String;
-  cost: String;
-  company: String;
+  idBonification: string;
+  incentive: string;
+  cost: string;
+  company: string;
 
 }

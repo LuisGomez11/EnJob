@@ -55,6 +55,7 @@ import { SupervisorListTasksComponent } from './components/supervisor/supervisor
 import { DragAndDropModule } from "angular-draggable-droppable";
 import { AuthAdmineService } from './services/auth.service';
 import { AuthGuard } from './guards/authguard.service';
+import { EmployeeNotificationsComponent } from './components/employee/employee-notifications/employee-notifications.component';
 
 
 
@@ -95,6 +96,7 @@ import { AuthGuard } from './guards/authguard.service';
     SupervisorListTasksComponent,
     AdminRequestsComponent,
     EmployeeBonusComponent,
+    EmployeeNotificationsComponent,
   ],
   imports: [
     BrowserModule,
