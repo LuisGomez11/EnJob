@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 
+const employeeModel = require('../models/EmployeeModel');
 const admineModel = require('../models/AdmineModel')
 const cloudinary = require('../database/cloudinary')
 const photoModel = require('../models/PhotoModel');
@@ -30,8 +31,12 @@ photoCtrl.uploadPhoto = async (req, res) => {
                 await admineModel.findByIdAndUpdate(req.params.id, { $set: admine }, { new: true })
                 return res.status(200).send({ photo: photo });
               break;
-            case valor2:
-              console.log('234')
+            case 'Empleado':
+                const employee = {
+                    photo: result.url,
+                }
+                await employeeModel.findByIdAndUpdate(req.params.id, { $set: employee }, { new: true })
+                return res.status(200).send({ photo: photo });
               break;
           }
     } catch (error) {

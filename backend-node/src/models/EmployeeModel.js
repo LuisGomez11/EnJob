@@ -17,7 +17,7 @@ const employeeSchema = new Schema({
     salary: { type: String },
     points: { type: String, default: '0' },
     bonus: { type: String, default: 'No' },
-    // photo: {type: String , ref: 'photo', default:'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' },
+    photo: {type: String , ref: 'photo', default:'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' },
     lastLogin: { type: Date, default: Date.now }
 });
 

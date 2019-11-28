@@ -6,9 +6,21 @@
 				<!-- <button title="Editar perfil" (click)="editProfile()" class="btn p-0 edit-btn">
 					<i class="fas fa-pen mr-4 text-muted h6"></i>
 				</button> -->
-                    <div class="photo mr-3">
+                    <!-- <div class="photo mr-3">
                         <img src="../../../../assets/img/foto-default.png" class="rounded-circle" width="90"
                             height="90">
+                    </div> -->
+                    <div class="hovereffect rounded-circle">
+                        <img class="img-fluid" [src]="service.selectedAdmine.photo" alt="card image" alt="Imagen"
+                        onerror="this.src = '../../assets/img/image-not-found.png'">
+                        <div class="overlay rounded-circle text-white">
+                            <input type="file" name="imageUpload" id="imageUpload"
+                                style="visibility: hidden;" accept="image/x-png,image/gif,image/jpeg"
+                                (input)="UploadImage($event)" />
+                            <label for="imageUpload" style="cursor: pointer;">
+                                <i class="fas fa-edit"></i>
+                            </label>
+                        </div>
                     </div>
                     <div class="name-user pt-3">
                         <h3 class="margin-not">{{ service.selectedAdmine.name }} {{ service.selectedAdmine.lastName }}</h3>

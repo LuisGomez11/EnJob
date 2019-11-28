@@ -39,4 +39,10 @@ export class AdmineServiceService {
     return this.http.put<AdmineModel>(`${this.url}/admine/update/${admine._id}`, admine, { headers: this.httpHeaders });
   }
 
+  updatePhoto(admine: AdmineModel, image: File): Observable<AdmineModel>{
+    // const data = new FormData();
+    // data.append('image', image);
+    return this.http.put<AdmineModel>(`${this.url}/photo/upload/${admine._id}`, admine);
+  }
+
 }
