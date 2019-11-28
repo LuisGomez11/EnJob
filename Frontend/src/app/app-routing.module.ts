@@ -55,7 +55,7 @@ const routes: Routes = [
   {path:'home',component: HomeComponent},
   {path:'login',component: LoginComponent},
   {path:'join',component: SignUpComponent},
-  {path:'sadmin',component: SadminHomeComponent},
+  {path:'sadmin',redirectTo: 'sadmin/home', pathMatch: 'full'},
   {path:'sadmin/home',component: SadminHomeComponent},
   {path:'sadmin/subscribed',component: SubscribedComponent},
   {path:'sadmin/subscriptions',component: SubscriptionsComponent},
