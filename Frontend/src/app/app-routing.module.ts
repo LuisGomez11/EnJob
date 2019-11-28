@@ -25,7 +25,6 @@ import { EmployeeProfileComponent } from './components/admin/employee-profile/em
 import { AdminBonusComponent } from './components/admin/admin-bonus/admin-bonus.component';
 import { AdminSubscriptionsComponent } from './components/admin/admin-subscriptions/admin-subscriptions.component';
 import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
-import { ADetailsTaskComponent } from './components/admin/a-details-task/a-details-task.component';
 
 //EMPLOYEE-COMPONENTS
 import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
@@ -36,7 +35,7 @@ import { EmployeeChatComponent } from './components/employee/employee-chat/emplo
 import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
 import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
 import { EmployeeChangepassComponent } from './components/employee/employee-changepass/employee-changepass.component';
-import { EDetailsTaskComponent } from './components/employee/e-details-task/e-details-task.component';
+import { EmployeeBonusComponent } from './components/employee/employee-bonus/employee-bonus.component';
 
 //SUPERVISOR-COMPONENTS
 import { SupervisorHomeComponent } from './components/supervisor/supervisor-home/supervisor-home.component';
@@ -45,11 +44,10 @@ import { SupervisorKanbanComponent } from './components/supervisor/supervisor-ka
 import { SupervisorConfigComponent } from './components/supervisor/supervisor-config/supervisor-config.component';
 import { SupervisorTasksComponent } from './components/supervisor/supervisor-tasks/supervisor-tasks.component';
 import { SupervisorListTasksComponent } from './components/supervisor/supervisor-list-tasks/supervisor-list-tasks.component';
-import { SDetailsTaskComponent } from './components/supervisor/s-details-task/s-details-task.component';
 
 //SERVICES
 import { AuthGuard } from './guards/authguard.service';
-import { AuthAdmineService } from './services/auth-admine.service';
+import { AuthAdmineService } from './services/auth.service';
 
 
 const routes: Routes = [
@@ -57,7 +55,7 @@ const routes: Routes = [
   {path:'home',component: HomeComponent},
   {path:'login',component: LoginComponent},
   {path:'join',component: SignUpComponent},
-  {path:'sadmin',component: SadminHomeComponent},
+  {path:'sadmin',redirectTo: 'sadmin/home', pathMatch: 'full'},
   {path:'sadmin/home',component: SadminHomeComponent},
   {path:'sadmin/subscribed',component: SubscribedComponent},
   {path:'sadmin/subscriptions',component: SubscriptionsComponent},
@@ -74,7 +72,6 @@ const routes: Routes = [
   {path:'admin/requests',component: AdminRequestsComponent, canActivate: [AuthGuard]},
   {path:'admin/bonus',component: AdminBonusComponent, canActivate: [AuthGuard]},
   {path:'admin/profile',component: AdminProfileComponent, canActivate: [AuthGuard]},
-  {path:'admin/task/details',component: ADetailsTaskComponent, canActivate: [AuthGuard]},
   {path:'supervisor',redirectTo: 'supervisor/home', pathMatch: 'full'},
   {path:'supervisor/home',component: SupervisorHomeComponent, canActivate: [AuthGuard]},
   {path:'supervisor/chat',component: SupervisorChatComponent, canActivate: [AuthGuard]},
@@ -82,7 +79,6 @@ const routes: Routes = [
   {path:'supervisor/tasks',component: SupervisorTasksComponent, canActivate: [AuthGuard]},
   {path:'supervisor/config',component: SupervisorConfigComponent, canActivate: [AuthGuard]},
   {path:'supervisor/listTasks',component: SupervisorListTasksComponent, canActivate: [AuthGuard]},
-  {path:'supervisor/task/details',component: SDetailsTaskComponent, canActivate: [AuthGuard]},
   {path:'employee',redirectTo: 'employee/home', pathMatch: 'full'},
   {path:'employee/home',component: EmployeeHomeComponent, canActivate: [AuthGuard]},
   {path:'employee/chat',component: EmployeeChatComponent, canActivate: [AuthGuard]},
@@ -92,7 +88,7 @@ const routes: Routes = [
   {path:'employee/profile/edit',component: EmployeeEditProfileComponent, canActivate: [AuthGuard]},
   {path:'employee/request',component: EmployeeRequestComponent, canActivate: [AuthGuard]},
   {path:'employee/changePass',component: EmployeeChangepassComponent, canActivate: [AuthGuard]},
-  {path:'employee/task/details',component: EDetailsTaskComponent, canActivate: [AuthGuard]},
+  {path:'employee/bonus',component: EmployeeBonusComponent, canActivate: [AuthGuard]},
   {path:'**',component: NotfoundComponent},
 ];
 

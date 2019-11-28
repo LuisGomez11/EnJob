@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { AdmineModel } from 'src/app/models/admine-model';
-import { AdmineServiceService } from 'src/app/services/admine-service.service';
+import { AdmineServiceService } from 'src/app/services/admine.service';
 
 @Component({
   selector: 'app-subscribed',

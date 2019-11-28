@@ -1,18 +1,30 @@
-<div class="contenedor p-4">
+<div class="contenedor animated zoomIn  p-4">
     <div class="row h-100">
-        <div class="col-lg-5 mb-3 h-100">
+        <div class="col-lg-12 mb-3 h-100 d-flex justify-content-center">
             <div class="bg-white p-3 h-100">
                 <div class="profile-header d-flex">
-				<button title="Editar perfil" (click)="editProfile()" class="btn p-0 edit-btn">
+				<!-- <button title="Editar perfil" (click)="editProfile()" class="btn p-0 edit-btn">
 					<i class="fas fa-pen mr-4 text-muted h6"></i>
-				</button>
-                    <div class="photo mr-3">
-                        <img src="../../../../assets/img/test-photos/foto2.jpg" class="rounded-circle" width="90"
+				</button> -->
+                    <!-- <div class="photo mr-3">
+                        <img src="../../../../assets/img/foto-default.png" class="rounded-circle" width="90"
                             height="90">
+                    </div> -->
+                    <div class="hovereffect rounded-circle">
+                        <img class="img-fluid" [src]="service.selectedAdmine.photo" alt="card image" alt="Imagen"
+                        onerror="this.src = '../../assets/img/image-not-found.png'">
+                        <div class="overlay rounded-circle text-white">
+                            <input type="file" name="imageUpload" id="imageUpload"
+                                style="visibility: hidden;" accept="image/x-png,image/gif,image/jpeg"
+                                (input)="UploadImage($event)" />
+                            <label for="imageUpload" style="cursor: pointer;">
+                                <i class="fas fa-edit"></i>
+                            </label>
+                        </div>
                     </div>
                     <div class="name-user pt-3">
-                        <h3 class="margin-not">{{ name }} {{ lastName }}</h3>
-                        <p class="margin-not text-muted">{{ userName }}</p>
+                        <h3 class="margin-not">{{ service.selectedAdmine.name }} {{ service.selectedAdmine.lastName }}</h3>
+                        <p class="margin-not text-muted">{{ service.selectedAdmine.userName }}</p>
                     </div>
 
                 </div>
@@ -20,17 +32,17 @@
                 <div class="profile-body">
                     <h2 class="text-center">Información</h2>
                     <div class="info-employee mt-4">
-                        <p><strong>Nombre completo: </strong>{{ name }} {{ lastName }}</p>
-                        <p><strong>Nro. de documento: </strong>{{ numDocument }}</p>
-                        <p><strong>Telefono: </strong>{{ phone }}</p>
-                        <p><strong>Correo electronico: </strong>{{ email }}</p>
-                        <p><strong>Usuario: </strong>{{ userName }}</p>
-                        <p><strong>Empresa: </strong>{{ nameCompany }}</p>
+                        <p><strong>Nombre completo: </strong>{{ service.selectedAdmine.name }} {{ service.selectedAdmine.lastName }}</p>
+                        <p><strong>Nro. de documento: </strong>{{ service.selectedAdmine.numDocument }}</p>
+                        <p><strong>Telefono: </strong>{{ service.selectedAdmine.phone }}</p>
+                        <p><strong>Correo electronico: </strong>{{ service.selectedAdmine.email }}</p>
+                        <p><strong>Usuario: </strong>{{ service.selectedAdmine.userName }}</p>
+                        <p><strong>Empresa: </strong>{{ service.selectedAdmine.nameCompany }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-7 h-100 mb-3">
+        <!-- <div class="col-lg-7 h-100 mb-3">
             <div class="bg-white p-3 h-100">
                 <div class="d-flex justify-content-between">
                     <h3 class="text-primary">Solicitudes</h3>
@@ -44,6 +56,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

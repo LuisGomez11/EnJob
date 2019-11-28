@@ -11,15 +11,12 @@ export class TaskService {
 
   selectedTask: Task;
   tasks: Task[];
-  f = new Date();
 
   readonly url='http://localhost:8090/app/task';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor( private http: HttpClient ) {
     this.selectedTask = new Task();
-    this.selectedTask.stateTask = 'Pendiente';
-    this.selectedTask.changeDate = this.f.getDate() + '/' + (this.f.getMonth()+1) + '/' + this.f.getFullYear();
   }
 
   getTasks(): Observable<Task[]>{

@@ -3,10 +3,10 @@ import { AppComponent } from 'src/app/app.component';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Router } from '@angular/router';
 import { DepartmentService } from 'src/app/services/department.service';
-import { AdmineServiceService } from 'src/app/services/admine-service.service';
+import { AdmineServiceService } from 'src/app/services/admine.service';
 import { TaskService } from 'src/app/services/task.service';
 import { Task } from 'src/app/models/task';
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 import { Chart } from 'chart.js';
 import { Employee } from 'src/app/models/employee';
 
@@ -22,6 +22,7 @@ export class EmployeeProfileComponent implements OnInit {
 
   nameCompany = ''; nameDepartment = '';
   listTasks: Task[];
+  filter: Task[];
   chart = [];
   pendiente = 0; enProceso = 0; revision = 0; finalizada = 0;
   ngOnInit() {
@@ -57,7 +58,6 @@ export class EmployeeProfileComponent implements OnInit {
         var revision = 0;
         var finalizado = 0;
         this.listTasks = data;
-
         this.listTasks.forEach(task => {
           if (task.assigned == idEmployee) {
             switch (task.stateTask) {
@@ -87,14 +87,14 @@ export class EmployeeProfileComponent implements OnInit {
               data: [pendiente, proceso, revision, finalizado],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 206, 86, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
                   'rgba(75, 192, 192, 0.2)'
               ],
               borderColor: [
                   'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
                   'rgba(255, 206, 86, 1)',
+                  'rgba(54, 162, 235, 1)',
                   'rgba(75, 192, 192, 1)'
               ],
               borderWidth: 1

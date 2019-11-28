@@ -4,7 +4,7 @@ import { EmployeeService } from 'src/app/services/employee.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
 import  swal  from "sweetalert2";
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 import { DepartmentService } from 'src/app/services/department.service';
 import { Department } from 'src/app/models/department';
 import { Router } from '@angular/router';
@@ -86,7 +86,6 @@ export class EmployeesComponent implements OnInit {
   }
   createEmployee() {
     this.Form.value.nameCompany = this.company;
-    this.Form.value.points = '0';
     this.service.createEmployee(this.Form.value)
       .subscribe(res => {
         swal.fire({

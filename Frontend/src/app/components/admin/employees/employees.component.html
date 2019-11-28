@@ -1,4 +1,4 @@
-<div class="contenedor p-4">
+<div class="contenedor animated zoomIn p-4">
     <h3>Empleados</h3>
     <div class="row mt-3 max-he">
         <div class="col-md-3 mb-3">
@@ -19,23 +19,26 @@
             <div class="card shadow bg-white p-2 max-he list-employees">
                 <div class="row">
                     <ng-container *ngFor="let emp of listEmployees">
-                        <div class="col-sm-6 col-12 col-lg-4 p-4" *ngIf="emp.nameCompany=== company">
-                            <div class="px-4">
-                                <div class="card card-employee">
-                                    <img class="card-img-top" src="../../../../assets/img/foto-default.png"
-                                        alt="Card image" style="width:100%">
-                                    <div class="card-body">
-                                        <h4 class="card-title">{{ emp.name }} {{ emp.lastName }}</h4>
-                                        <p class="card-text">
-                                            <strong>Puntos: </strong><span class="mr-1">{{ emp.points }}</span><i
-                                                class="fas fa-star"></i>
-                                        </p>
-                                        <button (click)="viewProfile(emp._id)" class="btn btn-primary text-white">Ver perfil</button>
+                        <ng-container *ngIf="emp.role === 'Empleado'">
+                            <div class="col-sm-6 col-12 col-lg-4 p-4" *ngIf="emp.nameCompany=== company">
+                                <div class="px-4">
+                                    <div class="card card-employee">
+                                        <img class="card-img-top" src="../../../../assets/img/foto-default.png"
+                                            alt="Card image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ emp.name }} {{ emp.lastName }}</h4>
+                                            <p class="card-text">
+                                                <strong>Puntos: </strong><span class="mr-1">{{ emp.points }}</span><i
+                                                    class="fas fa-star"></i>
+                                            </p>
+                                            <button (click)="viewProfile(emp._id)"
+                                                class="btn btn-primary text-white">Ver perfil</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div>
+                            </div>
+                        </ng-container>
                     </ng-container>
                 </div>
 

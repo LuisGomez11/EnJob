@@ -8,7 +8,8 @@ const { connect } = require('./database/database');
     await connect();
 
     //staring server
-    await app.listen(port2);
+    const server = app.listen(port2);
+    require('./controller/socket.controller').SocketConfig(server);
     console.log(`server on port ${port2}`)
 }
 

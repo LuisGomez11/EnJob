@@ -10,13 +10,11 @@ const admineCtrl = {};
 admineCtrl.LoginAdmine = async (req, res) => {
     let Admine_2 = admine(req);
     const auth = false;
-
-
     try {
         const data = await AdmineModel.findOne({
             $or: [{ userName: Admine_2.userName }]
         });
-
+        console.log(data);
         let comp = compare(req.body.password, data.password);
         if (comp == false) return res.status(not_foundStatus).send({ auth });
         // if (data.state === 'Inactivo') return res.status(non_authoritative_informationStatus).send({ error: non_authoritative_informationSend });

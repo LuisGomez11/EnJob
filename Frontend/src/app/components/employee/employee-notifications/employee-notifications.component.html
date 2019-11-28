@@ -1,0 +1,13 @@
+<div class="list-notifications">
+    <ng-container *ngFor="let n of listNotifications">
+        <div class="notification p-2 d-flex border-notification" *ngIf="this.serviceEmplo.selectedEmployee._id === n.receiver">
+            <div>
+                <img class="mt-2 rounded-circle" src="../../../../assets/img/foto-default.png" width="40" height="40">
+            </div>
+            <div class="ml-3">
+                <p class="text-muted margin-not" style="font-size: 13px">{{n.dateSubmit}}</p>
+                <p class="margin-not">{{n.message}}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>

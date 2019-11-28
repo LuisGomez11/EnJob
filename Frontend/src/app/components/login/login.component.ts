@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EmployeeService } from 'src/app/services/employee.service';
+import  swal  from "sweetalert2";
 
 declare var $: any;
 
@@ -56,6 +57,7 @@ export class LoginComponent implements OnInit {
 
 
   async onLogin() {
+    console.log('entro');
     if(this.FormLogin.value.role === 'Admin RH'){
       this.auth.login(this.FormLogin.value).toPromise().then(res => {
         if (res) {
@@ -69,7 +71,14 @@ export class LoginComponent implements OnInit {
         }
   
       }).catch((err) => {
-  
+        swal.fire({
+          position: 'center',
+          type: 'error',
+          title: 'Error!',
+          text: 'Revise sus credenciales',
+          showConfirmButton: false,
+          timer: 2000
+        });
       });
     }else if(this.FormLogin.value.role === 'Empleado'){
       this.authEmplo.login(this.FormLogin.value).toPromise().then(res => {
@@ -84,7 +93,14 @@ export class LoginComponent implements OnInit {
         }
   
       }).catch((err) => {
-  
+        swal.fire({
+          position: 'center',
+          type: 'error',
+          title: 'Error!',
+          text: 'Revise sus credenciales',
+          showConfirmButton: false,
+          timer: 2000
+        });
       });
     }
     

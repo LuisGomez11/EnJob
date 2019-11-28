@@ -1,9 +1,55 @@
-<div class="contenedor p-4">
-    <h3>Inicio</h3>
-    <div class="mt-3">
-    	<a routerLink="/supervisor/tasks" class="btn btn-success text-white">
-    		<i class="fas fa-plus pr-2"></i>
-    		<span>Tarea</span>
-    	</a>
-    </div>
+<div class="contenedor animated zoomIn  p-4">
+	<h3>Inicio</h3>
+	<hr>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="content-publications">
+				<form [formGroup]="FormPublication" (ngSubmit)="createPublication()">
+					<div class="card">
+						<div class="card-header">
+							Crear publicación
+						</div>
+
+						<div class="card-body">
+
+							<div class="form-group">
+								<textarea class="form-control" placeholder="Escriba su publicación" rows="2"
+									formControlName="publication" required></textarea>
+							</div>
+						</div>
+						<div class="card-footer">
+							<button type="submit" class="btn btn-primary float-right"><i
+									class="fas fa-paper-plane mr-2"></i><span>Publicar</span></button>
+
+						</div>
+
+
+					</div>
+				</form>
+			</div>
+			<ng-container *ngFor="let p of listPublications">
+				<div class="card my-2" *ngIf="p.company === company">
+					<div class="card-body" style="padding-top: 5px; padding-bottom: 5px;">
+						<div class="d-flex">
+							<div class="mr-3">
+								<img class="mt-1 rounded-circle" src="../../../../assets/img/foto-default.png"
+									width="45" height="45">
+							</div>
+							<div>
+								<p class="m-0 text-primary mt-1 h5">{{ p.publisher }}</p>
+								<p class="text-muted m-0" style="font-size: 13px;">{{ p.publicationDate }}</p>
+							</div>
+						</div>
+						<p class="mt-1">{{ p.publication }}</p>
+					</div>
+				</div>
+			</ng-container>
+		</div>
+		<div class="col-md-4">
+			<a routerLink="/supervisor/tasks" class="btn btn-link">
+				<i class="fas fa-plus pr-2"></i>
+				<span>Añadir nueva tarea</span>
+			</a>
+		</div>
+	</div>
 </div>

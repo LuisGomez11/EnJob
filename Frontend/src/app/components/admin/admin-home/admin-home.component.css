@@ -1,6 +1,8 @@
 .contenedor{
     background-color: #eee;
-    height: calc(100vh - 56px);
+    background-attachment: fixed;
+    height: auto;
+    min-height: calc(100vh - 56px);
 }
 
 .menu-slides{

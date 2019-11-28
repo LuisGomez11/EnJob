@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { Subscription } from 'src/app/models/subscription';
 import { SubscriptionService } from 'src/app/services/subscription.service';
-import { AdmineServiceService } from 'src/app/services/admine-service.service';
-import { AuthAdmineService } from 'src/app/services/auth-admine.service';
+import { AdmineServiceService } from 'src/app/services/admine.service';
+import { AuthAdmineService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({

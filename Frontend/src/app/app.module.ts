@@ -41,6 +41,7 @@ import { EmployeeChatComponent } from './components/employee/employee-chat/emplo
 import { EmployeeConfigComponent } from './components/employee/employee-config/employee-config.component';
 import { EmployeeKanbanComponent } from './components/employee/employee-kanban/employee-kanban.component';
 import { EmployeeChangepassComponent } from './components/employee/employee-changepass/employee-changepass.component';
+import { EmployeeBonusComponent } from './components/employee/employee-bonus/employee-bonus.component';
 
 //SUPERVISOR-COMPONENTS
 import { SupervisorHomeComponent } from './components/supervisor/supervisor-home/supervisor-home.component';
@@ -52,13 +53,11 @@ import { SupervisorListTasksComponent } from './components/supervisor/supervisor
 
 //EXTERNAL
 import { DragAndDropModule } from "angular-draggable-droppable";
-import { AuthAdmineService } from './services/auth-admine.service';
+import { AuthAdmineService } from './services/auth.service';
 import { AuthGuard } from './guards/authguard.service';
-import { EDetailsTaskComponent } from './components/employee/e-details-task/e-details-task.component';
-import { SDetailsTaskComponent } from './components/supervisor/s-details-task/s-details-task.component';
-import { ADetailsTaskComponent } from './components/admin/a-details-task/a-details-task.component';
+import { EmployeeNotificationsComponent } from './components/employee/employee-notifications/employee-notifications.component';
 
-
+import { SocketIoModule } from 'ngx-socket-io';
 
 @NgModule({
   declarations: [
@@ -96,9 +95,8 @@ import { ADetailsTaskComponent } from './components/admin/a-details-task/a-detai
     AdminSubscriptionsComponent,
     SupervisorListTasksComponent,
     AdminRequestsComponent,
-    EDetailsTaskComponent,
-    SDetailsTaskComponent,
-    ADetailsTaskComponent,
+    EmployeeBonusComponent,
+    EmployeeNotificationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,6 +105,7 @@ import { ADetailsTaskComponent } from './components/admin/a-details-task/a-detai
     HttpClientModule,
     ReactiveFormsModule,
     DragAndDropModule,
+    SocketIoModule.forRoot({ options: {}, url: '//localhost:3000' })
   ],
   providers: [AuthAdmineService, AuthGuard],
   bootstrap: [AppComponent]

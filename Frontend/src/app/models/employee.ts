@@ -1,7 +1,7 @@
 export class Employee {
     constructor(_id = '', name = '', userName = '', lastName = '', password = '', email = '',
         phone = '', numDocument = '', role = '', state = '', nameCompany = '', salary = '', 
-        points = '', departament = '', position = '', availability = '') {
+        points = '', departament = '', position = '', availability = '', bonus = '') {
         this._id = _id;
         this.name = name;
         this.userName = userName;
@@ -18,6 +18,7 @@ export class Employee {
         this.departament = departament;
         this.position = position;
         this.availability = availability;
+        this.bonus = bonus;
     }
     _id: string
     name: string
@@ -35,5 +36,6 @@ export class Employee {
     departament: string
     salary: string
     points: string
+    bonus: string
 }
 
