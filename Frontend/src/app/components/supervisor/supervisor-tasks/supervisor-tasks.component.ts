@@ -33,6 +33,7 @@ export class SupervisorTasksComponent implements OnInit {
   f = new Date();
 
   currenDate = this.f.getDate() + '/' + (this.f.getMonth()+1) + '/' + this.f.getFullYear();
+  currentDH = this.f.getDate() + '/' + (this.f.getMonth() + 1) + '/' + this.f.getFullYear() + ' ' + this.f.getHours() + ':' + this.f.getMinutes();
   
   ngOnInit() {
     this.app.supervisor();
@@ -58,7 +59,7 @@ export class SupervisorTasksComponent implements OnInit {
 
   createTask(form: NgForm) {
     form.value.stateTask = 'Pendiente';
-    form.value.changeDate = this.f.getDate() + '/' + (this.f.getMonth()+1) + '/' + this.f.getFullYear();
+    form.value.changeDate = this.currenDate;
     this.service.createTask(form.value).subscribe(data => {
       swal.fire({
         position: 'center',
@@ -71,7 +72,7 @@ export class SupervisorTasksComponent implements OnInit {
       this.serviceNoti.selectedNotification.message = 'Te han asignado la tarea: '+data.title;
       this.serviceNoti.selectedNotification.owner = this.id;
       this.serviceNoti.selectedNotification.receiver = data.assigned;
-      this.serviceNoti.selectedNotification.dateSubmit = this.currenDate;
+      this.serviceNoti.selectedNotification.dateSubmit = this.currentDH;
       this.serviceNoti.createNotification(this.serviceNoti.selectedNotification).subscribe(res => {
         console.log(res);
       });

@@ -6,6 +6,7 @@ import { RequestService } from 'src/app/services/request.service';
 import swal from "sweetalert2";
 import { Request } from 'src/app/models/request';
 import { AuthAdmineService } from 'src/app/services/auth.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-employee-request',
@@ -14,7 +15,7 @@ import { AuthAdmineService } from 'src/app/services/auth.service';
 })
 export class EmployeeRequestComponent implements OnInit {
 
-  constructor(public app : AppComponent, private router: Router, private service: RequestService, private auth: AuthAdmineService) { }
+  constructor(public app: AppComponent, private router: Router, private service: RequestService, private auth: AuthAdmineService, private serviceNoti: NotificationService) { }
 
   ngOnInit() {
     this.app.employee();
@@ -22,6 +23,7 @@ export class EmployeeRequestComponent implements OnInit {
 
   f = new Date();
   currentDate = this.f.getDate() + '/' + (this.f.getMonth() + 1) + '/' + this.f.getFullYear();
+  currentDH = this.f.getDate() + '/' + (this.f.getMonth() + 1) + '/' + this.f.getFullYear() + ' ' + this.f.getHours() + ':' + this.f.getMinutes();
 
   createRequest(form: NgForm) {
     form.value.applicant = this.auth.getUser()._id;
@@ -37,6 +39,13 @@ export class EmployeeRequestComponent implements OnInit {
         showConfirmButton: false,
         timer: 1500
       });
+      this.serviceNoti.selectedNotification.message = 'El empleado ' + this.auth.getUser().name + ' ' + this.auth.getUser().lastName + ' te ha enviado una solicitud';
+      this.serviceNoti.selectedNotification.owner = this.auth.getUser()._id;
+      this.serviceNoti.selectedNotification.receiver = data.receiver;
+      this.serviceNoti.selectedNotification.dateSubmit = this.currentDH;
+      this.serviceNoti.createNotification(this.serviceNoti.selectedNotification).subscribe(res => {
+        console.log(res);
+      });
       this.resetForm(form);
     }, error => {
       console.log(error);
@@ -50,7 +59,7 @@ export class EmployeeRequestComponent implements OnInit {
     }
   }
 
-  back(){
+  back() {
     this.router.navigate(['employee/home']);
   }
 

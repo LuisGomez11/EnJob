@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { AuthAdmineService } from 'src/app/services/auth.service';
+import { AdmineServiceService } from 'src/app/services/admine.service';
 
 @Component({
   selector: 'app-admin-profile',
@@ -9,20 +10,11 @@ import { AuthAdmineService } from 'src/app/services/auth.service';
 })
 export class AdminProfileComponent implements OnInit {
 
-  constructor(public app : AppComponent,private auth: AuthAdmineService) { }
+  constructor(public app : AppComponent,private auth: AuthAdmineService, private service: AdmineServiceService) { }
 
-  name = ''; lastName = ''; userName = '';
-  nameCompany = ''; email = ''; phone = '';
-  numDocument = '';
   ngOnInit() {
     this.app.admin();
-    this.name = this.auth.getUser().name;
-    this.lastName = this.auth.getUser().lastName;
-    this.userName = this.auth.getUser().userName;
-    this.nameCompany = this.auth.getUser().nameCompany;
-    this.email = this.auth.getUser().email;
-    this.phone = this.auth.getUser().phone;
-    this.numDocument = this.auth.getUser().numDocument;
+    this.service.selectedAdmine = this.auth.getUser();
   }
 
 }
