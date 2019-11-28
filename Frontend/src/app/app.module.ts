@@ -57,7 +57,7 @@ import { AuthAdmineService } from './services/auth.service';
 import { AuthGuard } from './guards/authguard.service';
 import { EmployeeNotificationsComponent } from './components/employee/employee-notifications/employee-notifications.component';
 
-
+import { SocketIoModule } from 'ngx-socket-io';
 
 @NgModule({
   declarations: [
@@ -105,6 +105,7 @@ import { EmployeeNotificationsComponent } from './components/employee/employee-n
     HttpClientModule,
     ReactiveFormsModule,
     DragAndDropModule,
+    SocketIoModule.forRoot({ options: {}, url: '//localhost:3000' })
   ],
   providers: [AuthAdmineService, AuthGuard],
   bootstrap: [AppComponent]

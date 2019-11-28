@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
 
 
   async onLogin() {
+    console.log('entro');
     if(this.FormLogin.value.role === 'Admin RH'){
       this.auth.login(this.FormLogin.value).toPromise().then(res => {
         if (res) {
