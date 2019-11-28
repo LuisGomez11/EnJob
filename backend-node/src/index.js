@@ -3,7 +3,7 @@ const {port2} = require('./config/data');
 const { connect } = require('./database/database');
 
 
-async function main() {
+ main = async () => {
     //staring database
     await connect();
 
