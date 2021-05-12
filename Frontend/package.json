@@ -21,7 +21,7 @@
     "@angular/router": "~8.2.8",
     "angular-draggable-droppable": "^4.3.8",
     "animate.css": "^3.7.2",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "ngx-socket-io": "^3.0.1",
     "rkjs": "^1.0.13",
     "rxjs": "~6.4.0",
